@@ -1,0 +1,109 @@
+{
+  "name": "chrissilich/craftedsupply",
+  "type": "project",
+  "license": "MIT",
+  "description": "Crafted Supply",
+  "homepage": "https://www.chrissilich.com",
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "vendor-dir": "dist/vendor",
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "ffraenz/private-composer-installer": true,
+      "junaidbhura/composer-wp-pro-plugins": true,
+      "roots/wordpress-core-installer": true
+    },
+    "platform": {
+      "php": "8.2.15"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "junaidbhura/advanced-custom-fields-pro",
+        "version": "6.2.8",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://www.advancedcustomfields.com/"
+        }
+      }
+    }   
+  ],
+  "require": {
+    "php": "^8.1",
+    "composer/composer": "*",
+    "composer/installers": "^2.1",
+    "cweagans/composer-patches": "^1.7",
+    "ffraenz/private-composer-installer": "^5.0",
+    "junaidbhura/advanced-custom-fields-pro": "*",
+    "junaidbhura/composer-wp-pro-plugins": "*",
+    "oscarotero/env": "^2.1",
+    "platformsh/config-reader": "^2.4",
+    "psy/psysh": "^0.11.0",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/wordpress": "^6.4.2",
+    "roots/wp-config": "^1.0",
+    "roots/wp-password-bcrypt": "^1.1",
+    "timber/timber": "^2.0.0",
+    "twig/twig": "^3.7",
+    "vlucas/phpdotenv": "^5.4",
+    "wp-cli/wp-cli-bundle": "^2.7",
+    "wpackagist-plugin/acf-image-aspect-ratio-crop": "^6.0",
+    "wpackagist-plugin/intuitive-custom-post-order": "3.1.4.1",
+    "wpackagist-plugin/mailgun": "^1",
+    "wpackagist-plugin/password-protected": "2.6.8",
+    "wpackagist-plugin/redirection": "^5.1",
+    "wpackagist-plugin/redis-cache": "^2.0",
+    "wpackagist-plugin/wordpress-seo": "^21.2",
+    "wpackagist-theme/twentytwentythree": "^1.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "wpackagist-plugin/debug-bar": "^1.1",
+    "wpackagist-plugin/duplicate-post": "^4.2",
+    "wpackagist-plugin/regenerate-thumbnails": "^3.1.6",
+    "wpackagist-plugin/yoast-test-helper": "^1.15"
+  },
+  "extra": {
+    "installer-paths": {
+      "include/drop-ins/{$name}/": [
+        "type:wordpress-dropin",
+        "wpackagist-plugin/redis-cache"
+      ],
+      "dist/wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "junaidbhura/advanced-custom-fields-pro",
+        "wpackagist-plugin/duplicate-post",
+        "wpackagist-plugin/acf-content-analysis-for-yoast-seo",
+        "wpackagist-plugin/acf-flexible-content-extended",
+        "wpackagist-plugin/acf-image-aspect-ratio-crop",
+        "wpackagist-plugin/intuitive-custom-post-order",
+        "wpackagist-plugin/regenerate-thumbnails",
+        "wpackagist-plugin/mailgun",
+        "wpackagist-plugin/wordpress-seo"
+      ],
+      "dist/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "dist/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "./dist/"
+  }
+}
