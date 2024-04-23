@@ -1,0 +1,36 @@
+/*
+* Blocks with Content Margins
+* Within "WYSIWYG" content, we use several blocks that have smaller margins between them than
+* the typical component/block margin. This loop applies that smaller margin when two of those
+* blocks are direct siblings.
+*/
+$blocks-with-content-margins: (
+	'.hero-article-block',
+	'.wysiwyg-block',
+	'.big-image-block',
+	'.video-block',
+	'.accordion-block'
+);
+
+// map through the blocks with content margins and apply the content margin mixin
+@each $blockA in $blocks-with-content-margins {
+	#{$blockA} {
+		@each $blockB in $blocks-with-content-margins {
+			&:has(+ #{$blockB}) {
+				@include content-margin;
+			}
+		}
+	}
+}
+
+// Special case for when a CTA block is last
+// This tucks the CTA block under the email subscribe component in the footer
+.cta-block:last-child {
+	@include from($layout-switch) {
+		margin-bottom: 0;
+
+		.page-container:has(&) .site-footer:has(.email-subscribe) {
+			margin-top: 0;
+		}
+	}
+}

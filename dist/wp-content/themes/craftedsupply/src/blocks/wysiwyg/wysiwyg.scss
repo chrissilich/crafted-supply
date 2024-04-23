@@ -1,0 +1,44 @@
+.wysiwyg-block {
+	@extend %grid-columns;
+	@include grid-placement(full-bleed);
+	@include component-margin;
+
+	.is-selected &,
+	.has-child-selected & {
+		border: 1px dashed color(gray, 300);
+		padding-top: rem-convert(20px);
+		padding-bottom: rem-convert(20px);
+	}
+
+	&-inner {
+		@include grid-placement(constrained, 720px);
+		position: relative;
+		@include z(content);
+		margin: 0 auto;
+		width: 100%;
+
+		.acf-innerblocks-container {
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// &[data-theme='dark'] {
+	// 	background-color: color(gray, 600);
+	// 	color: white;
+	// 	padding: rem-convert(20px) 0;
+	// }
+
+	// &[data-width='medium'] {
+	// 	.wysiwyg-block-inner {
+	// 		max-width: 708px;
+	// 	}
+	// }
+
+	// &[data-width='narrow'] {
+	// 	.wysiwyg-block-inner {
+	// 		max-width: 400px;
+	// 	}
+	// }
+}

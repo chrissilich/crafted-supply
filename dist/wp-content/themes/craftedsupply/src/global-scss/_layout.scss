@@ -1,0 +1,42 @@
+.page-container {
+	container-type: inline-size;
+	container-name: page-container;
+
+	display: grid;
+	grid-template: auto 1fr auto / minmax(0, 1fr);
+	grid-template-areas: 'header' 'main' 'footer';
+	position: relative;
+	overflow: clip;
+	min-height: 100%;
+	background: color(white);
+
+	@include breakpoint($outer-max-width + 1) {
+		@include content-constraint($outer-max-width);
+		box-shadow: 0 0 100px color(black, $alpha: 0.1);
+	}
+
+	& > .site-header {
+		grid-area: header;
+		background-color: color(gray, 100);
+	}
+
+	& > main {
+		grid-area: main;
+		background-color: white;
+
+		// NOTE: ALL direct descendants of this container MUST have a grid-column declared
+		.grid-container {
+			@extend %grid-columns;
+
+			:where(& > *) {
+				// default to main column with zero css specificity
+				@include grid-placement(constrained);
+			}
+		}
+	}
+
+	& > .site-footer {
+		grid-area: footer;
+		background-color: color(gray, 100);
+	}
+}

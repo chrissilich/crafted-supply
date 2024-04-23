@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b2e723cca68f0bdb98b65373b98711c",
+    "content-hash": "5efac20f311d65d94d48c6fb903638b7",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -6063,24 +6063,6 @@
             "homepage": "https://wordpress.org/plugins/mailgun/"
         },
         {
-            "name": "wpackagist-plugin/password-protected",
-            "version": "2.6.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/password-protected/",
-                "reference": "tags/2.6.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/password-protected.2.6.8.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/password-protected/"
-        },
-        {
             "name": "wpackagist-plugin/redirection",
             "version": "5.4.2",
             "source": {
@@ -6956,24 +6938,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
-        },
-        {
-            "name": "wpackagist-plugin/yoast-test-helper",
-            "version": "1.18",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/yoast-test-helper/",
-                "reference": "tags/1.18"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/yoast-test-helper.1.18.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/yoast-test-helper/"
         }
     ],
     "aliases": [],

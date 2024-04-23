@@ -1,0 +1,3 @@
+@mixin z($name: content, $modifier: 0) {
+	z-index: map.get($z-indicies, $name) + $modifier;
+}

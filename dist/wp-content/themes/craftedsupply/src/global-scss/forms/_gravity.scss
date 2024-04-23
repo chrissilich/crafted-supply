@@ -1,0 +1,75 @@
+/////////////////////////////////////////////
+// Begin Gravity Forms Global Overrides
+/////////////////////////////////////////////
+
+.gform {
+	&_validation_container {
+		display: none;
+	}
+
+	&_validation_errors {
+		@include sr-text;
+	}
+
+	&_fields {
+		display: flex;
+		flex-flow: column;
+		gap: rem-convert(24px);
+	}
+
+	&_body {
+		margin-bottom: rem-convert(24px);
+	}
+
+	&_ajax_spinner {
+		width: rem-convert(32px) !important;
+		height: rem-convert(32px) !important;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: rem-convert(24px);
+	}
+}
+
+.hidden_label {
+	& > label {
+		@include sr-text;
+	}
+}
+
+.gfield {
+	position: relative;
+
+	&_label {
+		@extend %formlabel;
+		cursor: pointer;
+
+		&::after {
+			content: ' (Optional)';
+			font-weight: 400;
+		}
+	}
+
+	&_required {
+		margin-left: auto;
+		&_text {
+			font-size: rem-convert(13px);
+			color: color(red, 500);
+			margin-left: rem-convert(4px);
+			font-style: italic;
+		}
+	}
+
+	&.gfield_contains_required {
+		.gfield_label {
+			&::before {
+				content: '* ';
+				display: inline-block;
+				margin-right: rem-convert(4px);
+				color: color(red, 300);
+			}
+			&::after {
+				display: none;
+			}
+		}
+	}
+}

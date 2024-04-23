@@ -1,0 +1,13 @@
+{% import 'src/macros.twig' as macros %}
+
+{% set button = {
+  type: fields.type,
+  style: fields.style,
+  destination: {
+    title: fields.destination.title,
+    url: fields.destination.url,
+    target: fields.destination.target,
+  }
+} %}
+
+{% include 'components/cms-button/cms-button.twig' with { button: button } %}  

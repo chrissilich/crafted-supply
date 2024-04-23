@@ -1,0 +1,32 @@
+{
+	"name": "craftedsupply/wysiwyg",
+	"title": "WYSIWYG",
+	"description": "A general purpose container for text content– headings, paragraphs, etc. ",
+	"style": [],
+	"category": "design",
+	"icon": "media-document",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "wysiwyg.php"
+	},
+	"craftedsupply": {
+		"boilerplate_version": "1.3.1"
+	},
+	"example": {
+		"viewportWidth": 1400
+	},
+	"supports": {
+		"mode": false,
+		"anchor": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": false,
+			"link": false
+		}
+	},
+	"_supports options": "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/"
+}

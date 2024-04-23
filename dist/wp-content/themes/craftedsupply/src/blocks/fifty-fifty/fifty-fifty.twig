@@ -1,0 +1,53 @@
+{% import 'src/macros.twig' as macros %}
+
+<section class="fifty-fifty-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+  data-image-side="{{ fields.image_side }}" >
+
+  {% if fields.has_circles %}
+    {% include 'components/circle-effect/circle-effect.twig' with { position: fields.image_side == "left" ? "right" : "left" } %}  
+  {% endif %}
+
+  <div class="fifty-fifty-block-inner">
+
+    <div 
+      class="fifty-fifty-block-image" 
+      data-animation="{{is_preview ? '':'fadeInUp'}}"
+      data-animation-delay="{{fields.image_side ? 200 : 0}}"
+    >
+      {% if (fields.image) %}
+        <img src="{{ get_image(fields.image) }}" alt="{{ fields.title }}" />
+      {% else %}
+        <div class="fifty-fifty-block-image-placeholder"></div>
+      {% endif %}
+    </div>
+
+    <div 
+      class="fifty-fifty-block-text" 
+      data-animation="{{is_preview ? '':'fadeInUp'}}"
+      data-animation-delay="{{fields.image_side ? 0 : 200}}"
+    >
+      <div class="fifty-fifty-block-text-inner">
+
+      <h2>
+        {{ fields.title ? fields.title : "[Title]"}}
+      </h2>
+
+      <div class="fifty-fifty-block-text">
+        {{ fields.text ? fields.text : "[Text]"}}
+      </div>
+
+
+      {% if (fields.button_type != "none") %}
+        <div class="fifty-fifty-block-buttons">
+          {% include 'components/cms-button/cms-button.twig' with { style: "", button: fields.button } %}  
+        </div>
+      {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+
+</section>

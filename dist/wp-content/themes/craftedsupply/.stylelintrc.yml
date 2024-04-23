@@ -1,0 +1,34 @@
+
+extends: [
+  "stylelint-config-recommended",
+  "stylelint-config-standard-scss"
+]
+rules:
+  indentation: null
+  alpha-value-notation: null
+  at-rule-empty-line-before: null
+  rule-empty-line-before: null
+  declaration-empty-line-before: null
+  font-family-name-quotes: "always-unless-keyword"
+  font-family-no-missing-generic-family-keyword:
+    - true
+    - ignoreFontFamilies:
+      - "icomoon"
+  keyframes-name-pattern: null
+  no-descending-specificity: null
+  no-invalid-position-at-import-rule: null
+  property-no-vendor-prefix:
+    - true
+    - ignoreProperties:
+      - "backface-visibility"
+  selector-id-pattern: null
+  selector-class-pattern: null
+  custom-property-pattern: null
+  value-keyword-case:
+    - "lower"
+    - ignoreProperties:
+      - "text-rendering"
+  scss/comment-no-empty: null
+  scss/dollar-variable-colon-space-after: "at-least-one-space"
+  scss/dollar-variable-empty-line-before: null
+  scss/double-slash-comment-empty-line-before: null

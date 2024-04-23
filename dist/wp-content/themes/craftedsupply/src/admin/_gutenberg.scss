@@ -1,0 +1,52 @@
+/*
+* Use this file to modify the Gutenberg editor itself,
+* not the content of the website when its inside the editor.
+* If you need to modify the way a site component or block looks
+* when its in the editor, do so in the block's own SCSS file.
+*/
+
+// Gutenberg editor
+@media (768px <= width <= 10000px) {
+	div:has(> [id='edit-post:document']),
+	div:has(> [id='edit-post:block']) {
+		width: 30%;
+		min-width: 300px;
+		max-width: 450px;
+	}
+	[id='edit-post:document'],
+	[id='edit-post:block'] {
+		width: auto;
+	}
+}
+
+// Make the block popover appear above the block
+.edit-post-visual-editor .components-popover.block-editor-block-popover {
+	z-index: 50;
+}
+
+// Make the editor's content clip off decorative elements that stick out the sides
+.edit-post-visual-editor .is-root-container {
+	overflow: clip;
+	container-type: inline-size;
+	container-name: page-container;
+}
+
+// Kill the H1 button in the heading block
+.components-popover button[aria-label='Heading 1'] {
+	display: none;
+}
+
+// Change the way the post title part of the editor looks,
+// so it doesn't look like part of the post.
+.edit-post-visual-editor__post-title-wrapper {
+	background: #eee;
+	margin: 0 !important;
+	padding: 20px;
+
+	&::before {
+		content: 'Title:';
+		font-size: 1em;
+		font-weight: normal;
+		color: #888;
+	}
+}

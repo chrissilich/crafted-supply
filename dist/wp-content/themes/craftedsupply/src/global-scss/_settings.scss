@@ -1,0 +1,35 @@
+//  Slicer Breakpoints
+//  https://github.com/lolmaus/breakpoint-slicer
+//
+//  Breakpoint:    0      100px   200px   360px   400px   500px   600px   768px       2056px
+//                 |───────┼───────┼───────┼───────┼───────┼───────┼───────┼──── ... ───┼────────>
+//  Slice #:               1       2       3       4       5       6       7           20
+$slicer-breakpoints: 100px 200px 320px 400px 500px 600px 768px 800px 900px 1024px 1100px 1200px
+	1300px 1400px 1500px 1600px 1700px 1800px 1920px 2056px;
+$slicer-anti-overlap-corrections: -1px;
+
+$sans: 'Open Sans', 'Segoe UI', tahoma, sans-serif;
+
+// type variables
+$body-font: $sans;
+$header-font: $sans;
+
+$base-font-size: 16px;
+$clamp-scale-basis: 600px;
+
+$component-margin: 160px; // space between major components and blocks
+$content-margin: 56px; // space between elements and blocks that are considered part of the same stack of content
+
+$outer-max-width: 1920px;
+$inner-max-width: 1440px;
+
+// radius
+$border-radius: 4px;
+
+// transitions
+$ts: 0.3s; // transition speed
+$te: ease-in-out; // transition ease
+
+// *default* layout switch
+// some blocks switch at a different breakpoint
+$layout-switch: 11;

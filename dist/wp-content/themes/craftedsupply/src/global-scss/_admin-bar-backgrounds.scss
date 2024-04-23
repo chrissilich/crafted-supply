@@ -1,0 +1,32 @@
+#wpadminbar,
+.block-editor .edit-post-header .edit-post-fullscreen-mode-close {
+	.wp-env-local & {
+		background-image: url('../../src/admin/wp-admin-bar-local.png?');
+	}
+	.wp-env-development & {
+		background-image: url('../../src/admin/wp-admin-bar-development.png');
+	}
+	.wp-env-staging & {
+		background-image: url('../../src/admin/wp-admin-bar-staging.png');
+	}
+	// .wp-env-production & {
+	// 	background-image: url('../../src/admin/wp-admin-bar-production.png');
+	// }
+}
+
+#wp-admin-bar-site-name > a {
+	&::after {
+		.wp-env-local & {
+			content: ' (Local)';
+		}
+		.wp-env-development & {
+			content: ' (Development)';
+		}
+		.wp-env-staging & {
+			content: ' (Staging)';
+		}
+		.wp-env-production & {
+			content: ' (Production)';
+		}
+	}
+}

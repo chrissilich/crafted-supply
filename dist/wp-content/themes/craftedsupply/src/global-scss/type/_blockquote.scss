@@ -1,0 +1,16 @@
+@include main-container(true) {
+	blockquote {
+		margin: is-clamp(50px, 80px, 1200px) 0;
+		padding: 0 0 0 rem-convert(24px);
+		border-left: 2px solid color(yellow);
+
+		p {
+			@include heading-e;
+			color: color(navy);
+
+			&:not(:first-child) {
+				margin-top: rem-convert(24px);
+			}
+		}
+	}
+}

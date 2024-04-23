@@ -66,7 +66,6 @@
     "wpackagist-plugin/acf-image-aspect-ratio-crop": "^6.0",
     "wpackagist-plugin/intuitive-custom-post-order": "3.1.4.1",
     "wpackagist-plugin/mailgun": "^1",
-    "wpackagist-plugin/password-protected": "2.6.8",
     "wpackagist-plugin/redirection": "^5.1",
     "wpackagist-plugin/redis-cache": "^2.0",
     "wpackagist-plugin/wordpress-seo": "^21.2",
@@ -76,8 +75,7 @@
     "roave/security-advisories": "dev-master",
     "wpackagist-plugin/debug-bar": "^1.1",
     "wpackagist-plugin/duplicate-post": "^4.2",
-    "wpackagist-plugin/regenerate-thumbnails": "^3.1.6",
-    "wpackagist-plugin/yoast-test-helper": "^1.15"
+    "wpackagist-plugin/regenerate-thumbnails": "^3.1.6"
   },
   "extra": {
     "installer-paths": {

@@ -1,0 +1,11 @@
+@mixin placeholder-image($width, $height, $show_size: true, $text: 'Image Placeholder') {
+	width: 100%;
+	@if $show_size {
+		background: url('https://placehold.co/#{$width}x#{$height}?text=[#{$text},+#{$width}x#{$height}]');
+	} @else {
+		background: url('https://placehold.co/#{$width}x#{$height}?text=[#{$text}]');
+	}
+	aspect-ratio: #{$width} / #{$height};
+	background-size: cover;
+	background-position: center;
+}

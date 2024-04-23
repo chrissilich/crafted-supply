@@ -1,0 +1,287 @@
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+	cursor: pointer;
+	appearance: none;
+	backface-visibility: hidden;
+	background: none;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	line-height: 1;
+	padding: 0;
+	transition: $ts $te;
+
+	&:disabled,
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+$button-pad-x: 24px;
+$button-pad-y: 17px;
+
+%button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	@extend %button-text;
+	gap: rem-convert(10px);
+	padding: $button-pad-y $button-pad-x;
+	border-radius: $border-radius;
+	transition: $ts $te;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	&.activated {
+		&::before {
+			visibility: visible !important;
+		}
+	}
+
+	&::before {
+		// the animated background circle
+		content: '';
+		position: absolute;
+		width: 100%;
+		aspect-ratio: 1/1;
+		background-color: color(blue);
+		border-radius: 50%;
+		transform: translate(-50%, -50%) scale(0);
+		// filter: blur(15px);
+		visibility: hidden;
+		left: 50%;
+		left: var(--x);
+		top: 50%;
+		top: var(--y);
+		animation: button-bubble-exit 0.4s ease-in-out forwards;
+	}
+
+	.button-text,
+	span:not(.button-icon) {
+		display: inline-block;
+		position: relative;
+		order: 2;
+	}
+
+	&:hover {
+		&::before {
+			animation: button-bubble 0.5s ease-in-out forwards;
+		}
+	}
+
+	&:active {
+		transform: scale(0.95);
+		&::before {
+			animation: button-bubble-exit 0.2s ease-in-out forwards;
+		}
+	}
+
+	&.-icon-before .button-text {
+		order: 4;
+	}
+
+	.button-icon {
+		width: 1em;
+		height: 1em;
+		order: 3;
+		transform: scale(0.85);
+	}
+
+	.disabled > &,
+	&.disabled,
+	&[disabled] {
+		cursor: not-allowed;
+		pointer-events: none;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+%button-donation {
+	@extend %button;
+	background: color(red, 300);
+	color: color(white);
+	border: 0;
+
+	&::before {
+		background-color: color(red, 500);
+	}
+
+	.button-icon {
+		order: 1;
+		width: 1.5em;
+		height: 1em;
+		transition: transform 0.25s ease-in-out;
+		transform: scale(1.5);
+	}
+
+	&:hover {
+		.button-icon {
+			transform: rotate(0deg) scale(1.75);
+		}
+	}
+
+	&:active {
+		.button-icon {
+			transform: scale(1.35);
+		}
+	}
+
+	&:has(.button-icon) {
+		&::before {
+			left: var(--icon-x);
+			top: var(--icon-y);
+		}
+	}
+}
+
+// White button with Teal outline
+%button-primary {
+	@extend %button;
+	background: color(white);
+	color: color(navy);
+	padding: ($button-pad-y - 2px) ($button-pad-x - 2px); // make room for the border
+	border: 2px solid color(teal, 700);
+
+	.-dark-background & {
+		border-color: color(teal, 500);
+	}
+
+	&::before {
+		background-color: color(teal, 100);
+	}
+
+	&:hover {
+		border-color: color(teal, 500);
+	}
+
+	&.disabled,
+	&[disabled] {
+		background-color: color(gray, 100);
+		border-color: color(gray, 100);
+		color: color(gray, 500);
+	}
+}
+
+// Solid teal button
+%button-secondary {
+	@extend %button;
+	background: color(teal, 700);
+	color: color(white);
+	border: 0;
+
+	&::before {
+		background-color: color(teal, 500);
+	}
+
+	&.disabled,
+	&[disabled] {
+		background-color: color(gray, 100);
+		border-color: color(gray, 100);
+		color: color(gray, 500);
+	}
+}
+
+// White button with Teal bottom border / underline
+%button-tertiary {
+	@extend %button;
+	background: color(white);
+	color: color(navy);
+	border: 0;
+	border-bottom: 2px solid color(teal);
+	border-radius: 0;
+	gap: rem-convert(5px);
+	padding: 11px 4px 9px;
+
+	&::before {
+		background-color: color(teal, 100);
+	}
+
+	&.disabled,
+	&[disabled] {
+		border-bottom: 2px solid color(gray, 400);
+		background: color(gray, 100);
+		color: color(gray, 500);
+	}
+
+	&-white {
+		@extend %button-tertiary;
+		color: color(white);
+		background: transparent;
+		&::before {
+			background-color: color(teal, 700);
+		}
+	}
+
+	&-yellow {
+		@extend %button-tertiary;
+		color: color(black);
+		background: transparent;
+		border-bottom: 2px solid color(black);
+		&::before {
+			background-color: color(yellow, 300);
+		}
+	}
+}
+
+.button,
+.button-default,
+.button-primary,
+.button.is-style-default {
+	@extend %button-primary;
+}
+
+.button-donation,
+.button.is-style-donation {
+	@extend %button-donation;
+}
+
+.button-secondary,
+.button.is-style-secondary {
+	@extend %button-secondary;
+}
+
+.button-tertiary,
+.button.is-style-tertiary {
+	@extend %button-tertiary;
+}
+
+.button-tertiary-white,
+.button.is-style-tertiary-white {
+	@extend %button-tertiary-white;
+}
+
+.button-tertiary-yellow,
+.button.is-style-tertiary-yellow {
+	@extend %button-tertiary-yellow;
+}
+
+@keyframes button-bubble {
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(3);
+	}
+}
+
+@keyframes button-bubble-exit {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(3);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+	}
+}

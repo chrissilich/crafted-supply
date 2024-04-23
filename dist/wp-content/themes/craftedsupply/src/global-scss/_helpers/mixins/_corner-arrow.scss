@@ -1,0 +1,20 @@
+// Corner Arrow
+//
+// Adds an absolutely positioned arrow to a block element, usually some text.
+
+@mixin corner-arrow($visible-off-hover: true, $ancestor-for-hover: null) {
+	position: relative;
+	padding-right: rem-convert(24px);
+
+	$hover-selector: '&:hover';
+	@if $ancestor-for-hover {
+		$hover-selector: '#{$ancestor-for-hover}:hover &';
+	}
+
+	#{$hover-selector} {
+		&::after {
+			right: 0;
+			opacity: 1;
+		}
+	}
+}

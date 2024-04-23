@@ -1,0 +1,202 @@
+$error-color: color(red);
+
+%fieldset,
+fieldset {
+	padding: 0;
+	border: 0;
+	margin: 0;
+
+	legend {
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+
+%formlabel,
+label {
+	cursor: pointer;
+	display: flex;
+	width: 100%;
+	// max-width: fit-content;
+	@include p-small;
+	margin-bottom: rem-convert(8px);
+	color: color(navy);
+}
+
+.form-field {
+	margin: 0 0 30px;
+
+	label {
+		margin-bottom: 10px;
+	}
+}
+
+.error-message {
+	color: $error-color;
+	font-size: rem-convert(14px);
+	margin-top: 8px;
+}
+
+%input,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+select,
+textarea {
+	display: block;
+	width: 100%;
+	background-color: color(white);
+	color: color(gray, 600);
+	font-family: $body-font;
+	// font-size: 16px; // leave at mobile sizes to prevent iphone zoom
+	@include p-small;
+	padding: 12px 16px;
+	border: 2px solid color(gray, 100);
+	border-radius: $border-radius;
+	box-shadow: none;
+	margin: 0;
+	appearance: none;
+	transition: $ts $te;
+
+	&::placeholder {
+		opacity: 1;
+	}
+
+	&:focus-visible {
+		border-color: color(teal, 600);
+		outline: color(teal, 600);
+
+		.-dark-background & {
+			border-color: color(teal, 500);
+			outline: color(teal, 500);
+		}
+
+		&::placeholder {
+			color: color(teal, 400);
+		}
+	}
+
+	&.-invalid {
+		color: $error-color;
+		border: 2px solid $error-color;
+	}
+}
+
+%textarea,
+textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+
+%select,
+select {
+	background-image: url('../images/chevron-down.svg?');
+	background-repeat: no-repeat;
+	background-position: right 15px center;
+	background-size: 28px auto;
+	text-decoration: none;
+	appearance: none;
+	padding: 12px 35px 12px 16px;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 #666;
+	}
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	all: unset;
+	@include sr-text;
+
+	+ label {
+		cursor: pointer;
+		align-items: flex-start;
+		position: relative;
+
+		&::before {
+			content: '';
+			display: grid !important;
+			place-items: center;
+			position: relative;
+			flex: none;
+			width: rem-convert(14px);
+			height: rem-convert(14px);
+			background: color(white);
+			color: transparent;
+			font-size: rem-convert(10px);
+			border: 1px solid #ccc;
+			margin-right: 14px;
+			transition:
+				color $ts $te,
+				border-color $ts $te;
+		}
+
+		a {
+			@extend %link;
+			margin-left: 5px;
+		}
+	}
+
+	&:focus-visible + label {
+		&::before {
+			border-color: red;
+		}
+	}
+}
+
+input[type='checkbox'] {
+	& + label {
+		// @include icon(check);
+	}
+
+	&:focus-visible + label & + label:hover {
+		&::before {
+			color: rgb(0 0 255 / 0.3);
+		}
+	}
+
+	&:checked + label {
+		&::before {
+			color: blue;
+		}
+	}
+}
+
+input[type='radio'] {
+	& + label {
+		&::before,
+		&::after {
+			border-radius: 50%;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: rem-convert(3px);
+			width: rem-convert(8px);
+			height: rem-convert(8px);
+			background: transparent;
+			transition: background $ts $te;
+		}
+	}
+
+	&:focus-visible + label & + label:hover {
+		&::after {
+			color: rgb(0 0 255 / 0.3);
+		}
+	}
+
+	&:checked + label {
+		&::after {
+			background: blue;
+		}
+	}
+}

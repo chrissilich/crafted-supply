@@ -1,0 +1,23 @@
+body {
+	color: color(gray, 900);
+}
+
+@include main-container(true) {
+	p {
+		@include p;
+		margin: 0 0 rem-convert(12px);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.-large,
+		&.is-style-large {
+			@include p-large;
+		}
+		&.-small,
+		&.is-style-small {
+			@include p-small;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{# 
+This component's job is to call the button macro and pass in the data it needs from 
+a specific data structure that we used many times in other blocks and components 
+by cloning a specific ACF Field Group.
+
+It is called "Cloneable: Button (clone as group "button")"
+
+To just generate a button without it coming from those cloned ACF fields, just use the macros.button macro directly.
+#}
+
+{% import 'src/macros.twig' as macros %}
+
+{% if button.type == "none" %}
+	{# No button #}
+{% elseif button.type == "donation" %}
+	{% if button.donation_method == "modal" %}
+		{{ macros.button({
+			text: "Donate Now", 
+			style: 'donation', 
+			classes: ["js-donate-modal-open"]
+		}) }}
+	{% else %}
+		{{ macros.button({
+			text: "Donate Now", 
+			style: 'donation', 
+			href: options.donation_form.monthly_donation_url_base, 
+			new_window: button.destination.target,
+		}) }}
+	{% endif %}
+{% else %}
+	{{ macros.button({
+		text: button.destination.title ? button.destination.title : "Button Text", 
+		href: button.destination.url, 
+		new_window: button.destination.target,
+		style: button.style ? button.style : (style ? style : "primary"),
+		icon: icon ? icon : 'arrow-right', 
+	}) }}
+{% endif %}

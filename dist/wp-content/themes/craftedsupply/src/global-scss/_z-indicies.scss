@@ -1,0 +1,19 @@
+$z-indicies: (
+	// behind everything, like a background image or color
+	background: 0,
+
+	// decorative, like a border or shadow, or floating circles
+	decorative: 20,
+
+	// content, like the main text or images
+	content: 40,
+
+	// floating ON the page, like the nav
+	floating: 60,
+
+	// covering the page, like for a modal
+	overlay: 80,
+
+	// modals, above everything else, no matter what
+	modal: 100
+);

@@ -1,0 +1,14 @@
+<figure
+  class="video-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+ {% if video_embed %}
+    <div class="video-block-video">
+      {{ video_embed | raw }}
+    </div>
+  {% else %}
+    <div class="video-block-video-placeholder"></div>
+  {% endif %}
+
+</figure>

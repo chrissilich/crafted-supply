@@ -1,0 +1,42 @@
+// Main Container
+//
+// Wraps other rules inside a selector for the main container of the page in
+// both the front end and editor contexts.
+//
+// @param {boolean} $zero-specificity - If true, the selector will use :where()
+// to reduce selector specificity to 0. This lets us set default styles for elements,
+// and later when adjusting their styling in blocks or components, there's no need
+// to use !important or any other specificity tricks to override the default styles.
+//
+// Usage:
+// @include main-container {
+// 		.component {
+//   		@include grid-placement;
+// 		}
+// }
+//
+// Compiled:
+// .page-container,
+// .is-root-container {
+// 		.component {
+//   		grid-column: main;
+// 		}
+// }
+//
+
+$front-end-main-container-selector: '.page-container main';
+$cms-editor-main-container-selector: '.is-root-container';
+
+@mixin main-container($zero-specificity: false) {
+	@if $zero-specificity {
+		:where(#{$front-end-main-container-selector}),
+		:where(#{$cms-editor-main-container-selector}) {
+			@content;
+		}
+	} @else {
+		#{$front-end-main-container-selector},
+		#{$cms-editor-main-container-selector} {
+			@content;
+		}
+	}
+}

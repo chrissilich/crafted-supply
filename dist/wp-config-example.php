@@ -28,7 +28,7 @@ Config::define( 'WP_ENVIRONMENT_TYPE', 'local' );
 Config::define( 'WP_HOME', 'https://local.domain.com' );
 Config::define( 'WP_SITEURL', 'https://local.domain.com' );
 Config::define( 'WP_DEBUG', true );
-Config::define( 'WP_LOGIN_WALL', false );
+Config::define( 'WP_LOGIN_WALL', true );
 
 
 // Keys

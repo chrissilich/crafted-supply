@@ -1,0 +1,55 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:meta';
+
+// Includes
+@import 'breakpoint';
+
+// Vendor
+@import 'global-scss/_vendor/vendor';
+
+// Settings
+@import 'global-scss/settings';
+
+// Helpers
+@import 'global-scss/_helpers/functions/**/*';
+@import 'global-scss/_helpers/mixins/**/*';
+
+// Global
+@import 'global-scss/admin-bar-backgrounds';
+@import 'global-scss/z-indicies';
+@import 'global-scss/colors';
+@import 'global-scss/fonts';
+@import 'global-scss/_animations/animate';
+@import 'global-scss/global';
+@import 'global-scss/type';
+@import 'global-scss/forms';
+@import 'global-scss/layout';
+@import 'global-scss/block-interactions';
+
+// Components
+@import 'global-scss/links';
+@import 'global-scss/buttons';
+@import 'components/**/*';
+@import 'blocks/**/*';
+
+html.admin-bar {
+	$bar-height: 32px;
+	margin-top: var(#{--wp-admin--admin-bar--height}) !important;
+
+	@include to(9) {
+		--wp-admin--admin-bar--height: 0 !important;
+	}
+
+	@include from(10) {
+		--wp-admin--admin-bar--height: #{$bar-height} !important;
+	}
+}
+
+#wpadminbar {
+	@include to(9) {
+		display: none;
+	}
+}

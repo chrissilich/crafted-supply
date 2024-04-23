@@ -1,0 +1,7 @@
+.site-footer {
+	@extend %grid-columns;
+
+	&-inner {
+		@include grid-placement;
+	}
+}

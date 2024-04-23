@@ -1,0 +1,71 @@
+.fifty-fifty-block {
+	@extend %grid-columns;
+	@include grid-placement(full-bleed);
+	@include component-margin;
+	position: relative;
+	padding: 30px 0;
+
+	$layout-switch: 7;
+
+	&-inner {
+		@include grid-placement;
+		display: flex;
+		justify-content: space-between;
+		gap: rem-convert(30px);
+		flex-flow: column;
+		@include from($layout-switch) {
+			flex-flow: row;
+			gap: is-clamp(50px, 80px, 1000px);
+		}
+		@include z(content);
+	}
+
+	&-text,
+	&-image {
+		flex: 1 1 100%;
+
+		&-placeholder {
+			@include placeholder-image(600, 800);
+		}
+	}
+
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		h2 {
+			@include heading-c;
+		}
+	}
+
+	&-buttons {
+		margin-top: rem-convert(40px);
+	}
+
+	&-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&[data-image-side='right'] {
+		@include from($layout-switch) {
+			.fifty-fifty-block-image {
+				order: 3;
+			}
+
+			.fifty-fifty-block-divider {
+				order: 2;
+			}
+
+			.fifty-fifty-block-text {
+				order: 1;
+			}
+		}
+	}
+}

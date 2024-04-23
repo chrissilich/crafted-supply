@@ -1,0 +1,79 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="people-grid-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+  data-animation="{{is_preview ? '':'fadeInUp'}}"
+>
+  <div class="people-grid-block-inner">
+
+    {% if fields.sections|length > 0 %}
+
+      <nav class="people-grid-block-nav">
+        {{ macros.button({
+          text: "All Staff",
+          tag: "a",
+          href: post.link,
+          style: "tertiary",
+          icon: false,
+          classes: ['people-grid-block-nav-item'],
+          attributes: {
+            "aria-controls": "people-grid-section--all",
+            "aria-expanded": "true"
+          }
+        }) }}
+
+
+        {% for section in fields.sections %}
+          {{ macros.button({
+            text: section.title,
+            tag: "a",
+            href: post.link ~ "?section=" ~ section.title | replace({' ': ''}) | lower,
+            style: "tertiary",
+            icon: false,
+            classes: ['people-grid-block-nav-item'],
+            attributes: {
+              "aria-controls": "people-grid-section--" ~ section.title | replace({' ': ''}) | lower,
+              "aria-expanded": "false"
+            }
+          }) }}
+
+        {% endfor %}
+      </nav>
+    {% endif %}
+
+
+    <div class="people-grid-block-sections">
+
+      <div 
+        id="people-grid-section--all"
+        class="people-grid-block-sections-item"
+        aria-hidden="false">
+
+          <h2 class="sr-text">All Staff</h2>
+
+          {% for person in all %}
+            {% include 'person.twig' with {is_preview, person, index: loop.index } %}
+          {% endfor %}
+        </div>
+
+      {% for section in fields.sections %}
+        <div 
+          id="people-grid-section--{{section.title | replace({' ': ''}) | lower}}"
+          class="people-grid-block-sections-item"
+          aria-hidden="true"
+        >
+          <h2 class="sr-text">{{section.title}}</h2>
+
+          {% for person_wp_post in section.people %}
+            {% set person = get_post(person_wp_post) %}
+            {% include 'person.twig' with {is_preview, person, index: loop.index } %}
+          {% endfor %}
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>

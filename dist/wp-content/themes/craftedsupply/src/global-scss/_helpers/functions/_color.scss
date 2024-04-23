@@ -1,0 +1,31 @@
+// Color
+//
+// Gets hex value from Sass map
+//
+// $color = null - Color name from the Sass map
+// $tone = 500 - Tone (tint or shade)
+// $alpha = null - Opacity
+//
+// Function:
+// @function color($color, $tone: 500, $alpha: '') {
+//   $color: map.get(map.get($colors, $color), $tone);
+//   @if $alpha != '' {
+//     $color: color.adjust($color, $alpha: (1 - $alpha) * -1);
+//   }
+//   @return $color;
+// }
+//
+// Usage:
+// color: color(black, $alpha: .4);
+//
+// Compiled:
+// color: rgb(0 0 0 / .4);
+//
+// Styleguide Sass Functions.Color
+@function color($color, $tone: 500, $alpha: '') {
+	$color: map.get(map.get($colors, $color), $tone);
+	@if $alpha != '' {
+		$color: color.adjust($color, $alpha: (1 - $alpha) * -1);
+	}
+	@return $color;
+}

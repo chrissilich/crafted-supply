@@ -1,0 +1,10 @@
+<div
+  class="wysiwyg-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+  data-animation="{{is_preview ? '':'fadeInUp'}}"
+>
+  <div class="wysiwyg-block-inner">
+    <InnerBlocks template="{{innerblocks_template}}" allowedBlocks="{{allowed_blocks}}" />
+  </div>
+</div>

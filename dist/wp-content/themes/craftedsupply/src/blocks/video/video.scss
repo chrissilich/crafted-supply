@@ -1,0 +1,28 @@
+.video-block {
+	@include grid-placement;
+	@include component-margin;
+
+	&-video {
+		width: 100%;
+		aspect-ratio: 16/9;
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+
+		[data-preview] & {
+			pointer-events: none;
+		}
+	}
+
+	&-video-placeholder {
+		@include placeholder-image(1000, 565, false, 'Video Placeholder');
+	}
+
+	&-caption {
+		margin-top: rem-convert(24px);
+		@include p-small;
+		color: color(gray, 600);
+		font-style: italic;
+	}
+}

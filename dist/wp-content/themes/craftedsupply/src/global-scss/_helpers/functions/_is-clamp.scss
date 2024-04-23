@@ -1,0 +1,56 @@
+// Clamp
+//
+// This is a mixin to mimic the behavior of native css clamp() while also interpolating arguments and allowing for inversing to make it negative. Clamps a value between an upper and lower bound while selecting a middle value within a range of values between a defined minimum and maximum. See https://developer.mozilla.org/en-US/docs/Web/CSS/clamp() for more info.
+//
+// $min      = null - Lower bound
+// $max      = null - Upper bound
+// $basis    = $clamp-scale-basis - Preferred value
+// $negative = false - Whether to inverse the values to make it negative
+//
+// Function:
+// @function is-clamp($min, $max, $basis: $clamp-scale-basis, $negative: false) {
+//   @if $negative {
+//     @return clamp(-#{$max}, -#{get-basis($min, $basis)}, -#{$min});
+//   } @else {
+//     @return clamp(#{$min}, #{get-basis($min, $basis)}, #{$max});
+//   }
+// }
+//
+// Usage:
+// .h1 {
+//   font-size: is-clamp(rem-convert(20px), rem-convert(28px));
+// }
+//
+// Compiled:
+// .h1 {
+//   font-size: clamp(1.25rem, 3.33vw, 1.75rem);
+// }
+//
+// Styleguide Sass Functions.Clamp
+@function is-clamp($min, $max, $basis: $clamp-scale-basis, $negative: false) {
+	@if $negative {
+		@return clamp(-#{$max}, -#{get-basis($min, $basis)}, -#{$min});
+	} @else {
+		@return clamp(#{$min}, #{get-basis($min, $basis)}, #{$max});
+	}
+}
+
+@function get-basis($min, $basis) {
+	@if get-unit($min) == 'rem' {
+		$basis: rem-convert($basis);
+	}
+	@return math.div(strip-unit($min), strip-unit($basis)) * 100vw;
+}
+
+@function get-unit($value) {
+	@return str-slice($value * 0 + '', 2, -1);
+}
+
+@function strip-unit($value) {
+	@if meta.type-of($value) != 'number' {
+		@error "Invalid `#{meta.type-of($value)}` type. Choose a number type instead.";
+	} @else if meta.type-of($value) == 'number' and not math.is-unitless($value) {
+		@return math.div($value, ($value * 0 + 1));
+	}
+	@return $value;
+}

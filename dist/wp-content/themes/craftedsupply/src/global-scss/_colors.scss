@@ -1,0 +1,52 @@
+$colors: (
+	white: (
+		500: #fff,
+	),
+	black: (
+		// do you really want black, or is it actually gray-900?
+		500: #000,
+	),
+	gray: (
+		900: #262626,
+		600: #4a4a52,
+		// default 500 borrowed from 400 because not having a 500 is problematic
+		500: #adadb8,
+		400: #adadb8,
+		100: #e2e2e9,
+	),
+	navy: (
+		// pulled from figma for hero background gradient
+		900: #030c4c,
+		500: #001070,
+	),
+	red: (
+		500: #a3072d,
+		300: #d40e3e,
+	),
+	blue: (
+		700: #164184,
+		600: #005eb8,
+		500: #1c80e0,
+		200: #b5d7f7,
+		100: #ddecf9,
+	),
+	teal: (
+		800: #005e66,
+		700: #007f8a,
+		600: #009aa7,
+		500: #40bcc6,
+		// 300 made by developer
+		300: #86d4db,
+		200: #bfe8ec,
+		100: #e5f6f7,
+	),
+	yellow: (
+		700: #e2a90e,
+		500: #f6b80f,
+		300: #fadb87,
+		200: #fdedc3,
+		100: #fef7e7,
+	),
+);
+
+$body-color: color(gray, 900);

@@ -1,0 +1,75 @@
+// see /_helpers/mixins/type/headers.scss for mixin definitions
+
+%heading-a,
+.heading-a {
+	@include heading-a;
+}
+
+%heading-b,
+.heading-b {
+	@include heading-b;
+}
+
+%heading-c,
+.heading-c {
+	@include heading-c;
+}
+
+%heading-d,
+.heading-d {
+	@include heading-d;
+}
+
+%heading-e,
+.heading-e {
+	@include heading-e;
+}
+
+@include main-container(true) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: $header-font;
+		margin: 0 0 20px;
+		text-wrap: pretty;
+		font-weight: bold;
+		color: color(navy);
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h1 {
+		@include heading-b;
+	}
+
+	h2 {
+		@include heading-c;
+	}
+
+	h3 {
+		@include heading-d;
+	}
+
+	h4 {
+		@include heading-e;
+	}
+
+	h5 {
+		@include p-large;
+		margin-top: rem-convert(40px);
+		font-weight: bold;
+		color: color(navy);
+	}
+
+	h6 {
+		@include p;
+		margin-top: rem-convert(24px);
+		font-weight: bold;
+		color: color(navy);
+	}
+}

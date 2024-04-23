@@ -1,0 +1,54 @@
+// NOTE: You MUST ensure the woff2 exits in src/assets/fonts and update the $icons map in src/global-scss/admin/icons.scss also for icons available in the advanced custom field icon selector
+
+// IcoMoon font declaration
+@font-face {
+	font-family: 'icomoon';
+	src:
+		url('../fonts/icomoon.woff2?2024-03-15') format('woff2'),
+		url('../fonts/icomoon.ttf?2024-03-15') format('truetype'),
+		url('../fonts/icomoon.woff?2024-03-15') format('woff'),
+		url('../fonts/icomoon.svg?2024-03-15#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+// Icomoon variables
+$icons: (
+	craftedsupply: '\e900',
+
+	facebook: '\e901',
+	instagram: '\e902',
+	twitter: '\e906',
+	youtube: '\e907',
+	linkedin: '\e903',
+	tiktok: '\e904',
+	twitch: '\e905',
+
+	caret-left: '\e90b',
+	caret-right: '\e90c',
+	caret-up: '\e90d',
+	caret-down: '\e90a',
+
+	arrow-left: '\e908',
+	arrow-right: '\e909',
+
+	close: '\e90e',
+	donate: '\e90f',
+	home: '\e910',
+	mail: '\e911',
+	pause: '\e912',
+	play: '\e913',
+	search: '\e914',
+	photo-credit: '\e915',
+	check: '\ea10',
+);
+
+@each $icon, $content in $icons {
+	.icon-#{$icon} {
+		&::before {
+			content: '#{$content}';
+			@include icomoon;
+		}
+	}
+}

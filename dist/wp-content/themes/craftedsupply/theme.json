@@ -1,0 +1,194 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"blocks": {
+			"core/button": {
+				"layout": {
+					"allowEditing": false
+				},
+				"border": {
+					"radius": false
+				}
+			}
+		},
+		"appearanceTools": false,
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
+		"color": {
+			"text": false,
+			"background": false,
+			"link": false,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "#000",
+          "name": "Black"
+        },
+        {
+          "slug": "gray-900",
+          "color": "#262626",
+          "name": "Gray 900 (almost black)"
+        },
+        {
+          "slug": "gray-600",
+          "color": "#686872",
+          "name": "Gray 600"
+        },
+        {
+          "slug": "gray-400",
+          "color": "#adadb8",
+          "name": "Gray 400"
+        },
+        {
+          "slug": "gray-100",
+          "color": "#e2e2e9",
+          "name": "Gray 100"
+        },
+        {
+          "slug": "navy-500",
+          "color": "#001070",
+          "name": "Navy"
+        },
+        {
+          "slug": "red-500",
+          "color": "#a3072d",
+          "name": "Red 500"
+        },
+        {
+          "slug": "red-300",
+          "color": "#d40e3e",
+          "name": "Red 300"
+        },
+        {
+          "slug": "blue-700",
+          "color": "#164184",
+          "name": "Blue 700"
+        },
+        {
+          "slug": "blue-600",
+          "color": "#005eb8",
+          "name": "Blue 600"
+        },
+        {
+          "slug": "blue-500",
+          "color": "#1c80e0",
+          "name": "Blue 500"
+        },
+        {
+          "slug": "blue-200",
+          "color": "#b5d7f7",
+          "name": "Blue 200"
+        },
+        {
+          "slug": "blue-100",
+          "color": "#ddecf9",
+          "name": "Blue 100"
+        },
+        {
+          "slug": "teal-700",
+          "color": "#007f8a",
+          "name": "Teal 700"
+        },
+        {
+          "slug": "teal-600",
+          "color": "#00a5b3",
+          "name": "Teal 600"
+        },
+        {
+          "slug": "teal-500",
+          "color": "#40bcc6",
+          "name": "Teal 500"
+        },
+        {
+          "slug": "teal-200",
+          "color": "#bfe8ec",
+          "name": "Teal 200"
+        },
+        {
+          "slug": "teal-100",
+          "color": "#e5f6f7",
+          "name": "Teal 100"
+        },
+        {
+          "slug": "yellow-700",
+          "color": "#e2a90e",
+          "name": "Yellow 700"
+        },
+        {
+          "slug": "yellow-500",
+          "color": "#f6b80f",
+          "name": "Yellow 500"
+        },
+        {
+          "slug": "yellow-300",
+          "color": "#fadb87",
+          "name": "Yellow 300"
+        },
+        {
+          "slug": "yellow-200",
+          "color": "#fdedc3",
+          "name": "Yellow 200"
+        },
+        {
+          "slug": "yellow-100",
+          "color": "#fef7e7",
+          "name": "Yellow 100"
+        }
+			]
+		},
+		"dimensions": {
+			"minHeight": false
+		},
+		"layout": {
+			"contentSize": null,
+			"wideSize": null
+		},
+		"position": {
+			"sticky": false
+		},
+		"spacing": {
+			"blockGap": null,
+			"margin": false,
+			"padding": false,
+			"units": [],
+			"customSpacingSize": false,
+			"spacingScale": []
+		},
+		"shadow": {
+			"defaultPresets": false
+		},
+		"typography": {
+			"fluid": false,
+			"customFontSize": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textDecoration": false,
+			"textTransform": false,
+			"dropCap": false,
+			"fontSizes": [],
+			"fontFamilies": []
+		},
+		"useRootPaddingAwareAlignments": false
+	},
+	"styles": {},
+	"customTemplates": [],
+	"templateParts": []
+}

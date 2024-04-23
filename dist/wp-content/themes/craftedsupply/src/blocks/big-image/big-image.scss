@@ -1,0 +1,19 @@
+.big-image-block {
+	@include grid-placement;
+	@include component-margin;
+
+	&-image {
+		width: 100%;
+	}
+
+	&-image-placeholder {
+		@include placeholder-image(1000, 800, false);
+	}
+
+	&-caption {
+		margin-top: rem-convert(24px);
+		@include p-small;
+		color: color(gray, 600);
+		font-style: italic;
+	}
+}

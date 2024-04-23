@@ -1,0 +1,81 @@
+.people-grid-block {
+	@include grid-placement(full-bleed);
+	@include component-margin;
+	@extend %grid-columns;
+
+	&-inner {
+		@include grid-placement;
+	}
+
+	&-nav {
+		display: flex;
+		flex-flow: row wrap;
+		gap: rem-convert(24px);
+		margin-bottom: rem-convert(80px);
+
+		&-item {
+			&[aria-expanded='true'] {
+				background-color: color(teal, 100);
+			}
+		}
+	}
+
+	&-sections {
+		&-item {
+			&[aria-hidden='true'] {
+				display: none;
+			}
+
+			display: grid;
+			gap: rem-convert(60px) rem-convert(24px);
+
+			grid-template-columns: repeat(2, 1fr);
+			@include from(10) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+	&-person {
+		&-headshot {
+			aspect-ratio: 1 / 1;
+			overflow: clip;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform $ts $te;
+			}
+		}
+		&-content {
+			margin-top: rem-convert(24px);
+
+			h3 a {
+				@include heading-e;
+				display: block;
+				margin-top: rem-convert(24px);
+				margin-bottom: rem-convert(12px);
+				padding-right: rem-convert(36px);
+				transition: color $ts $te;
+				position: relative;
+
+				@include corner-arrow(false, '.people-grid-block-person');
+			}
+
+			p {
+				@include p;
+				margin-bottom: 0;
+			}
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.05);
+			}
+			h3 a {
+				background-color: transparent;
+				color: color(teal, 600);
+			}
+		}
+	}
+}

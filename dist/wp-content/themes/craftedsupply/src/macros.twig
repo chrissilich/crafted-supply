@@ -1,0 +1,63 @@
+{% macro link(href, text, classes) %}
+  <a{% if classes %} class="{{ classes|join(' ') }}"{% endif %} href="{{ href }}">{{ text }}</a>
+{% endmacro %}
+
+
+{% macro button(options) %}
+  {% set text = options.text is defined ? options.text : "Button Text" %}
+  {% set hide_text = options.hide_text is defined ? options.hide_text : false %}
+  {% set tag = options.tag is defined ? options.tag : 'a' %}
+  {% set type = options.type is defined ? options.type : 'button' %}
+  {% set href = options.href is defined ? options.href : '' %}
+  {% set style = options.style is defined ? options.style : 'primary' %}
+  {% set icon = options.icon is defined ? options.icon : "arrow-right" %}
+  {% set icon_position = options.icon_position is defined ? options.icon_position : '' %}
+  {% set new_window = options.new_window is defined ? options.new_window : false %}
+  {% set attributes = options.attributes is defined ? options.attributes : {} %}
+  {% set classes = options.classes is defined ? options.classes : [] %}
+
+  {# if style is donation, force icon and icon-side #}
+  {% if style == "donation" %}
+    {% set icon = "craftedsupply" %}
+  {% endif %}
+
+  <{{tag}} 
+    {% if href %}href="{{ href }}"{% endif %}
+    type="{{type}}"
+    class="button-{{ style }} {{ classes|join(' ') }} {{ icon_position ? '-icon-' ~ icon_position : ""}} "
+    {% if text %}
+      aria-label="{{ text }}"
+      title="{{ text }}"
+    {% endif %}
+    {% if new_window %} target="_blank" rel="noopener noreferrer" {% endif %} 
+    {% for key, value in attributes %} {{ key }}="{{ value }}" {% endfor %}
+    >
+    {% if not hide_text %} 
+      <span class="button-text">{{ text }}</span>
+    {% endif %}
+    {% if icon %} 
+      <span class="button-icon icon-{{ icon }}"></span>
+    {% endif %}
+  </{{tag}}>
+{% endmacro %}
+
+
+{% macro image(image, lazy = true) %}
+  <picture>
+    {% if image.mime_type != 'image/webp' -%}
+      <source
+        srcset="{{ image.url|towebp|relative }}"
+        type="image/webp"
+      >
+    {%- endif %}
+    <img
+      src="{{ image.url|relative }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      alt="{{ image.original_image.alt|escape }}"
+      type="{{ image.mime_type }}"
+      decoding="async"
+      loading="{{ lazy ? 'lazy' : 'eager' }}"
+    >
+  </picture>
+{% endmacro %}
