@@ -8,7 +8,8 @@
     "preferred-install": "dist",
     "optimize-autoloader": true,
     "sort-packages": true,
-    "vendor-dir": "dist/vendor",
+    "vendor-dir": "vendor",
+    "_vendor-dir": "if you dont have access to the parent dir to make the vendor dir private, change it to dist/vendor",
     "allow-plugins": {
       "composer/installers": true,
       "cweagans/composer-patches": true,
@@ -42,7 +43,7 @@
           "url": "https://www.advancedcustomfields.com/"
         }
       }
-    }   
+    }
   ],
   "require": {
     "php": "^8.1",
@@ -67,7 +68,6 @@
     "wpackagist-plugin/intuitive-custom-post-order": "3.1.4.1",
     "wpackagist-plugin/mailgun": "^1",
     "wpackagist-plugin/redirection": "^5.1",
-    "wpackagist-plugin/redis-cache": "^2.0",
     "wpackagist-plugin/wordpress-seo": "^21.2",
     "wpackagist-theme/twentytwentythree": "^1.0"
   },
@@ -80,10 +80,9 @@
   "extra": {
     "installer-paths": {
       "include/drop-ins/{$name}/": [
-        "type:wordpress-dropin",
-        "wpackagist-plugin/redis-cache"
+        "type:wordpress-dropin"
       ],
-      "dist/wp-content/mu-plugins/{$name}/": [
+      "dist/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "junaidbhura/advanced-custom-fields-pro",
         "wpackagist-plugin/duplicate-post",
@@ -95,13 +94,13 @@
         "wpackagist-plugin/mailgun",
         "wpackagist-plugin/wordpress-seo"
       ],
-      "dist/wp-content/plugins/{$name}/": [
+      "dist/app/plugins/{$name}/": [
         "type:wordpress-plugin"
       ],
-      "dist/wp-content/themes/{$name}/": [
+      "dist/app/themes/{$name}/": [
         "type:wordpress-theme"
       ]
     },
-    "wordpress-install-dir": "./dist/"
+    "wordpress-install-dir": "./dist/wp"
   }
 }

@@ -9,9 +9,9 @@ namespace CraftedSupply\Modules\RegisterMenus;
 function register_navs() {
   register_nav_menus( [
     'main_nav'    => __( 'Main Navigation', 'craftedsupply' ),
-    'utility_nav' => __( 'Utility Navigation', 'craftedsupply' ),
+    // 'utility_nav' => __( 'Utility Navigation', 'craftedsupply' ),
     'footer_nav'  => __( 'Footer Navigation', 'craftedsupply' ),
-    'legal_nav'   => __( 'Legal Navigation', 'craftedsupply' )
+    // 'legal_nav'   => __( 'Legal Navigation', 'craftedsupply' )
   ] );
 }
 add_action( 'init', __NAMESPACE__ . '\\register_navs' );

@@ -7,6 +7,7 @@
 Thumbs.db
 
 # wp core (as of 4.9.5)
+dist/wp/
 dist/db-config.php
 dist/index.php
 dist/license.txt
@@ -35,35 +36,35 @@ dist/wp-trackback.php
 dist/xmlrpc.php
 dist/wp-admin
 dist/wp-includes
-dist/wp-content/index.php
-dist/wp-content/themes/twentyten
-dist/wp-content/themes/twentyeleven
-dist/wp-content/themes/twentytwelve
-dist/wp-content/themes/twentythirteen
-dist/wp-content/themes/twentyfourteen
-dist/wp-content/themes/twentyfifteen
-dist/wp-content/themes/twentysixteen
-dist/wp-content/themes/twentyseventeen
-dist/wp-content/themes/twentyeighteen
-dist/wp-content/themes/twentynineteen
-dist/wp-content/themes/twentytwenty
-dist/wp-content/themes/twentytwentyone
-dist/wp-content/themes/twentytwentytwo
-dist/wp-content/themes/twentytwentythree
-dist/wp-content/themes/index.php
-dist/wp-content/plugins/index.php
-dist/wp-content/plugins/akismet*
+dist/app/index.php
+dist/app/themes/twentyten
+dist/app/themes/twentyeleven
+dist/app/themes/twentytwelve
+dist/app/themes/twentythirteen
+dist/app/themes/twentyfourteen
+dist/app/themes/twentyfifteen
+dist/app/themes/twentysixteen
+dist/app/themes/twentyseventeen
+dist/app/themes/twentyeighteen
+dist/app/themes/twentynineteen
+dist/app/themes/twentytwenty
+dist/app/themes/twentytwentyone
+dist/app/themes/twentytwentytwo
+dist/app/themes/twentytwentythree
+dist/app/themes/index.php
+dist/app/plugins/index.php
+dist/app/plugins/akismet*
 
 # wordpress specific
 dist/wp-config.php
-dist/wp-content/uploads/
-dist/wp-content/blogs.dir/
-dist/wp-content/upgrade/*
-dist/wp-content/backup-db/*
-dist/wp-content/advanced-cache.php
-dist/wp-content/wp-cache-config.php
-dist/wp-content/cache/*
-dist/wp-content/cache/supercache/*
+dist/app/uploads/
+dist/app/blogs.dir/
+dist/app/upgrade/*
+dist/app/backup-db/*
+dist/app/advanced-cache.php
+dist/app/wp-cache-config.php
+dist/app/cache/*
+dist/app/cache/supercache/*
 
 # large/disallowed file types
 # a CDN should be used for these
@@ -105,9 +106,9 @@ dist/wp-content/cache/supercache/*
 .env
 vendor
 include
-dist/wp-content/plugins/hello.php
-dist/wp-content/plugins/*/
-dist/wp-content/mu-plugins/*/
+dist/app/plugins/hello.php
+dist/app/plugins/*/
+dist/app/mu-plugins/*/
 service-worker.js
 service-worker.js.map
 workbox*
