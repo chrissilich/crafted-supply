@@ -10,110 +10,35 @@
     >
       <img
         src="{{ assets }}/images/logo.svg"
-        width="87"
-        height="100"
+        width="187"
+        height="102"
         alt="{{ __('Crafted Supply Logo', 'craftedsupply') }}"
       >
     </a>
 
-    <div class="site-header-nav">
-
-      {# Main Nav #}
-      <nav
-        class="site-header-nav-primary"
-        aria-label="{{ __('Main Menu', 'craftedsupply') }}"
-      >
-        <ul>
-          {% for item in main_nav.get_items %}
-            <li>
-              {% if item.children %}
-                <button
-                  type="button"
-                  aria-controls="nav-primary-item-{{ loop.index }}-dropdown"
-                  aria-expanded="false"
-                  data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
-                >{{ item.title }}</button>
-
-                {# Dropdown #}
-                <ul
-                  id="nav-primary-item-{{ loop.index }}-dropdown"
-                  aria-hidden="true"
-                  data-children="{{ item.children|length }}"
-                >
-                  {% for child in item.children %}
-                    <li>
-                      <a
-                        href="{{ child.url }}"
-                        class="nav-subheading"
-                        aria-current="{{ child.current ? 'page' : 'false' }}"
-                        data-trail="{{ child.current or get_active_trail( post, child ) ? 'active' : 'inactive' }}"
-                      >{{ child.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% else %}
-                <a
-                  href="{{ item.link }}"
-                  aria-current="{{ item.current ? 'page' : 'false' }}"
-                  data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
-                >{{ item.title }}</a>
-              {% endif %}
-            </li>
-            {% endfor %}
-          </ul>
-
-      </nav>
 
 
+    {# Subnav #}
+    {% block subnav %}
+      <ul class="site-header-subnav">
+        <li>
+          <a href="#">Test</a>
+        </li>
+        <span class="pipe">|</span>
+        <li>
+          <a href="#">Test</a>
+        </li>
+        <span class="pipe">|</span>
+        <li>
+          <a href="#">Test</a>
+        </li>
+        <span class="pipe">|</span>
+      </ul>
+    {% endblock %}
 
-      {# Utility #}
-      <nav
-        class="site-header-nav-utility"
-        aria-label="{{ __('Utility Menu', 'craftedsupply') }}"
-      >
-        <ul>
-          {% for item in utility_nav.get_items %}
-            <li>
-              {% if item.children %}
-                <button
-                  type="button"
-                  aria-controls="nav-utility-item-{{ loop.index }}-dropdown"
-                  aria-expanded="false"
-                  data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
-                >{{ item.title }}</button>
-
-                {# Dropdown #}
-                <ul
-                  id="nav-utility-item-{{ loop.index }}-dropdown"
-                  aria-hidden="true"
-                  data-children="{{ item.children|length }}"
-                >
-                  {% for child in item.children %}
-                    <li>
-                        <a
-                          href="{{ child.url }}"
-                          aria-current="{{ child.current ? 'page' : 'false' }}"
-                          data-trail="{{ child.current or get_active_trail( post, child ) ? 'active' : 'inactive' }}"
-                        >{{ child.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% else %}
-                <a
-                  href="{{ item.link }}"
-                  aria-current="{{ item.current ? 'page' : 'false' }}"
-                  data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
-                >{{ item.title }}</a>
-              {% endif %}
-            </li>
-
-          {% endfor %}
-        </ul>
-
-      </nav>
-
-    </div>{# close .site-header-nav #}
 
   </div>{# close .site-header-inner #}
 
 </header>
+
+

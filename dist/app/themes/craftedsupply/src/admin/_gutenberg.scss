@@ -43,6 +43,14 @@
 	margin: 0 !important;
 	padding: 20px;
 
+	.post-type-gallery & {
+		padding-bottom: 0;
+
+		h1 {
+			margin-bottom: 0;
+		}
+	}
+
 	&::before {
 		content: 'Title:';
 		font-size: 1em;

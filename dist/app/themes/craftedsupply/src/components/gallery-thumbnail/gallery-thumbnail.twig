@@ -1,0 +1,30 @@
+{# 
+Makes a thumbnail for a gallery item. Used on the front end on the gallery archive page,
+and on the back end on the gallery edit page, where you preview the thumbnail, in the
+gallery settings block.
+#}
+
+{% import 'src/macros.twig' as macros %}
+
+<div class="
+	gallery-thumbnail 
+	{{component.thumbnail ? '' : '-placeholder'}}
+	-horizontal-{{component.title_position.horizontal}} 
+	-vertical-{{component.title_position.vertical}}
+">
+	
+	{% if component.thumbnail %}
+		{{ macros.image(component.thumbnail) }}
+	{% endif %}
+
+	{% set title = post.title %}
+	{% if title == "" or title == "Auto Draft" %} 	
+		{% set title = "[Gallery Title]" %}
+	{% endif %}
+
+
+	<h2>
+		{{ title }}
+	</h2>
+
+</div>

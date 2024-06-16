@@ -3,7 +3,62 @@
     class="site-footer-inner"
     {# data-animation="{{is_preview ? '':'fadeInUp'}}" #}
   >
-    footer
+
+    {# Logo #}
+    <a
+      class="site-footer-logo"
+      href="/"
+    >
+      <img
+        src="{{ assets }}/images/logo.svg"
+        width="187"
+        height="102"
+        alt="{{ __('Crafted Supply Logo', 'craftedsupply') }}"
+      >
+    </a>
+
+    <div class="site-footer-col-1">
+      {{options.footer.col1}}
+    </div>
+    
+    <div class="site-footer-col-2">
+      {{options.footer.col2}}
+    </div>
+    
+    <div class="site-footer-col-3">
+      <ul>
+        LINKS:
+        {% for item in footer_nav.get_items %}
+          <li>
+            <a
+              href="{{ item.link }}"
+              aria-current="{{ item.current ? 'page' : 'false' }}"
+              data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
+            >{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="site-footer-col-4">
+      {{options.footer.col4}}
+
+{# TODO fix social links #}
+      <div class="site-footer-social">
+        {% if options.social.enable_instagram and options.social.instagram %}
+          <a class="social-icon social-icon-instagram" href="https://instagram.com/{{options.social.instagram}}" target="_blank" rel="noopener noreferrer">
+            <span class="sr-text">Instagram icon</span>
+          </a>
+        {% endif %}
+        {% if options.social.enable_facebook and options.social.facebook %}
+          <a class="social-icon social-icon-facebook" href="https://facebook.com/{{options.social.facebook}}" target="_blank" rel="noopener noreferrer">
+            <span class="sr-text">Facebook icon</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+
   </div>
 </footer>
 

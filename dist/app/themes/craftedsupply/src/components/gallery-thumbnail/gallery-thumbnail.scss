@@ -1,0 +1,83 @@
+.gallery-thumbnail {
+	width: 100%;
+	max-width: 350px;
+	margin: 0px auto 40px;
+	background-color: #ddd;
+	position: relative;
+	aspect-ratio: 784 / 660;
+	padding: 20px;
+
+	display: flex;
+	flex-flow: column nowrap;
+
+	&.-placeholder {
+		@include placeholder-image(784, 660, true, 'Thumbnail');
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		@include z(content, -1);
+	}
+
+	h2 {
+		position: relative;
+		@include z(content);
+		color: white;
+		font-size: 18pt;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&.-horizontal-left h2 {
+		align-self: flex-start;
+	}
+	&.-horizontal-middle h2 {
+		align-self: center;
+	}
+	&.-horizontal-right h2 {
+		align-self: flex-end;
+	}
+
+	&.-vertical-top {
+		justify-content: flex-start;
+	}
+	&.-vertical-high {
+		&::before {
+			content: '';
+			flex: 1 1 20%;
+		}
+		h2 {
+			flex: 1 1 20%;
+		}
+		&::after {
+			content: '';
+			flex: 1 1 60%;
+		}
+	}
+	&.-vertical-middle {
+		justify-content: center;
+	}
+	&.-vertical-left {
+		&::before {
+			content: '';
+			flex: 1 1 60%;
+		}
+		h2 {
+			flex: 1 1 20%;
+		}
+		&::after {
+			content: '';
+			flex: 1 1 20%;
+		}
+	}
+	&.-vertical-bottom {
+		justify-content: flex-end;
+	}
+}

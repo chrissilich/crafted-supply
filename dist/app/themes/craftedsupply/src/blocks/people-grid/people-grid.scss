@@ -1,5 +1,5 @@
 .people-grid-block {
-	@include grid-placement(full-bleed);
+	@include grid-placement(full);
 	@include component-margin;
 	@extend %grid-columns;
 

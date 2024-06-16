@@ -1,0 +1,53 @@
+Have to do two font kits for this project due to fonts chosen. 
+
+
+ADOBE TYPEKIT
+
+<link rel="stylesheet" href="https://use.typekit.net/fbw8vhj.css”>
+
+font-family: linotype-didot, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: linotype-didot, serif;
+font-weight: 400;
+font-style: italic;
+
+
+font-family: ltc-caslon-pro, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: ltc-caslon-pro, serif;
+font-weight: 400;
+font-style: italic;
+
+font-family: ltc-caslon-pro, serif;
+font-weight: 700;
+font-style: normal;
+
+font-family: ltc-caslon-pro, serif;
+font-weight: 700;
+font-style: italic;
+
+
+
+
+MONOTYPE FONTS
+
+<link rel="preconnect" href="https://cdn.fonts.net">
+<link href="https://cdn.fonts.net/kit/9a5b40c3-1374-41fd-987e-b9eff8157542/9a5b40c3-1374-41fd-987e-b9eff8157542.css" rel="stylesheet" />
+
+
+font-family: ‘ArquitectaRegular’
+font-style:’Normal'
+font-stretch: 'Normal'
+
+font-family: ‘ArquitectaBook’
+font-style:’Normal'
+font-stretch: 'Normal'
+
+font-family: ‘ArquitectaBookItalic'
+font-style:’Italic'
+font-stretch: 'Italic'
+

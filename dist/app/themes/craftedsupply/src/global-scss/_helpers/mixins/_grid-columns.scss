@@ -29,12 +29,14 @@
 //
 
 @mixin generate-grid-columns($gutter: 24px, $margins: 80px) {
+	$columns: 24;
+
 	gap: 0 $gutter;
 	grid-template-columns:
 		[full-start]
 		minmax($margins - $gutter, 1fr)
 		[main-start]
-		minmax(0, $inner-max-width)
+		repeat($columns, minmax(0, math.div($inner-max-width, $columns)))
 		[main-end]
 		minmax($margins - $gutter, 1fr)
 		[full-end];
@@ -44,12 +46,12 @@
 %grid-columns {
 	display: grid;
 
-	$gutter: 12px;
+	$gutter: 0;
 	$margins: 16px;
 	@include generate-grid-columns($gutter, $margins);
 
 	@include from($layout-switch) {
-		$gutter: 24px;
+		$gutter: 0;
 		$margins: 80px;
 		@include generate-grid-columns($gutter, $margins);
 	}

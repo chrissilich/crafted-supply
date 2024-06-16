@@ -1,8 +1,8 @@
 <?php
 
-namespace ProjectHope\PostTypes\Posts;
+namespace CraftedSupply\PostTypes\Posts;
 
-use ProjectHope\Modules\Utils;
+use CraftedSupply\Modules\Utils;
 
 
 /**

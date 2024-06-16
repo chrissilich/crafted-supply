@@ -1,0 +1,19 @@
+<nav 
+class="hamburger-nav"
+aria-hidden="true" 
+aria-label="{{ __('Main Menu', 'craftedsupply') }}"
+>
+	<ul>
+		{% for item in main_nav.get_items %}
+			<li>
+				<a
+					href="{{ item.link }}"
+					aria-current="{{ item.current ? 'page' : 'false' }}"
+					data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
+				>{{ item.title }}</a>
+			</li>
+		{% endfor %}
+
+	</ul>
+
+</nav>

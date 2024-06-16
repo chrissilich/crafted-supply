@@ -1,6 +1,6 @@
 .wysiwyg-block {
 	@extend %grid-columns;
-	@include grid-placement(full-bleed);
+	@include grid-placement(full);
 	@include component-margin;
 
 	.is-selected &,
@@ -11,7 +11,7 @@
 	}
 
 	&-inner {
-		@include grid-placement(constrained, 720px);
+		@include grid-placement(main, 720px);
 		position: relative;
 		@include z(content);
 		margin: 0 auto;

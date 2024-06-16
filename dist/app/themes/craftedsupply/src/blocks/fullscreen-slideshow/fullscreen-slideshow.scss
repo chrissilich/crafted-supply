@@ -1,0 +1,15 @@
+.fullscreen-slideshow-block {
+	@include grid-placement(full);
+	@include component-margin;
+
+	min-height: 600px;
+	height: 100vh;
+	max-height: 100vw;
+	max-height: 100cqw;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjectHope\PostTypes\Pages;
+namespace CraftedSupply\PostTypes\Pages;
 
 
 

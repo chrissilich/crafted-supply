@@ -1,0 +1,40 @@
+.hamburger-nav {
+	position: fixed;
+	display: none;
+	top: 0;
+	right: 0;
+	width: 100%;
+	max-width: 325px;
+	background-color: rgb(109 110 113 / 0.6);
+	min-height: 100vh;
+	@include z(floating);
+
+	display: flex;
+	flex-flow: column;
+	padding: 160px 40px 20px 20px;
+	translate: 110%;
+	transition: $ts $te;
+
+	&[aria-hidden='false'] {
+		translate: 0%;
+	}
+
+	ul {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 12px;
+
+		li {
+			text-align: right;
+			a {
+				font-family: $nav-font;
+				font-size: is-clamp(17pt, 20pt, 1200px);
+				text-transform: uppercase;
+				color: color(white);
+				padding: 6px 0;
+				text-decoration: none;
+				letter-spacing: 0.1em;
+			}
+		}
+	}
+}

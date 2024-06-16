@@ -1,0 +1,6 @@
+.gallery-setup-block {
+	@include grid-placement;
+	@include component-margin;
+
+	background: #eee;
+}

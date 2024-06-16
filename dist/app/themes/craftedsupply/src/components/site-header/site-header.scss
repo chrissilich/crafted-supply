@@ -1,42 +1,22 @@
 .site-header {
-	@extend %grid-columns;
-	position: relative;
+	width: 100%;
+	max-width: $outer-max-width;
 	padding: 15px 0;
-	gap: 0;
-	@include z(floating);
 
-	@include from($layout-switch) {
-		padding: 15px 0 0;
+	// this if the when the header is mean to sit over the first block, like a slideshow
+	.-site-header-overlay-mode & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
 	}
 
 	&-inner {
-		@include grid-placement;
 		display: flex;
+		flex-flow: column;
 		align-items: center;
 		position: relative;
-		justify-content: space-between;
-		border-bottom: 2px solid transparent;
-		transition: border-color $ts $te;
-	}
-
-	&-js-blocker {
-		position: absolute;
-		top: 100%;
-	}
-
-	@include from($layout-switch) {
-		&[data-open='true'] {
-			.site-header-inner {
-				border-bottom: 2px solid color(gray, 100);
-			}
-			.site-header-js-blocker {
-				display: block;
-				visibility: visible;
-				opacity: 1;
-				position: absolute;
-				height: 100vh;
-			}
-		}
+		gap: 48px;
 	}
 
 	&-logo {
@@ -44,402 +24,50 @@
 		font-size: 0;
 		transition: none;
 		margin: 0 0 0 16px;
-		width: 100px;
+		min-width: 150px;
+		width: 18%;
+		max-width: 225px;
 
 		img {
 			transition: $ts;
-		}
 
-		@include from($layout-switch) {
-			margin: 0 is-clamp(30px, 80px, 1000px) 0 0;
-			width: is-clamp(120px, 180px, 1000px);
-		}
-	}
-
-	&-nav {
-		// the wrapper around both navs on the right side
-		flex: 1 1 0%;
-		display: flex;
-		flex-direction: column;
-	}
-
-	%lowest-level-nav-item {
-		display: inline-flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-		border: 2px solid transparent;
-		transition: border-color $ts $te;
-
-		&::after {
-			transition:
-				opacity $ts $te,
-				transform $ts $te;
-			opacity: 0;
-			font-size: rem-convert(16px);
-			transform: translateX(-0.75em);
-		}
-
-		&:hover {
-			color: color(gray, 600);
-			border-bottom: 2px solid color(gray, 100);
-			&::after {
-				opacity: 1;
-				transform: translateX(0);
+			.-site-header-overlay-mode & {
+				filter: invert(1);
 			}
 		}
+	}
 
-		&[aria-current='page'] {
-			color: color(teal, 700);
-			border-bottom: 2px solid color(teal, 600);
-			&::after {
+	&-subnav {
+		display: flex;
+		flex-flow: row;
+		font-size: 18pt;
+		li {
+			a {
+				font-family: $nav-font;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				text-decoration: none;
+				color: color(black);
+
+				.-site-header-overlay-mode & {
+					color: color(white);
+				}
+			}
+		}
+		.pipe {
+			position: relative;
+			font-family: $nav-font;
+			scale: 1 1.25;
+			translate: 0 -1px;
+			margin: 0 0.25em;
+			color: color(black);
+
+			.-site-header-overlay-mode & {
+				color: color(white);
+			}
+
+			&:last-child {
 				display: none;
-			}
-		}
-	}
-
-	&-nav-primary,
-	&-nav-utility {
-		display: flex;
-		align-items: center;
-
-		> button {
-			@include from($layout-switch) {
-				margin-left: 30px;
-			}
-		}
-
-		> ul {
-			// L1 nav
-			justify-content: flex-end;
-			flex: 1 1 0%;
-			margin-bottom: -2px;
-			display: none;
-
-			@include from($layout-switch) {
-				display: flex;
-			}
-
-			> li {
-				flex: none;
-				@include from($layout-switch) {
-					align-self: stretch;
-					display: flex;
-					align-items: stretch;
-				}
-				> button {
-					&[aria-expanded='true'] {
-						&::after {
-							transform: rotate(-180deg);
-						}
-					}
-					&::after {
-						transition: transform $ts $te;
-					}
-				}
-
-				> a,
-				> button {
-					position: relative;
-					display: flex;
-					align-items: center;
-					border-bottom: 2px solid transparent;
-					transition: $ts $te;
-				}
-			}
-		}
-	}
-
-	&-nav-primary {
-		order: 2;
-		justify-content: flex-end;
-		> ul {
-			// L1 nav
-			display: none;
-			@include from($layout-switch) {
-				display: flex;
-				align-items: center;
-				height: 84px;
-			}
-			gap: 20px;
-
-			@include from(14) {
-				gap: 32px;
-			}
-
-			> li {
-				> a,
-				> button {
-					@extend %nav-primary-item;
-					// padding: is-clamp(18px, 26px, 1100px) 0 is-clamp(19px, 27px, 1100px);
-
-					&[aria-expanded='true'],
-					&:hover {
-						color: color(teal, 700);
-						border-bottom: 2px solid color(teal, 600);
-					}
-
-					&[data-trail='active'] {
-						border-bottom: 2px solid color(teal, 600);
-					}
-				}
-
-				> ul {
-					// L2 nav
-					position: absolute;
-					top: 100%;
-					transform: translateY(2px);
-					width: 100%;
-					left: 0;
-					background: color(white);
-					box-shadow: 0 15px 15px 0 rgb(0 0 0 / 0.2);
-					display: flex;
-					flex-direction: row;
-					padding: is-clamp(35px, 56px, 1100px) is-clamp(50px, 80px, 1100px)
-						is-clamp(59px, 80px, 1100px);
-					opacity: 0;
-					visibility: hidden;
-					transition:
-						opacity $ts $te,
-						visibility $ts $te;
-					@include p;
-					@include z(floating, -1);
-
-					justify-content: center;
-					@include from(14) {
-						justify-content: flex-start;
-					}
-
-					&[aria-hidden='false'] {
-						opacity: 1;
-						visibility: visible;
-					}
-
-					$blurb-basis: 37%;
-
-					div.blurb {
-						display: none;
-						flex: 1 1 $blurb-basis;
-						padding-top: 15px;
-						max-width: 400px;
-
-						@include from(14) {
-							display: block;
-						}
-
-						p {
-							// the featured text
-							max-width: 464px;
-							align-self: flex-start;
-							color: color(navy);
-							font-weight: bold;
-							@include heading-d;
-							padding-right: is-clamp(40px, 100px, 1000px);
-							margin: 0;
-						}
-					}
-
-					> li {
-						flex: 1 1 ((100% - $blurb-basis) * 0.333);
-						max-width: 375px;
-						border-right: 2px solid color(gray, 100);
-						padding: 0 32px;
-						box-sizing: content-box;
-
-						&:first-of-type {
-							padding-left: 0;
-						}
-
-						&:last-child {
-							border-right: none;
-							padding-right: 0;
-						}
-
-						a {
-							@extend %nav-primary-nested-item;
-							@extend %lowest-level-nav-item;
-						}
-
-						> a.nav-subheading {
-							@extend %nav-primary-subheading;
-
-							&[href='#'] {
-								pointer-events: none;
-								&::after {
-									display: none;
-								}
-							}
-
-							@extend %lowest-level-nav-item;
-
-							&::after {
-								opacity: 1;
-							}
-						}
-
-						> ul {
-							> li {
-								margin: 4px 0;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	&-nav-utility {
-		order: 1;
-		position: relative;
-		border-bottom: 2px solid color(gray, 100);
-		display: none;
-		@include from($layout-switch) {
-			display: flex;
-		}
-
-		> ul {
-			gap: 24px;
-			> li {
-				position: relative;
-
-				> a,
-				> button {
-					padding: is-clamp(12px, 19px, 1100px) 0;
-					@extend %nav-utility-item;
-
-					&[aria-expanded='true'] {
-						color: color(teal, 700);
-						border-bottom: 2px solid color(teal);
-					}
-
-					&[data-trail='active'] {
-						border-bottom: 2px solid color(teal);
-					}
-				}
-
-				> ul {
-					// L2 nav
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					transform: translateX(-50%);
-					background: color(white);
-					box-shadow: 0 15px 15px 0 rgb(0 0 0 / 0.2);
-					border-top: 2px solid color(teal);
-					margin-top: -2px;
-					min-width: 280px;
-					max-width: 320px;
-					padding: 24px;
-					opacity: 0;
-					visibility: hidden;
-					transition:
-						opacity $ts $te,
-						visibility $ts $te;
-					@include p;
-					@include z(floating);
-
-					&[aria-hidden='false'] {
-						opacity: 1;
-						visibility: visible;
-					}
-
-					> li {
-						button,
-						a {
-							@extend %nav-utility-nested-item;
-							@extend %lowest-level-nav-item;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	&-donate {
-		align-self: center;
-		margin-right: 8px;
-		@include from($layout-switch) {
-			margin-right: 0;
-		}
-	}
-
-	&-search-pipe {
-		margin: 0 0 0 24px;
-		width: 2px;
-		height: 1em;
-		background: color(gray, 100);
-	}
-
-	&-search-open {
-		display: inline-flex;
-		align-items: center;
-		align-self: stretch;
-		margin-bottom: -2px;
-		@extend %nav-utility-item;
-
-		&:hover {
-			color: color(teal, 700);
-		}
-
-		&[aria-expanded='true'] {
-			border-bottom: 2px solid color(teal);
-		}
-	}
-
-	&-menu-open {
-		$total-width: 48px;
-		$total-height: 48px;
-		$visible-width: 22px;
-		$gap: 5px;
-		$thickness: 2px;
-
-		width: 0;
-		height: 0;
-		padding: $total-width * 0.5 $total-height * 0.5;
-		margin-right: 16px;
-		position: relative;
-		@include z(floating, 1);
-
-		@include from($layout-switch) {
-			display: none;
-		}
-
-		div {
-			position: absolute;
-			width: $visible-width;
-			height: $thickness;
-			left: 13px;
-			transition: $ts $te;
-			background-color: color(gray, 900);
-			border-radius: 1px;
-		}
-
-		&[aria-expanded='false'] {
-			div:nth-child(1) {
-				top: 23px - $gap;
-			}
-			div:nth-child(2) {
-				top: 23px;
-				opacity: 1;
-			}
-			div:nth-child(3) {
-				top: 23px + $gap;
-			}
-		}
-
-		&[aria-expanded='true'] {
-			$gap: 5px;
-			div:nth-child(1) {
-				top: 23px - $gap;
-				transform: translateY($gap) rotate(45deg);
-			}
-			div:nth-child(2) {
-				top: 23px;
-				opacity: 0;
-			}
-			div:nth-child(3) {
-				top: 23px + $gap;
-				transform: translateY(-$gap) rotate(-45deg);
 			}
 		}
 	}

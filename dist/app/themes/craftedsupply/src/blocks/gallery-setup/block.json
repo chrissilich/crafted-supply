@@ -1,0 +1,34 @@
+{
+	"name": "craftedsupply/gallery-setup",
+	"title": "Gallery Setup Block",
+	"description": "This block is at the top of all gallery pages, and contains configuration fields for the gallery page. It doesn't show on the front end. Do not remove it.",
+	"style": [],
+	"category": "media",
+	"icon": "format-image",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "gallery-setup.php",
+		"usePostMeta": true
+	},
+	"craftedsupply": {
+		"boilerplate_version": "1.3.1"
+	},
+	"example": {
+		"viewportWidth": 1400
+	},
+	"supports": {
+		"mode": false,
+		"anchor": false,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": false,
+			"link": false
+		},
+		"customClassName": false
+	},
+	"_supports options": "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/"
+}

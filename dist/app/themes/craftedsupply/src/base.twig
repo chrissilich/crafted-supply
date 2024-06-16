@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html
-  class="front-end {{ body_class }}"
+  class="front-end {{ body_class }} {{post.meta.header_overlay ? '-site-header-overlay-mode' : ''}}"
   data-loading="false"
   data-menu="closed"
   {{ site.language_attributes }}
@@ -47,6 +47,16 @@
     {# Skip Link for a11y #}
     <a class="skiplink" href="#maincontent">{{ __('Skip to main content') }}</a>
 
+    {# Hamburger nav #}
+    {% block hamburger_nav %}
+      {% include 'components/hamburger-nav/hamburger-nav.twig' %}
+    {% endblock %}
+
+    {# Hamburger button #}
+    {% block hamburger_button %}
+      {% include 'components/hamburger-button/hamburger-button.twig' %}
+    {% endblock %}
+
     {# Page Container #}
     <div class="page-container">
 
@@ -61,11 +71,6 @@
 
           {# Place to add pre-content components #}
           {% block before_content %}{% endblock %}
-
-          {# Hero #}
-          {% block hero %}
-            {# {% include 'components/hero/hero.twig' %} #}
-          {% endblock %}
 
           {# Content #}
           <div class="grid-container">

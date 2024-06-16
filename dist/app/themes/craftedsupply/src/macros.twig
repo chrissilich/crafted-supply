@@ -1,47 +1,52 @@
-{% macro link(href, text, classes) %}
-  <a{% if classes %} class="{{ classes|join(' ') }}"{% endif %} href="{{ href }}">{{ text }}</a>
+
+{# For directly generating a button #}
+{% macro button(text, classes) %}
+  <button class="{% if classes %} {{ classes|join(' ') }}{% endif %}"
+  ><span class="btn-text">{{ text }}<span></button>
+{% endmacro %}
+
+{# For directly generating a link (that looks like a button) #}
+{% macro link(href, text, classes, target = '', is_preview = false) %}
+  <a class="{% if classes %} {{ classes|join(' ') }}{% endif %}"
+    href="{{ is_preview ? "javascript:;" : href }}"
+    {% if target %}target="{{ target }}"{% endif %}
+  ><span class="btn-text">{{ text }}<span></a>
 {% endmacro %}
 
 
-{% macro button(options) %}
-  {% set text = options.text is defined ? options.text : "Button Text" %}
-  {% set hide_text = options.hide_text is defined ? options.hide_text : false %}
-  {% set tag = options.tag is defined ? options.tag : 'a' %}
-  {% set type = options.type is defined ? options.type : 'button' %}
-  {% set href = options.href is defined ? options.href : '' %}
-  {% set style = options.style is defined ? options.style : 'primary' %}
-  {% set icon = options.icon is defined ? options.icon : "arrow-right" %}
-  {% set icon_position = options.icon_position is defined ? options.icon_position : '' %}
-  {% set new_window = options.new_window is defined ? options.new_window : false %}
-  {% set attributes = options.attributes is defined ? options.attributes : {} %}
-  {% set classes = options.classes is defined ? options.classes : [] %}
+{# For generating a button based on the "Cloneable: Button" data structure we've created in ACF #}
+{% macro cloneable_button(button_fields, is_preview) %}
 
-  {# if style is donation, force icon and icon-side #}
-  {% if style == "donation" %}
-    {% set icon = "craftedsupply" %}
+  {% set url = button_fields.link.url %}
+  {% set title = button_fields.link.title ? button_fields.link.title : "Button text" %}
+  {% set target = button_fields.link.target %}
+  {% set classes = [] %}
+
+
+  {% if button_fields.button_type == 'donate' %}
+    {% set classes = classes|merge(['btn-donate']) %}
+    {% set title = "Donate Now" %}
+  {% elseif button_fields.button_type == 'button' %}
+    {% set classes = classes|merge(['btn-'~button_fields.button_style]) %}
+  {% elseif button_fields.button_type == 'link' %}
+    {% set classes = classes|merge(['link']) %}
   {% endif %}
 
-  <{{tag}} 
-    {% if href %}href="{{ href }}"{% endif %}
-    type="{{type}}"
-    class="button-{{ style }} {{ classes|join(' ') }} {{ icon_position ? '-icon-' ~ icon_position : ""}} "
-    {% if text %}
-      aria-label="{{ text }}"
-      title="{{ text }}"
-    {% endif %}
-    {% if new_window %} target="_blank" rel="noopener noreferrer" {% endif %} 
-    {% for key, value in attributes %} {{ key }}="{{ value }}" {% endfor %}
-    >
-    {% if not hide_text %} 
-      <span class="button-text">{{ text }}</span>
-    {% endif %}
-    {% if icon %} 
-      <span class="button-icon icon-{{ icon }}"></span>
-    {% endif %}
-  </{{tag}}>
+  {% if button_fields.button_type != 'none' %}
+    {{ _self.link(
+      url,
+      title,
+      classes,
+      target,
+      is_preview
+    ) }}
+  {% endif %}
 {% endmacro %}
 
 
+{# 
+  Macro for creating an image, from a traditional Wordpress image object
+ #}
 {% macro image(image, lazy = true) %}
   <picture>
     {% if image.mime_type != 'image/webp' -%}
@@ -61,3 +66,7 @@
     >
   </picture>
 {% endmacro %}
+
+
+
+

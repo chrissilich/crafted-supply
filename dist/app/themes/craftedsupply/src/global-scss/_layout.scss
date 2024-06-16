@@ -17,7 +17,6 @@
 
 	& > .site-header {
 		grid-area: header;
-		background-color: color(gray, 100);
 	}
 
 	& > main {
@@ -30,13 +29,13 @@
 
 			:where(& > *) {
 				// default to main column with zero css specificity
-				@include grid-placement(constrained);
+				@include grid-placement(main);
 			}
 		}
 	}
 
 	& > .site-footer {
 		grid-area: footer;
-		background-color: color(gray, 100);
+		// background-color: color(gray, 100);
 	}
 }

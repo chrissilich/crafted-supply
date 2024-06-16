@@ -53,3 +53,19 @@
 .js-link-event {
 	cursor: pointer;
 }
+
+.social-icon {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	&.social-icon-facebook {
+		background-image: url(../images/social-facebook.svg);
+	}
+	&.social-icon-instagram {
+		background-image: url(../images/social-instagram.svg);
+	}
+}
