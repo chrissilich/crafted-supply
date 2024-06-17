@@ -1,0 +1,54 @@
+{% import 'src/macros.twig' as macros %}
+
+
+<div class="archive-list">
+
+
+    {# Teasers #}
+    <div class="archive-list-teasers">
+      {% for post in posts %}
+
+        {% set fromPostMeta = {
+          thumbnail: image_array_from_id(post.meta.thumbnail),
+          title_position: {
+            horizontal: post.meta.title_position_horizontal, 
+            vertical: post.meta.title_position_vertical 
+          }
+        } %}
+        {% include 'components/gallery-thumbnail/gallery-thumbnail.twig' with { component: fromPostMeta } %} 
+        
+
+        <article
+          class="archive-list-teaser js-link-event"
+          data-type="{{ post.post_type }}"
+          data-animation="fadeInUp"
+          data-animation-delay="{{ loop.index % 2 ? 200 : 400}}"
+        >
+          <div class="archive-list-teaser-image">
+            {% if image %}
+              {{ macros.image(image) }}
+            {% endif %}
+          </div>
+          <h1>
+              {% set post_url = post.link|relative %}
+              {% if post.url %}
+                {% set post_url = post.url %}
+              {% endif %}
+              <a class="js-link-event-link" href="{{ post_url }}">
+                {{ post.title }}
+              </a>
+          </h1>
+          <p>
+            <time datetime="{{ post.date | date('Y-m-d') }}">{{ post.date  | date('m.d.Y')}}</time>
+            {% if (topic) %}
+                | <a class="js-select-topic" data-value="{{topic.slug}}">{{ topic.name }}</a>
+            {% endif %}
+          </p>
+          
+        </article>
+      {% endfor %}
+    </div>
+
+  </section>
+
+</div>

@@ -302,64 +302,6 @@ function get_archive_page_ID() {
 
 
 /**
- * Automatically build a template path based off an ACF layout name, and render
- * the template if found.
- *
- * @param array $component_data
- * @return void
- */
-function render_component( array $component_data ): void {
-  global $timber;
-
-  if ( empty( $component_data['acf_fc_layout'] ) ) {
-    trigger_error(
-      'No ACF layout name',
-      E_USER_WARNING
-    );
-    echo '<!-- NO TEMPLATE: UNKNOWN COMPONENT NAME -->';
-    return;
-  }
-
-  $component_backend_name = $component_data['acf_fc_layout'];
-  $component_name         = str_replace( '_', '-', $component_backend_name );
-  $component_name         = apply_filters( 'craftedsupply_component_name', $component_name );
-  $template_path          = 'components' . DIRECTORY_SEPARATOR . $component_name . DIRECTORY_SEPARATOR . $component_name . '.twig';
-  $theme_dir              = get_template_directory();
-  $dirnames               = Timber::$dirname;
-
-  if ( ! is_array( $dirnames ) ) {
-    $dirnames = [ $dirnames ];
-  }
-
-  $template_exists = FALSE;
-  foreach ( $dirnames as $root_path ) {
-    // NOTE: assumes relative paths in Timber::$dirname
-    $test_path = $theme_dir . DIRECTORY_SEPARATOR . $root_path . DIRECTORY_SEPARATOR . $template_path;
-
-    if ( file_exists( $test_path ) ) {
-      $template_exists = TRUE;
-      break;
-    }
-  }
-
-  if ( $template_exists ) {
-    $context              = Timber::context();
-    $context['component'] = $component_data;
-    $context              = apply_filters( 'craftedsupply_component_context', $context, $component_backend_name );
-    $context              = apply_filters( 'craftedsupply_component_context/' . $component_backend_name, $context );
-
-    Timber::render( $template_path, $context );
-  } else {
-    trigger_error(
-      'Could not find template for component ' . $component_name,
-      E_USER_WARNING
-    );
-    echo '<!-- NO TEMPLATE ' . $component_name . '.twig -->';
-  }
-}
-
-
-/**
  * Modify the admin URL based on the current admin URL plus whatever query vars are provided.
  *
  * @param array $query_vars
@@ -419,4 +361,31 @@ function get_post_type_singular_name($post_type) {
 function get_post_type_plural_name($post_type) {
   $post_type_object = get_post_type_object($post_type);
   return $post_type_object->labels->name;
+}
+
+
+
+
+
+/*
+* Recreate Image Array that mimics the one ACF produces for the Image field, from just an attachment ID 
+*
+* @param Attachment ID
+* @return array
+*/
+function image_array_from_id( $attachment_id ) {
+  $url = wp_get_attachment_url($attachment_id);
+  $meta = wp_get_attachment_metadata($attachment_id);
+  $post = get_post($attachment_id);
+  $alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true) ?: '';
+
+  return [
+    'url' => $url,
+    'mime_type' => $post->post_mime_type,
+    'width' => $meta['width'],
+    'height' => $meta['height'],
+    'original_image' => [
+      'alt' => $alt
+    ]
+  ];
 }

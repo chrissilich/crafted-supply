@@ -12,6 +12,7 @@ $context   = Timber::context();
 $templates = [ 'src/pages/archive.twig' ];
 
 
+/*
 // Custom post type archive
 if ( is_post_type_archive() ) {
   $post_type       = get_queried_object()->name;
@@ -49,6 +50,6 @@ if ( is_post_type_archive() ) {
   wp_redirect( $url, 302 );
   exit;
 } 
-
+*/
 
 Timber::render( $templates, $context );

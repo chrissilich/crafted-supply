@@ -67,6 +67,9 @@ function add_to_twig( Environment $twig ): Environment {
 
   $twig->addExtension( new \Twig\Extension\StringLoaderExtension() );
 
+  // Get Image Array from Image ID
+  $twig->addFunction( new Twig\TwigFunction( 'image_array_from_id', 'CraftedSupply\\Modules\\Utils\\image_array_from_id' ) );
+
   // Get Yoast Primary Term
   $twig->addFunction( new Twig\TwigFunction( 'get_primary_taxonomy_term', 'CraftedSupply\\Modules\\Utils\\get_primary_taxonomy_term' ) );
 
@@ -77,9 +80,6 @@ function add_to_twig( Environment $twig ): Environment {
   $twig->addFunction( new Twig\TwigFunction( 'generate_id', function() {
     return str_shuffle( uniqid() );
   } ) );
-
-  // Render a component based on its ACF Layout name
-  $twig->addFunction( new Twig\TwigFunction( 'render_component', 'CraftedSupply\\Modules\\Utils\\render_component' ) );
 
   // Get active trail for a menu item
   $twig->addFunction( new Twig\TwigFunction( 'get_active_trail', 'CraftedSupply\\Modules\\Utils\\get_active_trail' ) );
