@@ -8,7 +8,7 @@
     "preferred-install": "dist",
     "optimize-autoloader": true,
     "sort-packages": true,
-    "vendor-dir": "vendor",
+    "vendor-dir": "dist/vendor",
     "_vendor-dir": "if you dont have access to the parent dir to make the vendor dir private, change it to dist/vendor",
     "allow-plugins": {
       "composer/installers": true,
@@ -17,8 +17,9 @@
       "junaidbhura/composer-wp-pro-plugins": true,
       "roots/wordpress-core-installer": true
     },
+    "platform-check": false,
     "platform": {
-      "php": "8.2.15"
+      "php": "8.1.2"
     }
   },
   "minimum-stability": "dev",
@@ -47,34 +48,34 @@
   ],
   "require": {
     "php": "^8.1",
-    "composer/composer": "*",
-    "composer/installers": "^2.1",
-    "cweagans/composer-patches": "^1.7",
-    "ffraenz/private-composer-installer": "^5.0",
-    "junaidbhura/advanced-custom-fields-pro": "*",
-    "junaidbhura/composer-wp-pro-plugins": "*",
+    "composer/composer": ">=2.7.7",
+    "composer/installers": "^2.2",
+    "cweagans/composer-patches": "^1.7.3",
+    "ffraenz/private-composer-installer": "^5.0.1",
+    "junaidbhura/advanced-custom-fields-pro": ">=6.2.8",
+    "junaidbhura/composer-wp-pro-plugins": ">=1.8",
     "oscarotero/env": "^2.1",
-    "platformsh/config-reader": "^2.4",
-    "psy/psysh": "^0.11.0",
-    "roots/bedrock-autoloader": "^1.0",
-    "roots/wordpress": "^6.4.2",
+    "platformsh/config-reader": "^2.4.1",
+    "psy/psysh": "^0.11.22",
+    "roots/bedrock-autoloader": "^1.0.4",
+    "roots/wordpress": "^6.5.4",
     "roots/wp-config": "^1.0",
     "roots/wp-password-bcrypt": "^1.1",
-    "timber/timber": "^2.0.0",
-    "twig/twig": "^3.7",
-    "vlucas/phpdotenv": "^5.4",
-    "wp-cli/wp-cli-bundle": "^2.7",
-    "wpackagist-plugin/acf-image-aspect-ratio-crop": "^6.0",
+    "timber/timber": "^2.2.0",
+    "twig/twig": "^3.10.3",
+    "vlucas/phpdotenv": "^5.6",
+    "wp-cli/wp-cli-bundle": "^2.10",
+    "wpackagist-plugin/acf-image-aspect-ratio-crop": "^6.0.3",
     "wpackagist-plugin/intuitive-custom-post-order": "3.1.4.1",
-    "wpackagist-plugin/mailgun": "^1",
-    "wpackagist-plugin/redirection": "^5.1",
-    "wpackagist-plugin/wordpress-seo": "^21.2",
-    "wpackagist-theme/twentytwentythree": "^1.0"
+    "wpackagist-plugin/mailgun": "^1.9.9",
+    "wpackagist-plugin/redirection": "^5.4.2",
+    "wpackagist-plugin/wordpress-seo": "^21.9.1",
+    "wpackagist-theme/twentytwentythree": "^1.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
-    "wpackagist-plugin/debug-bar": "^1.1",
-    "wpackagist-plugin/duplicate-post": "^4.2",
+    "wpackagist-plugin/debug-bar": "^1.1.6",
+    "wpackagist-plugin/duplicate-post": "^4.5",
     "wpackagist-plugin/regenerate-thumbnails": "^3.1.6"
   },
   "extra": {
