@@ -134,7 +134,6 @@ function allowlist_built_in_block_types( $block_editor_context, $editor_context 
       array_push($enabled_blocks, $block->name);
     }
   }
-
 	return $enabled_blocks;
 }
 add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\\allowlist_built_in_block_types', 10, 2 );

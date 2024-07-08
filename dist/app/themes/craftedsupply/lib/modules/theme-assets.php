@@ -33,9 +33,11 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\theme_assets' );
  * @return void
  */
 function admin_theme_scripts(): void {
-  $font_css_url = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+  $font_css_url_1 = "https://cdn.fonts.net/kit/9a5b40c3-1374-41fd-987e-b9eff8157542/9a5b40c3-1374-41fd-987e-b9eff8157542.css";
+  $font_css_url_2 = "https://use.typekit.net/fbw8vhj.css";
 
-  wp_enqueue_style( 'craftedsupply-admin-fonts', $font_css_url, [], 1, FALSE );
+  wp_enqueue_style( 'craftedsupply-admin-fonts-1', $font_css_url_1, [], 1, FALSE );
+  wp_enqueue_style( 'craftedsupply-admin-fonts-2', $font_css_url_2, [], 1, FALSE );
   wp_enqueue_style( 'craftedsupply-admin-style', get_template_directory_uri() . '/assets/admin/admin.css', [], filemtime( get_template_directory() . '/assets/admin/admin.css' ), FALSE );
   wp_enqueue_script( 'craftedsupply-admin-js', get_template_directory_uri() . '/assets/admin/admin.js', [ 'jquery' ], filemtime(get_template_directory() . '/assets/admin/admin.js' ), FALSE);
 }

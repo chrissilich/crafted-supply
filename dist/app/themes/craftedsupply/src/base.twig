@@ -9,24 +9,8 @@
 >
 <head>
 
-  {# TODO: Ensure critical assets (i.e. fonts) are preloaded #}
-  <link rel="preload" href="{{ assets }}/fonts/icomoon.woff2?2024-03-15" as="font" crossorigin="anonymous">
-
-  {# DNS preconnects for ubiquitous external host dependencies. #}
-  {# TODO: Ensure critical external host urls are preconnected (i.e. fonts, trackers, etc.) #}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  {#
-  <link rel="preconnect" href="//use.typekit.net" crossorigin="anonymous">
-  <link rel="preconnect" href="//p.typekit.net" crossorigin="anonymous">
-  <link rel="preconnect" href="//cloud.typenetwork.com" crossorigin="anonymous">
-  <link rel="preconnect" href="//www.googletagmanager.com" crossorigin="anonymous">
-  <link rel="preconnect" href="//www.google-analytics.com" crossorigin="anonymous">
-  <link rel="preconnect" href="//www.google.com" crossorigin="anonymous">
-  <link rel="preconnect" href="//stats.g.doubleclick.net" crossorigin="anonymous">
-  #}
-
-  {# <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> #}
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="preconnect" href="https://cdn.fonts.net">
 
   <meta charset="{{ site.charset }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +18,8 @@
   {# Wordpress Header Call #}
   {{ function('wp_head') }}
 
+  <link rel="stylesheet" href="https://cdn.fonts.net/kit/9a5b40c3-1374-41fd-987e-b9eff8157542/9a5b40c3-1374-41fd-987e-b9eff8157542.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/fbw8vhj.css">
   <link rel="manifest" href="/manifest.json?2023-03-11" crossorigin="use-credentials">
   <link rel="icon" href="/favicon.ico?2023-03-11" type="image/svg+xml">
   <link rel="icon" href="/favicon.svg?2023-03-11" type="image/svg+xml">

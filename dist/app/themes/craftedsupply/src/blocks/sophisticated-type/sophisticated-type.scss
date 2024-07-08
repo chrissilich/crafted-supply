@@ -1,0 +1,44 @@
+.sophisticated-type-block {
+	@include grid-placement(main, 820px);
+	@include component-margin;
+	padding: 40px 0;
+
+	p {
+		font-family: $caslon;
+		font-style: italic;
+		font-size: is-clamp(14px, 20px);
+		line-height: 1.6em;
+
+		strong {
+			font-family: $didot;
+			font-style: normal;
+			font-size: 1.8em;
+			text-transform: uppercase;
+			font-weight: normal;
+		}
+
+		@include from(9) {
+			span {
+				display: block;
+			}
+
+			&.-crc {
+				span:nth-child(1),
+				span:nth-child(3) {
+					text-align: center;
+				}
+				span:nth-child(2) {
+					text-align: right;
+				}
+			}
+			&.-lcr {
+				span:nth-child(2) {
+					text-align: center;
+				}
+				span:nth-child(3) {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

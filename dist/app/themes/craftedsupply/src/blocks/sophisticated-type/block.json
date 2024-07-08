@@ -1,0 +1,43 @@
+{
+	"name": "craftedsupply/sophisticated-type",
+	"title": "Sophisticated Type",
+	"description": "Replace this with a description of Sophisticated Type",
+	"style": [],
+	"category": "widgets",
+	"_category options": ["text", "media", "design", "widgets", "theme", "embed"],
+	"icon": "editor-italic",
+	"_icon options": "Escaped SVG code OR https://developer.wordpress.org/resource/dashicons/#block-default",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "sophisticated-type.php"
+	},
+	"craftedsupply": {
+		"boilerplate_version": "1.4.0",
+		"_allowed/disallowed options": {
+			"post_type": ["page", "post"],
+			"id": [1, 2, 3],
+			"slug": ["home", "about"],
+			"template": ["template-home.php", "template-about.php"],
+			"special": ["front", "posts"],
+			"capabilities": ["administrator", "custom_role"]
+		}
+	},
+	"example": {
+		"viewportWidth": 1400
+	},
+	"supports": {
+		"mode": false,
+		"anchor": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": false,
+			"link": false
+		},
+		"customClassName": false
+	},
+	"_supports options": "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/"
+}

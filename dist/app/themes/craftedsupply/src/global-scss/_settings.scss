@@ -8,9 +8,18 @@ $slicer-breakpoints: 100px 200px 320px 400px 500px 600px 768px 800px 900px 1024p
 	1300px 1400px 1500px 1600px 1700px 1800px 1920px 2056px;
 $slicer-anti-overlap-corrections: -1px;
 
-$caslon: 'Caslon Pro', 'Caslon', ltc-caslon-pro, serif;
-$didot: 'Didot', linotype-didot, serif;
-$arquitecta: 'Arquitecta', 'Arquitecta Regular', ArquitectaRegular, sans-serif;
+$caslon: ltc-caslon-pro, 'Caslon Pro', 'Caslon', 'Iowan Old Style', 'Palatino Linotype',
+	'URW Palladio L', P052, serif;
+$didot:
+	linotype-didot,
+	Didot,
+	Didot LT STD,
+	Hoefler Text,
+	Garamond,
+	Times New Roman,
+	serif;
+$arquitecta: ArquitectaRegular, 'Arquitecta', 'Arquitecta Regular', Avenir, Montserrat, Corbel,
+	'URW Gothic', source-sans-pro, sans-serif;
 
 // type variables
 $body-font: $didot;
