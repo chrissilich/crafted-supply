@@ -5,66 +5,104 @@
 	position: relative;
 	padding: 30px 0;
 
-	$layout-switch: 7;
-
 	&-inner {
 		@include grid-placement;
 		display: flex;
 		justify-content: space-between;
 		gap: rem-convert(30px);
 		flex-flow: column;
-		@include from($layout-switch) {
-			flex-flow: row;
-			gap: is-clamp(50px, 80px, 1000px);
-		}
 		@include z(content);
+
+		container-name: 'fifty-fifty-block-inner';
+		container-type: inline-size;
+
+		@include from($layout-switch) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: is-clamp(30px, 50px, 1200px);
+			row-gap: 0;
+		}
 	}
 
-	&-text,
-	&-image {
-		flex: 1 1 100%;
+	&-heading {
+		font-size: 40pt;
+		font-family: $didot;
+		font-weight: normal;
 
-		&-placeholder {
-			@include placeholder-image(600, 800);
+		@include to($layout-switch - 1) {
+			order: 2;
+			margin-bottom: 0;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 1;
+			font-size: 7.5cqw;
+			text-align: right;
+
+			[data-image-side='right'] & {
+				grid-column: 2;
+				text-align: left;
+			}
+		}
+	}
+
+	&-image {
+		position: relative;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: flex-end;
+
+		@include to($layout-switch) {
+			order: 1;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 1;
+			[data-image-side='right'] & {
+				grid-column: 2;
+			}
 		}
 	}
 
 	&-text {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
 
-		h2 {
-			@include heading-c;
+		@include to($layout-switch) {
+			order: 3;
 		}
-	}
 
-	&-buttons {
-		margin-top: rem-convert(40px);
-	}
-
-	&-image {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		img {
-			width: 100%;
-		}
-	}
-
-	&[data-image-side='right'] {
 		@include from($layout-switch) {
-			.fifty-fifty-block-image {
-				order: 3;
-			}
+			grid-column: 2;
 
-			.fifty-fifty-block-divider {
-				order: 2;
+			[data-image-side='right'] & {
+				grid-column: 1;
+				grid-row: 2;
+				align-items: flex-end;
 			}
+		}
 
-			.fifty-fifty-block-text {
-				order: 1;
+		p {
+			@include p;
+			font-family: $arquitecta;
+			$low: 17px;
+			$high: 23px;
+			font-size: is-clamp(rem-convert($low), rem-convert($high), 1200px);
+			line-height: is-clamp(rem-convert($low * 2), rem-convert($high * 2), 1200px);
+			margin-bottom: is-clamp(rem-convert($low), rem-convert($high), 1200px);
+
+			@include from($layout-switch) {
+				max-width: 450px;
+
+				[data-image-side='right'] & {
+					text-align: right;
+				}
 			}
 		}
 	}

@@ -10,6 +10,7 @@ $slicer-anti-overlap-corrections: -1px;
 
 $caslon: ltc-caslon-pro, 'Caslon Pro', 'Caslon', 'Iowan Old Style', 'Palatino Linotype',
 	'URW Palladio L', P052, serif;
+
 $didot:
 	linotype-didot,
 	Didot,
@@ -18,6 +19,7 @@ $didot:
 	Garamond,
 	Times New Roman,
 	serif;
+
 $arquitecta: ArquitectaRegular, 'Arquitecta', 'Arquitecta Regular', Avenir, Montserrat, Corbel,
 	'URW Gothic', source-sans-pro, sans-serif;
 
@@ -44,4 +46,4 @@ $te: ease-in-out; // transition ease
 
 // *default* layout switch
 // some blocks switch at a different breakpoint
-$layout-switch: 11;
+$layout-switch: 10;

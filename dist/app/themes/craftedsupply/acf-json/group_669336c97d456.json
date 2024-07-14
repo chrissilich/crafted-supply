@@ -1,10 +1,10 @@
 {
-    "key": "group_668bbef45a8a2",
-    "title": "Block: Sophisticated Type",
+    "key": "group_669336c97d456",
+    "title": "Block: Fifty-fifty",
     "fields": [
         {
-            "key": "field_668bbf0c5dc86",
-            "label": "Design",
+            "key": "field_669336d8bcf40",
+            "label": "Image",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -20,11 +20,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_668bbf2a5dc87",
-            "label": "Layout",
-            "name": "layout",
+            "key": "field_669336f8bcf42",
+            "label": "Image Side",
+            "name": "image_side",
             "aria-label": "",
-            "type": "radio",
+            "type": "button_group",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -34,19 +34,45 @@
                 "id": ""
             },
             "choices": {
-                "crc": "Center - Right - Center",
-                "lcr": "Left - Center - Right"
+                "left": "⇦",
+                "right": "⇨"
             },
-            "default_value": "crc",
+            "default_value": "left",
             "return_format": "value",
             "allow_null": 0,
-            "other_choice": 0,
-            "layout": "vertical",
-            "save_other_choice": 0
+            "layout": "horizontal"
         },
         {
-            "key": "field_668bc1440e663",
-            "label": "Text",
+            "key": "field_66933854d33ca",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image_aspect_ratio_crop",
+            "instructions": "Image Size: 820x888",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "aspect_ratio",
+            "aspect_ratio_width": 820,
+            "aspect_ratio_height": 888,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 820,
+            "min_height": 888,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
+            "key": "field_669336e4bcf41",
+            "label": "Content",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -62,29 +88,31 @@
             "endpoint": 0
         },
         {
-            "key": "field_668bc4f7e987d",
-            "label": "",
-            "name": "",
+            "key": "field_66933778bcf43",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
+            "type": "text",
+            "instructions": "Wrap italic text in underscores, like _this_",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "message": "Wrap asterisks around text to make it into larger uppercase text. Line breaks will be ignored and text will flow together normally on mobile.",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_668bc5ec0bcd0",
-            "label": "Line 1",
-            "name": "line_1",
+            "key": "field_6693380972787",
+            "label": "Text",
+            "name": "text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -94,50 +122,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": 120,
-            "rows": 3,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_668bc3bde4574",
-            "label": "Line 2",
-            "name": "line_2",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": 120,
-            "rows": 3,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_668bc5e80bccf",
-            "label": "Line 3",
-            "name": "line_3",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": 120,
-            "rows": 3,
-            "placeholder": "",
-            "new_lines": ""
+            "tabs": "visual",
+            "toolbar": "basic_text_styles",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -145,7 +133,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "craftedsupply\/sophisticated-type"
+                "value": "craftedsupply\/fifty-fifty-block"
             }
         ]
     ],
@@ -158,5 +146,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720448094
+    "modified": 1720930078
 }

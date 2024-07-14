@@ -9,8 +9,15 @@
 */
 $context = Timber::context();
 
-$context['fields'] = get_fields();
 $context['block'] = $block;
 $context['is_preview'] = $is_preview;
+$context['fields'] = get_fields() ?: [
+	'title' => '_The_ Title',
+	'text' => 'Body Copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.',
+	'image_side' => 'left',
+];
+
+// Take the title field and convert any underscores to italics
+$context['fields']['title'] = preg_replace( '/_([^_]+)_/', '<em>$1</em>', $context['fields']['title'] );
 
 Timber::render( 'fifty-fifty.twig', $context );
