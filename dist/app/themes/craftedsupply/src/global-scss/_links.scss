@@ -1,15 +1,15 @@
 %link {
 	cursor: pointer;
 	// display: inline-block;
-	color: color(teal, 700);
+	color: color(teal);
 	// text-decoration: none;
 	transition:
 		color $ts,
 		background-color $ts;
 
 	&:hover {
-		background-color: color(teal, 100);
-		color: color(teal, 500);
+		background-color: color(teal);
+		color: color(teal);
 	}
 
 	&:disabled,
@@ -22,10 +22,10 @@
 %link-inverted {
 	@extend %link;
 	color: color(white);
-	background-color: color(teal, 800, 0);
+	background-color: color(teal);
 
 	&:hover {
-		background-color: color(teal, 800);
+		background-color: color(teal);
 		color: color(white);
 	}
 }
@@ -37,17 +37,15 @@
 	&:hover {
 		background-color: transparent;
 		text-decoration: underline;
-		color: color(teal, 600);
+		color: color(teal);
 	}
 }
 
-@include main-container(true) {
-	a:not([class*='button']) {
-		@extend %link;
-	}
-	a.-inverted:not([class*='button']) {
-		@extend %link-inverted;
-	}
+main a:not([class*='button']) {
+	@extend %link;
+}
+main a.-inverted:not([class*='button']) {
+	@extend %link-inverted;
 }
 
 .js-link-event {

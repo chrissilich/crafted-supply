@@ -20,7 +20,7 @@ label {
 	// max-width: fit-content;
 	@include p-small;
 	margin-bottom: rem-convert(8px);
-	color: color(navy);
+	color: color(teal);
 }
 
 .form-field {
@@ -66,16 +66,16 @@ textarea {
 	}
 
 	&:focus-visible {
-		border-color: color(teal, 600);
-		outline: color(teal, 600);
+		border-color: color(teal);
+		outline: color(teal);
 
 		.-dark-background & {
-			border-color: color(teal, 500);
-			outline: color(teal, 500);
+			border-color: color(teal);
+			outline: color(teal);
 		}
 
 		&::placeholder {
-			color: color(teal, 400);
+			color: color(teal);
 		}
 	}
 

@@ -24,19 +24,8 @@
 // }
 //
 
-$front-end-main-container-selector: '.page-container main';
-$cms-editor-main-container-selector: '.is-root-container';
-
-@mixin main-container($zero-specificity: false) {
-	@if $zero-specificity {
-		:where(#{$front-end-main-container-selector}),
-		:where(#{$cms-editor-main-container-selector}) {
-			@content;
-		}
-	} @else {
-		#{$front-end-main-container-selector},
-		#{$cms-editor-main-container-selector} {
-			@content;
-		}
+@mixin apply-typography() {
+	:where(.-apply-typography) {
+		@content;
 	}
 }

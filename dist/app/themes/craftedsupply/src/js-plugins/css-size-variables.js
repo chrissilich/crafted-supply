@@ -26,8 +26,8 @@ export default () => {
 			$body.style.setProperty('--viewport-height', $viewport.innerHeight + 'px')
 		}
 		if ($pageContainer) {
-			$body.style.setProperty('--main-container-width', $pageContainer.offsetWidth + 'px')
-			$body.style.setProperty('--main-container-height', $pageContainer.offsetHeight + 'px')
+			$body.style.setProperty('---apply-typography-width', $pageContainer.offsetWidth + 'px')
+			$body.style.setProperty('---apply-typography-height', $pageContainer.offsetHeight + 'px')
 		}
 	}
 

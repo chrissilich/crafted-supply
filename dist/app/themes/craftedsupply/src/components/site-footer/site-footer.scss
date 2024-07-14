@@ -81,9 +81,22 @@
 		}
 		&-col-3 {
 			order: 4;
+			padding-left: linear-clamp(1024px, 1400px, 0px, 30px);
 		}
 		&-col-4 {
 			order: 5;
+		}
+
+		&-logo {
+			// padding: 0 20px;
+		}
+	}
+
+	a {
+		color: color(gray, 900);
+
+		&:hover {
+			color: color(teal, 500);
 		}
 	}
 }

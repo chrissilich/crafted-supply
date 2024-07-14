@@ -25,7 +25,7 @@
 	@include heading-e;
 }
 
-@include main-container(true) {
+@include apply-typography {
 	h1,
 	h2,
 	h3,
@@ -36,7 +36,6 @@
 		margin: 0 0 20px;
 		text-wrap: pretty;
 		font-weight: bold;
-		color: color(navy);
 
 		a {
 			text-decoration: none;
@@ -63,13 +62,11 @@
 		@include p-large;
 		margin-top: rem-convert(40px);
 		font-weight: bold;
-		color: color(navy);
 	}
 
 	h6 {
 		@include p;
 		margin-top: rem-convert(24px);
 		font-weight: bold;
-		color: color(navy);
 	}
 }

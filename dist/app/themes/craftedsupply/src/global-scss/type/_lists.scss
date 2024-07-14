@@ -3,7 +3,7 @@ ul {
 	@include kill-bullets;
 }
 
-@include main-container(true) {
+@include apply-typography {
 	ol,
 	ul {
 		list-style-position: outside;

@@ -33,7 +33,6 @@
 @mixin heading-e {
 	font-size: is-clamp(rem-convert(24px), rem-convert(24px));
 	@include line-height(32, 24);
-	color: color(navy);
 	margin-top: rem-convert(40px);
 	font-weight: bold;
 	@include first-last-margin;
