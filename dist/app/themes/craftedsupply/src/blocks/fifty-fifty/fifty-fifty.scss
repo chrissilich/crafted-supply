@@ -13,7 +13,7 @@
 		flex-flow: column;
 		@include z(content);
 
-		container-name: 'fifty-fifty-block-inner';
+		container-name: fifty-fifty-block-inner;
 		container-type: inline-size;
 
 		@include from($layout-switch) {
@@ -50,7 +50,7 @@
 		position: relative;
 		display: flex;
 		flex-flow: column;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: flex-end;
 
 		@include to($layout-switch) {
@@ -98,7 +98,8 @@
 			margin-bottom: is-clamp(rem-convert($low), rem-convert($high), 1200px);
 
 			@include from($layout-switch) {
-				max-width: 450px;
+				max-width: 40vw;
+				max-width: 40cqw;
 
 				[data-image-side='right'] & {
 					text-align: right;

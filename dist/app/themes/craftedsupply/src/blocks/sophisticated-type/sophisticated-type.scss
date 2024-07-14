@@ -1,42 +1,84 @@
 .sophisticated-type-block {
-	@include grid-placement(main, 820px);
+	@include grid-placement(main);
 	@include component-margin;
 	padding: 40px 0;
 
 	p {
 		font-family: $caslon;
 		font-style: italic;
-		font-size: is-clamp(14px, 20px);
-		line-height: 1.6em;
+
+		font-size: 15pt;
+		line-height: 1.5em;
+		text-align: center;
+		@include from($layout-switch) {
+			font-size: linear-clamp(1024px, 1600px, 17.92px, 28px); // 1.5625
+			line-height: 1.6em;
+		}
 
 		strong {
 			font-family: $didot;
 			font-style: normal;
-			font-size: 1.9em;
 			text-transform: uppercase;
 			font-weight: normal;
+			font-size: 1.5em;
+			@include from($layout-switch) {
+				font-size: 1.9em;
+			}
 		}
 
-		@include from(9) {
-			span {
-				display: block;
+		@include from($layout-switch) {
+			.line-wrap {
+				display: flex;
+				flex-flow: row nowrap;
+				span {
+					// avoid wrapping
+					white-space: nowrap;
+				}
+				&::before,
+				&::after {
+					content: '';
+				}
 			}
 
 			&.-crc {
-				span:nth-child(1),
-				span:nth-child(3) {
-					text-align: center;
+				.line-1-wrap,
+				.line-3-wrap {
+					&::before,
+					&::after {
+						flex: 1 1 auto;
+					}
 				}
-				span:nth-child(2) {
-					text-align: right;
+				.line-2-wrap {
+					&::before {
+						flex: 1 1 40%;
+					}
+					&::after {
+						flex: 1 1 10%;
+					}
 				}
 			}
 			&.-lcr {
-				span:nth-child(2) {
-					text-align: center;
+				.line-1-wrap {
+					&::before {
+						flex: 1 1 10%;
+					}
+					&::after {
+						flex: 1 1 40%;
+					}
 				}
-				span:nth-child(3) {
-					text-align: right;
+				.line-3-wrap {
+					&::before {
+						flex: 1 1 40%;
+					}
+					&::after {
+						flex: 1 1 10%;
+					}
+				}
+				.line-2-wrap {
+					&::before,
+					&::after {
+						flex: 1 1 auto;
+					}
 				}
 			}
 		}
