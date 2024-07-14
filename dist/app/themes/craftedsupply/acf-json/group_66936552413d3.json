@@ -1,0 +1,190 @@
+{
+    "key": "group_66936552413d3",
+    "title": "Block: Images",
+    "fields": [
+        {
+            "key": "field_6693656d68ae7",
+            "label": "Layout",
+            "name": "layout",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "huge": "Huge",
+                "square": "Square",
+                "double": "Double"
+            },
+            "default_value": "huge",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "vertical"
+        },
+        {
+            "key": "field_6693659568ae8",
+            "label": "Image",
+            "name": "image_huge",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6693656d68ae7",
+                        "operator": "==",
+                        "value": "huge"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": 1600,
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_669365d468ae9",
+            "label": "Image",
+            "name": "image_square",
+            "aria-label": "",
+            "type": "image_aspect_ratio_crop",
+            "instructions": "Image Size: 1200x1200",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6693656d68ae7",
+                        "operator": "==",
+                        "value": "square"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "aspect_ratio",
+            "aspect_ratio_width": 1200,
+            "aspect_ratio_height": 1200,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg"
+        },
+        {
+            "key": "field_6693660768aea",
+            "label": "Image A",
+            "name": "image_pair_a",
+            "aria-label": "",
+            "type": "image_aspect_ratio_crop",
+            "instructions": "Image Size: 1000x1500",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6693656d68ae7",
+                        "operator": "==",
+                        "value": "double"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "aspect_ratio",
+            "aspect_ratio_width": 1000,
+            "aspect_ratio_height": 1500,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg"
+        },
+        {
+            "key": "field_6693668c68aec",
+            "label": "Image B",
+            "name": "image_pair_b",
+            "aria-label": "",
+            "type": "image_aspect_ratio_crop",
+            "instructions": "Image Size: 1000x1500",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6693656d68ae7",
+                        "operator": "==",
+                        "value": "double"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "aspect_ratio",
+            "aspect_ratio_width": 1000,
+            "aspect_ratio_height": 1500,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "craftedsupply\/images"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1720936092
+}

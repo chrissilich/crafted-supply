@@ -15,4 +15,4 @@ $context['block'] = $block;
 $context['is_preview'] = $is_preview;
 $context['post'] = Timber::get_post($post_id);
 
-Timber::render( 'big-image.twig', $context );
+Timber::render( 'images.twig', $context );

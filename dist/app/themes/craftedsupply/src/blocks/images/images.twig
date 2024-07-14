@@ -1,0 +1,27 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="images-block -layout-{{fields.layout}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+
+  {% if fields.layout == 'huge' and fields.image_huge %}
+    
+    {{ macros.image(fields.image_huge) }}
+
+  {% elseif fields.layout == 'square' and fields.image_square %}
+    
+    {{ macros.image(fields.image_square) }}
+    
+  {% elseif fields.layout == 'double' and fields.image_pair_a and fields.image_pair_b %}
+    
+    {{ macros.image(fields.image_pair_a) }}
+    {{ macros.image(fields.image_pair_b) }}
+    
+  {% else %}
+    <img src="https://placehold.co/1200x900/cccccc/aaaaaa/?text=Placeholder+Image" alt="Placeholder image">
+
+  {% endif %}
+
+</div>

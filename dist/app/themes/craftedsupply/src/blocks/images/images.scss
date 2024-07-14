@@ -1,0 +1,15 @@
+.images-block {
+	@include grid-placement(main);
+	@include component-margin;
+
+	&.-layout-square {
+		@include grid-placement(main, 800px);
+	}
+
+	&.-layout-double {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		gap: 40px;
+	}
+}

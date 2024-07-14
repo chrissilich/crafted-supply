@@ -1,14 +1,14 @@
 {
-	"name": "craftedsupply/big-image",
-	"title": "Big Image",
-	"description": "A block that simply contains one large image, that fits the full width of the page content area.",
+	"name": "craftedsupply/images",
+	"title": "Images",
+	"description": "A block that simply contains one or two images, in a simple layout.",
 	"style": [],
 	"category": "media",
 	"icon": "format-image",
 	"keywords": [],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "big-image.php"
+		"renderTemplate": "images.php"
 	},
 	"craftedsupply": {
 		"boilerplate_version": "1.3.1"

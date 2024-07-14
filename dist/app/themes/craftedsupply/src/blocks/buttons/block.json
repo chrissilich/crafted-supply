@@ -13,7 +13,7 @@
 	},
 	"craftedsupply": {
 		"boilerplate_version": "1.4.0",
-		"enabled": true
+		"enabled": false
 	},
 	"example": {
 		"viewportWidth": 500
