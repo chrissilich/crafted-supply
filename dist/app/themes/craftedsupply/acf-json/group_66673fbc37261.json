@@ -126,7 +126,7 @@
                     "name": "image",
                     "aria-label": "",
                     "type": "image_aspect_ratio_crop",
-                    "instructions": "Image Size: 1440x1080",
+                    "instructions": "Image Size: 2100x1500",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -170,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721330013
+    "modified": 1721597299
 }
