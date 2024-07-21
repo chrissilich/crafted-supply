@@ -2,6 +2,7 @@
 	width: 100%;
 	max-width: $outer-max-width;
 	padding: 15px 0;
+	@include z(floating);
 
 	// this if the when the header is mean to sit over the first block, like a slideshow
 	.-site-header-overlay-mode & {

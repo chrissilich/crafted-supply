@@ -1,9 +1,31 @@
+{% import 'macros.twig' as macros %}
+
 <div
   class="fullscreen-slideshow-block {{block.className}}"
   id="{{block.anchor}}"
   {{is_preview ? 'data-preview' : ''}}
 >
-  <img src="{{assets}}/images/fpo/placeholder-04.jpg">
 
+  <!-- Slider main container -->
+  <div class="swiper">
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+
+      <!-- Slides -->
+      {% for image in fields.images %}
+        <div class="swiper-slide">
+        {{ macros.image(image["image"]) }}
+        </div>
+
+      {% endfor %}
+
+
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
  
 </div>

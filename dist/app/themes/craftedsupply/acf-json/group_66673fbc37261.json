@@ -135,8 +135,8 @@
                         "id": ""
                     },
                     "crop_type": "aspect_ratio",
-                    "aspect_ratio_width": 1440,
-                    "aspect_ratio_height": 1080,
+                    "aspect_ratio_width": 2100,
+                    "aspect_ratio_height": 1500,
                     "return_format": "array",
                     "preview_size": "medium",
                     "library": "all",
@@ -170,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718056535
+    "modified": 1721330013
 }

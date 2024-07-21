@@ -13,14 +13,14 @@ import siteHeader from '@components/site-header'
 // -----------------------------------------------------------------------------
 // Block Includes
 // -----------------------------------------------------------------------------
-// import example from '@blocks/example-block'
+import fullscreenSlideshow from '@blocks/fullscreen-slideshow'
 
 const initializer = {
 	components: [
 		// regular components
 		['.site-header', siteHeader],
 		// blocks
-		// ['.example-block', example],
+		['.fullscreen-slideshow-block', fullscreenSlideshow],
 	],
 	plugins: [
 		// cssSizeVariables,

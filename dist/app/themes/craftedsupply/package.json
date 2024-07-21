@@ -13,6 +13,7 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "hyperform": "^0.12.1",
+    "swiper": "^11.1.5",
     "throttle-debounce": "^5.0.0"
   },
   "devDependencies": {

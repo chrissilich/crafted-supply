@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3507b5635ccdde8fc1b62e36af00ab7f",
+    "content-hash": "45f45e2d19687ae1feb2d19ae389d047",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -6053,6 +6053,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/acf-image-aspect-ratio-crop/"
+        },
+        {
+            "name": "wpackagist-plugin/filebird",
+            "version": "6.3.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/filebird/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/filebird.zip?timestamp=1719300941"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/filebird/"
         },
         {
             "name": "wpackagist-plugin/intuitive-custom-post-order",
