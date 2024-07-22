@@ -18,10 +18,12 @@
       'data-animation': is_preview ? '':'fadeInUp',
       'data-animation-delay': 0
     }) }}
+
     {{ macros.image(fields.image_quad_b, true, {
       'data-animation': is_preview ? '':'fadeInUp',
       'data-animation-delay': 150
     }) }}
+
     {{ macros.image(fields.image_quad_c, true, {
       'data-animation': is_preview ? '':'fadeInUp',
       'data-animation-delay': 225
@@ -31,7 +33,6 @@
       'data-animation': is_preview ? '':'fadeInUp',
       'data-animation-delay': 375
     }) }}
-    
 
 
   {% elseif fields.layout == 'double' and fields.image_pair_a and fields.image_pair_b %}

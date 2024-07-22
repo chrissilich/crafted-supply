@@ -6,6 +6,8 @@
 	position: relative;
 	aspect-ratio: 784 / 660;
 	padding: 20px;
+	container-name: gallery-thumbnail;
+	container-type: inline-size;
 
 	display: flex;
 	flex-flow: column nowrap;
@@ -29,10 +31,17 @@
 		@include z(content);
 		color: white;
 		font-size: 18pt;
+		font-size: 9cqw;
 		margin: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-transform: uppercase;
+		font-weight: 300;
+		letter-spacing: 0.1em;
+		text-shadow:
+			0 0 20px rgb(0 0 0 / 1),
+			0 0 30px rgb(0 0 0 / 1);
 	}
 
 	&.-horizontal-left h2 {

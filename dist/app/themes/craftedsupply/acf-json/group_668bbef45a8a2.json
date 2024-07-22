@@ -35,7 +35,8 @@
             },
             "choices": {
                 "crc": "Center - Right - Center",
-                "lcr": "Left - Center - Right"
+                "lcr": "Left - Center - Right",
+                "lll": "Left - Left - Left"
             },
             "default_value": "crc",
             "return_format": "value",
@@ -158,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720448094
+    "modified": 1721624168
 }

@@ -30,13 +30,19 @@
 			.line-wrap {
 				display: flex;
 				flex-flow: row nowrap;
+
 				span {
 					// avoid wrapping
 					white-space: nowrap;
 				}
+
 				&::before,
 				&::after {
 					content: '';
+				}
+
+				&:has(strong) {
+					margin-top: 0.3em;
 				}
 			}
 
@@ -50,28 +56,28 @@
 				}
 				.line-2-wrap {
 					&::before {
-						flex: 1 1 40%;
+						flex: 1 1 35%;
 					}
 					&::after {
-						flex: 1 1 10%;
+						flex: 1 1 15%;
 					}
 				}
 			}
 			&.-lcr {
 				.line-1-wrap {
 					&::before {
-						flex: 1 1 10%;
+						flex: 1 1 15%;
 					}
 					&::after {
-						flex: 1 1 40%;
+						flex: 1 1 35%;
 					}
 				}
 				.line-3-wrap {
 					&::before {
-						flex: 1 1 40%;
+						flex: 1 1 35%;
 					}
 					&::after {
-						flex: 1 1 10%;
+						flex: 1 1 15%;
 					}
 				}
 				.line-2-wrap {
@@ -79,6 +85,16 @@
 					&::after {
 						flex: 1 1 auto;
 					}
+				}
+			}
+			&.-lll {
+				display: grid;
+				grid-template-columns: 20% auto 25%;
+
+				.line-1-wrap,
+				.line-2-wrap,
+				.line-3-wrap {
+					grid-column: 2;
 				}
 			}
 		}
