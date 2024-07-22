@@ -1,0 +1,53 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="images-page-block -layout-{{fields.layout ? fields.layout : 'simple'}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+
+  {% if fields.layout == 'simple' and fields.image_simple %}
+    
+    {{ macros.image(fields.image_simple, true, {
+      'data-animation': is_preview ? '':'fadeInUp'
+    }) }}
+
+  {% elseif fields.layout == 'quad' and fields.image_quad_a and fields.image_quad_b and fields.image_quad_c and fields.image_quad_d %}
+    
+    {{ macros.image(fields.image_quad_a, true, {
+      'data-animation': is_preview ? '':'fadeInUp',
+      'data-animation-delay': 0
+    }) }}
+    {{ macros.image(fields.image_quad_b, true, {
+      'data-animation': is_preview ? '':'fadeInUp',
+      'data-animation-delay': 150
+    }) }}
+    {{ macros.image(fields.image_quad_c, true, {
+      'data-animation': is_preview ? '':'fadeInUp',
+      'data-animation-delay': 225
+    }) }}
+
+    {{ macros.image(fields.image_quad_d, true, {
+      'data-animation': is_preview ? '':'fadeInUp',
+      'data-animation-delay': 375
+    }) }}
+    
+
+
+  {% elseif fields.layout == 'double' and fields.image_pair_a and fields.image_pair_b %}
+    
+    <figure>
+      {{ macros.image(fields.image_pair_a, true, {
+      'data-animation': is_preview ? '':'fadeInUp'
+    }) }}
+      {{ macros.image(fields.image_pair_b, true, {
+      'data-animation': is_preview ? '':'fadeInUp'
+    }) }}
+    </figure>
+
+  {% else %}
+    <img src="https://placehold.co/1200x900/cccccc/aaaaaa/?text=Placeholder+Image" alt="Placeholder image">
+
+  {% endif %}
+
+</div>

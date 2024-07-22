@@ -1,0 +1,13 @@
+// Linear Clamp
+
+@function linear-clamp($min-viewport, $max-viewport, $min-value, $max-value) {
+	$slope: math.div(($max-value - $min-value), ($max-viewport - $min-viewport));
+	$base: $min-value - $min-viewport * $slope;
+
+	@return clamp(#{$min-value}, #{$base} + #{$slope * 100vw}, #{$max-value});
+}
+
+// Usage example
+// .example {
+// 	font-size: linear-clamp(1024px, 1440px, 14px, 20px);
+// }

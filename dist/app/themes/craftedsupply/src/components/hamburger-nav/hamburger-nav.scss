@@ -4,8 +4,9 @@
 	top: 0;
 	right: 0;
 	width: 100%;
-	max-width: 325px;
-	background-color: rgb(109 110 113 / 0.6);
+	max-width: 300px;
+	backdrop-filter: blur(3px) brightness(0.6);
+	background-color: rgb(109 110 113 / 0.2);
 	min-height: 100vh;
 	@include z(floating);
 

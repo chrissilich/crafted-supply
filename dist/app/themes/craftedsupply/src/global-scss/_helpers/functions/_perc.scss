@@ -1,0 +1,22 @@
+// Perc
+//
+// Returns a percentage value based on two numbers
+//
+// $a = numerator
+// $b = denominator
+//
+// Function:
+// @function perc($a, $b) {
+// 	@return (math.div($a, $b)) * 100%;
+// }
+//
+// Usage:
+// width: perc(480, 1920);
+//
+// Compiled:
+// width: 25%;
+//
+// Styleguide Sass Functions.Percentage
+@function perc($a, $b) {
+	@return (math.div($a, $b)) * 100%;
+}

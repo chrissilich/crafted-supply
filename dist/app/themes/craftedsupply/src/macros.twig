@@ -44,29 +44,44 @@
 {% endmacro %}
 
 
-{# 
-  Macro for creating an image, from a traditional Wordpress image object
- #}
-{% macro image(image, lazy = true) %}
-  <picture>
-    {% if image.mime_type != 'image/webp' -%}
-      <source
-        srcset="{{ image.url|towebp|relative }}"
-        type="image/webp"
-      >
-    {%- endif %}
+
+
+{# Macro for creating an image, from a traditional Wordpress image object #}
+{% macro image(image, lazy = true, other_attributes = {}) %}
+  {% if not image.id %}
+    {# This is not a wordpress image object, just pass it through #}
     <img
-      src="{{ image.url|relative }}"
-      width="{{ image.width }}"
-      height="{{ image.height }}"
-      alt="{{ image.original_image.alt|escape }}"
-      type="{{ image.mime_type }}"
+      src="{{ image.url }}"
+      alt="{{ image.alt|escape }}"
       decoding="async"
       loading="{{ lazy ? 'lazy' : 'eager' }}"
+      {% for key, value in other_attributes %}
+        {{ key }}="{{ value }}"
+      {% endfor %}
     >
-  </picture>
+  {% else %}
+    <picture>
+      {% if image.mime_type != 'image/webp' -%}
+        <source
+          srcset="{{ image.url|towebp|relative }}"
+          type="image/webp"
+        >
+      {%- endif %}
+      <img
+        src="{{ image.url|relative }}"
+        width="{{ image.width }}"
+        height="{{ image.height }}"
+        alt="{{ image.original_image.alt|escape }}"
+        type="{{ image.mime_type }}"
+        decoding="async"
+        loading="{{ lazy ? 'lazy' : 'eager' }}"
+        {% for key, value in other_attributes %}
+          {{ key }}="{{ value }}"
+        {% endfor %}
+      >
+    </picture>
+  {% endif %}
 {% endmacro %}
-
 
 
 

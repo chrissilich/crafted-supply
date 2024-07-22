@@ -1,6 +1,6 @@
 {
     "key": "group_66936552413d3",
-    "title": "Block: Images",
+    "title": "Block: Gallery Images",
     "fields": [
         {
             "key": "field_6693656d68ae7",
@@ -186,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720936092
+    "modified": 1721617995
 }

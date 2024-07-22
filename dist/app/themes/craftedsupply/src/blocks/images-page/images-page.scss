@@ -1,0 +1,62 @@
+.images-page-block {
+	@include grid-placement(full);
+	@include component-margin;
+
+	@extend %grid-columns;
+
+	&.-layout-simple {
+		picture {
+			grid-column: 7 / 21;
+		}
+	}
+
+	&.-layout-double {
+		figure {
+			grid-column: 3 / 25;
+
+			display: flex;
+			justify-content: space-between;
+			flex-flow: row nowrap;
+			gap: perc(1, 21);
+		}
+	}
+
+	&.-layout-quad {
+		// top
+		picture:nth-child(1) {
+			grid-column: 11 / 20;
+			order: 2;
+
+			// NOTE use this technique to adjust ratios
+			// img {
+			// 	aspect-ratio: 205 / 100;
+			// 	object-fit: cover;
+			// }
+		}
+
+		// left
+		picture:nth-child(2) {
+			order: 1;
+			grid-column: 5 / 10;
+			grid-row: 1 / span 2;
+
+			// NOTE the denominators in these percentages are the number of columns the image takes in the grid
+			// if you make the image wider, you'll need to adjust the denominator
+			padding-top: perc(2, 5);
+		}
+
+		// bottom
+		picture:nth-child(3) {
+			order: 3;
+			grid-column: 11 / 16;
+			padding-top: perc(1, 5);
+		}
+
+		// right
+		picture:nth-child(4) {
+			order: 4;
+			grid-column: 17 / 24;
+			padding-top: perc(1, 7);
+		}
+	}
+}

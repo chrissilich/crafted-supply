@@ -1,0 +1,28 @@
+.images-gallery-block {
+	@include grid-placement(main);
+	@include component-margin;
+
+	&.-layout-square {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+
+		picture {
+			@include from(7) {
+				width: 75%;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&.-layout-double {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		gap: 40px;
+	}
+}
