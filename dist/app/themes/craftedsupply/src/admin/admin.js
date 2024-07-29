@@ -88,14 +88,14 @@ wp.domReady(() => {
 	// 	name: 'eyebrow',
 	// 	label: 'Eyebrow',
 	// })
-	wp.blocks.registerBlockStyle('core/paragraph', {
-		name: 'large',
-		label: 'Large',
-	})
-	wp.blocks.registerBlockStyle('core/paragraph', {
-		name: 'small',
-		label: 'Small',
-	})
+	// wp.blocks.registerBlockStyle('core/paragraph', {
+	// 	name: 'large',
+	// 	label: 'Large',
+	// })
+	// wp.blocks.registerBlockStyle('core/paragraph', {
+	// 	name: 'small',
+	// 	label: 'Small',
+	// })
 })
 
 /*
@@ -127,8 +127,8 @@ wp.domReady(() => {
  * Add custom color palette to ACF color picker
  */
 wp.domReady(() => {
-	acf.add_filter('color_picker_args', function (args) {
-		args.palettes = ['#E92941', '#CF2030', '#F05730', '#F9A21D', '#333333']
-		return args
-	})
+	// acf.add_filter('color_picker_args', function (args) {
+	// 	args.palettes = ['#E92941', '#CF2030', '#F05730', '#F9A21D', '#333333']
+	// 	return args
+	// })
 })

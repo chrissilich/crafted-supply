@@ -1,14 +1,33 @@
 %link {
 	cursor: pointer;
 	// display: inline-block;
+	color: $body-color;
+	text-decoration: none;
+	transition: color $ts;
 	color: color(teal);
-	// text-decoration: none;
-	transition:
-		color $ts,
-		background-color $ts;
 
 	&:hover {
-		background-color: color(teal);
+		text-decoration: underline;
+		color: color(teal, 300);
+	}
+
+	&:disabled,
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+%link-subtle {
+	cursor: pointer;
+	// display: inline-block;
+	color: $body-color;
+	text-decoration: none;
+	transition: color $ts;
+	color: $body-color;
+
+	&:hover {
+		text-decoration: underline;
 		color: color(teal);
 	}
 
@@ -27,17 +46,6 @@
 	&:hover {
 		background-color: color(teal);
 		color: color(white);
-	}
-}
-
-%link-subtle {
-	@extend %link;
-	color: color(gray, 600);
-
-	&:hover {
-		background-color: transparent;
-		text-decoration: underline;
-		color: color(teal);
 	}
 }
 

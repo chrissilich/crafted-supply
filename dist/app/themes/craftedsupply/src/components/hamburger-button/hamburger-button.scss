@@ -6,6 +6,7 @@
 	$height: 16px;
 
 	position: fixed;
+	cursor: pointer;
 	left: 50%;
 	top: is-clamp($distance_top_mobile, $distance_top);
 	translate: calc(50vw - $distance_right - $width);
@@ -16,6 +17,7 @@
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
+	background: none;
 
 	.-site-header-overlay-mode & {
 		&::before {

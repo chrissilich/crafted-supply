@@ -17,7 +17,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_669336f8bcf42",
@@ -69,6 +70,32 @@
             "mime_types": "jpg, jpeg"
         },
         {
+            "key": "field_66a7b45c605d7",
+            "label": "Second Image",
+            "name": "image_two",
+            "aria-label": "",
+            "type": "image_aspect_ratio_crop",
+            "instructions": "Image Size: 820x888",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "free_crop",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg"
+        },
+        {
             "key": "field_669336e4bcf41",
             "label": "Content",
             "name": "",
@@ -83,7 +110,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66933778bcf43",
@@ -144,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721761016
+    "modified": 1722267011
 }

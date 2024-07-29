@@ -31,14 +31,31 @@ $nav-font: $arquitecta;
 $base-font-size: 16px;
 $clamp-scale-basis: 600px;
 
-$component-margin: 48px; // space between major components and blocks
-$content-margin: 32px; // space between elements and blocks that are considered part of the same stack of content
+// Vertical margins between blocks within a WYSIWYG block. For more info, see _block-interactions.scss
+$component-margin: 48px;
+$content-margin: 32px;
 
-$outer-max-width: 1920px;
-$inner-max-width: 1440px;
+// Content to edge of viewport
+$gutter-small: 16px;
+$gutter-medium: 65px;
+$gutter-large: 100px;
+
+// Almost all components/blocks switch from wide to stacked at this breakpoint,
+// occasionally, some other changes happen in other places, but this is the main one
+$mobile-layout-switch: 10;
+
+// Cap the mobile layout here so that, effectively, we don't have to deal with any
+// weirdly oversized mobile layouts between this and our $mobile-layout-switch breakpoint
+$mobile-layout-max-width: 640px;
+
+// Largest the content ever gets
+$inner-max-width: 1680px;
+
+// Largest the page container ever gets
+$outer-max-width: 2056px;
 
 // radius
-$border-radius: 4px;
+$border-radius: 0;
 
 // transitions
 $ts: 0.3s; // transition speed

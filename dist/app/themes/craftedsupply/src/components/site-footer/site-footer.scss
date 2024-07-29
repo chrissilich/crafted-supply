@@ -2,6 +2,10 @@
 	@extend %grid-columns;
 	padding: 40px 0;
 
+	a {
+		@extend %link-subtle;
+	}
+
 	&-inner {
 		@include grid-placement;
 		display: flex;

@@ -1,5 +1,5 @@
 .images-gallery-block {
-	@include grid-placement(main);
+	@include grid-placement(wide);
 	@include component-margin;
 
 	&.-layout-square {

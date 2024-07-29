@@ -1,0 +1,34 @@
+.wpforms-container {
+	.wpforms-field-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 18px;
+		font-family: $arquitecta;
+
+		.wpforms-field {
+			padding: 0;
+
+			// we're saying "small" fields go side by side
+			&:has(.wpforms-field-small) {
+				grid-column: span 1;
+			}
+
+			// we're saying "medium" fields fill the grid
+			&:has(.wpforms-field-medium),
+			&:has(.wpforms-field-large) {
+				grid-column: span 2;
+			}
+		}
+
+		input {
+			max-width: unset !important;
+		}
+	}
+
+	.wpforms-submit-container {
+		display: flex;
+		justify-content: center;
+		display: column;
+		margin-top: 24px;
+	}
+}

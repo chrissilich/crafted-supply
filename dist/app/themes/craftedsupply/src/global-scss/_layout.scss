@@ -29,7 +29,7 @@
 
 			:where(& > *) {
 				// default to main column with zero css specificity
-				@include grid-placement(main);
+				@include grid-placement(wide);
 			}
 		}
 	}

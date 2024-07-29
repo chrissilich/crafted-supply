@@ -24,7 +24,9 @@ gallery settings block.
 	{% endif %}
 
 	<h2>
-		<a href="{{ component.url }}" class="js-link-event-link">{{ title }}</a>
+		{% if not is_preview %}<a href="{{ component.url }}" class="js-link-event-link">{% endif %}
+			{{ title }}
+		{% if not is_preview %}</a>{% endif %}
 	</h2>
 
 	

@@ -11,7 +11,7 @@
 	}
 
 	&-inner {
-		@include grid-placement(main, 720px);
+		@include grid-placement(narrow);
 		position: relative;
 		@include z(content);
 		margin: 0 auto;
@@ -23,22 +23,4 @@
 			}
 		}
 	}
-
-	// &[data-theme='dark'] {
-	// 	background-color: color(gray, 600);
-	// 	color: white;
-	// 	padding: rem-convert(20px) 0;
-	// }
-
-	// &[data-width='medium'] {
-	// 	.wysiwyg-block-inner {
-	// 		max-width: 708px;
-	// 	}
-	// }
-
-	// &[data-width='narrow'] {
-	// 	.wysiwyg-block-inner {
-	// 		max-width: 400px;
-	// 	}
-	// }
 }

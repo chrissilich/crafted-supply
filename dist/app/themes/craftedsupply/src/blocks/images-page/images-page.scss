@@ -6,13 +6,13 @@
 
 	&.-layout-simple {
 		picture {
-			grid-column: 7 / 21;
+			@include grid-placement(narrow);
 		}
 	}
 
 	&.-layout-double {
 		figure {
-			grid-column: 3 / 25;
+			@include grid-placement(wide);
 
 			display: flex;
 			justify-content: space-between;

@@ -6,7 +6,7 @@
 	padding: 30px 0;
 
 	&-inner {
-		@include grid-placement;
+		@include grid-placement(medium);
 		display: flex;
 		justify-content: space-between;
 		gap: rem-convert(30px);
@@ -104,6 +104,14 @@
 				[data-image-side='right'] & {
 					text-align: right;
 				}
+			}
+		}
+
+		&-image {
+			margin: 0 auto;
+			max-width: 60%;
+			@include from($layout-switch) {
+				margin: unset;
 			}
 		}
 	}

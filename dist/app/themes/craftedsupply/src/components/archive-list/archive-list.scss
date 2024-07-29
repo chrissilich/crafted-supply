@@ -1,5 +1,5 @@
 .archive-list {
-	@include grid-placement(main);
+	@include grid-placement(wide);
 	@include component-margin;
 
 	&-teasers {

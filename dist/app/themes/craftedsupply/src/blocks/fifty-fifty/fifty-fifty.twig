@@ -29,6 +29,15 @@
       data-animation-delay="{{fields.image_side ? 0 : 200}}"
     >
       {{ fields.text }}
+      
+      <div class="fifty-fifty-block-text-image"> 
+        {% if (fields.image_two) %}
+          {{ macros.image(fields.image_two) }}
+        {% else %}
+          <img src="https://placehold.co/500x500/cccccc/aaaaaa/?text=Placeholder+Image" alt="Placeholder image">
+        {% endif %}
+      </div>
+      
     </div>
 
   </div>

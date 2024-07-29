@@ -1,3 +1,6 @@
+$button-pad-x: 24px;
+$button-pad-y: 17px;
+
 button,
 input[type='submit'],
 input[type='reset'],
@@ -7,38 +10,30 @@ input[type='button'] {
 	backface-visibility: hidden;
 	background: none;
 	color: inherit;
-	font: inherit;
+	font-family: $arquitecta;
+	text-transform: uppercase;
 	border: 0;
 	line-height: 1;
-	padding: 0;
-	transition: $ts $te;
-
-	&:disabled,
-	&[disabled] {
-		opacity: 0.5;
-		pointer-events: none;
-	}
-}
-
-$button-pad-x: 24px;
-$button-pad-y: 17px;
-
-%button {
+	background: color(gray, 900);
+	color: white;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	@extend %button-text;
-	gap: rem-convert(10px);
 	padding: $button-pad-y $button-pad-x;
 	border-radius: $border-radius;
 	transition: $ts $te;
 	position: relative;
-	overflow: hidden;
 	cursor: pointer;
 
+	&:hover {
+		background: color(teal);
+	}
+
+	&:disabled,
+	&[disabled],
 	.disabled > &,
-	&.disabled,
-	&[disabled] {
+	&.disabled {
 		cursor: not-allowed;
 		pointer-events: none;
 
@@ -46,30 +41,4 @@ $button-pad-y: 17px;
 			display: none;
 		}
 	}
-}
-
-%button-primary {
-	@extend %button;
-	background: color(white);
-	color: color(teal);
-	padding: ($button-pad-y - 2px) ($button-pad-x - 2px); // make room for the border
-	border: 2px solid color(teal, 700);
-
-	&:hover {
-		border-color: color(teal, 500);
-	}
-
-	&.disabled,
-	&[disabled] {
-		background-color: color(gray, 100);
-		border-color: color(gray, 100);
-		color: color(gray, 500);
-	}
-}
-
-.button,
-.button-default,
-.button-primary,
-.button.is-style-default {
-	@extend %button-primary;
 }

@@ -9,10 +9,10 @@
       {% for post in posts %}
 
         {% set fromPostMeta = {
-          thumbnail: post.meta.thumbnail,
+          thumbnail: post.meta('thumbnail'),
           title_position: {
-            horizontal: post.meta.title_position_horizontal, 
-            vertical: post.meta.title_position_vertical 
+            horizontal: post.meta('title_position_horizontal'), 
+            vertical: post.meta('title_position_vertical') 
           },
           url: post.link
         } %}

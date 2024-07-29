@@ -15,7 +15,7 @@ function alter_admin_menu() {
 	$menu["100.3"] = array( '', 'custom-separator-3', 'custom-separator-3', '', 'wp-menu-separator custom-separator' );
 
 	$menu = array_values($menu);
-	
+
 	if ( current_user_can( 'administrator' ) ) {
 		$custom_menu_order = array(
 			'index.php', 								// Dashboard
@@ -30,7 +30,7 @@ function alter_admin_menu() {
 			'upload.php', 								// Media
 			'filebird-settings', 						// FileBird
 			'custom-separator-1', 					// ---- Separator
-			'gf_edit_forms', 							// Gravity Forms
+			'wpforms-overview', 							//  Forms
 			'custom-separator-2', 					// ---- Separator
 			'edit.php?post_type=acf-field-group', 		// ACF
 			'wpseo_dashboard', 							// Yoast SEO
@@ -53,7 +53,7 @@ function alter_admin_menu() {
 			'edit.php?post_type=region', 				// Regions
 			'edit.php?post_type=person', 				// People
 			'separator2', 							// ---- Separator
-			'admin.php?page=gf_entries', 				// Gravity Forms (entries only)
+			'admin.php?page=wpforms-overview', 			//  Forms
 			'upload.php', 								// Media
 			'wpseo_dashboard', 							// Yoast SEO
 			'profile.php', 								// Users

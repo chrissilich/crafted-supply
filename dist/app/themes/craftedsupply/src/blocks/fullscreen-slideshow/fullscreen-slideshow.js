@@ -10,7 +10,7 @@ export default (el) => {
 		modules: [Autoplay, EffectFade],
 		direction: 'horizontal',
 		loop: true,
-		speed: 600,
+		speed: 1500,
 		spaceBetween: 30,
 		autoplay: { delay: 3000, disableOnInteraction: true },
 		effect: 'fade',

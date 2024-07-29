@@ -10,16 +10,9 @@
 
 $context = Timber::context();
 
-$allowed_blocks = [ 'craftedsupply/button' ];
-
-$template = [
-  ['craftedsupply/button'],
-];
-
 $context['fields'] = get_fields();
 $context['block'] = $block;
 $context['is_preview'] = $is_preview;
-$context['innerblocks_allowed'] = esc_attr( wp_json_encode( $allowed_blocks ) );
-$context['innerblocks_template'] = esc_attr( wp_json_encode( $template ) );
+$context['post'] = Timber::get_post($post_id);
 
-Timber::render( 'buttons.twig', $context );
+Timber::render( 'form.twig', $context );

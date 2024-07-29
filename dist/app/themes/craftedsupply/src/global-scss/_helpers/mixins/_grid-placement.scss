@@ -35,13 +35,13 @@
 
 // Grid type variables
 $grid-type: (
-	main: main,
 	full: full,
-	left-bleed: list.slash(full, main),
-	right-bleed: list.slash(main, full),
+	wide: wide,
+	medium: medium,
+	narrow: narrow,
 );
 
-@mixin grid-placement($type: main, $max-width: null) {
+@mixin grid-placement($type: wide, $max-width: null) {
 	grid-column: map.get($grid-type, $type);
 
 	@if $max-width {

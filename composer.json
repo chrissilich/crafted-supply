@@ -62,6 +62,7 @@
     "wpackagist-plugin/mailgun": "^1.9.9",
     "wpackagist-plugin/redirection": "^5.4.2",
     "wpackagist-plugin/wordpress-seo": "^21.9.1",
+    "wpackagist-plugin/wpforms-lite": "^1.8",
     "wpackagist-theme/twentytwentythree": "^1.4",
     "wpengine/advanced-custom-fields-pro": "^6.3"
   },
@@ -87,6 +88,7 @@
         "wpackagist-plugin/regenerate-thumbnails",
         "wpackagist-plugin/mailgun",
         "wpackagist-plugin/wordpress-seo",
+        "wpackagist-plugin/wpforms-lite",
         "wpackagist-plugin/filebird"
       ],
       "dist/app/plugins/{$name}/": [

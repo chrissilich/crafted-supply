@@ -1,0 +1,11 @@
+<div
+  class="form-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+
+  {% set shortcode = '[wpforms id="'~fields.form~'"]' %}
+
+  {{ function('do_shortcode', shortcode) }}
+
+</div>

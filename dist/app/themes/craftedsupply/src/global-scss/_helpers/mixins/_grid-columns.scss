@@ -2,57 +2,73 @@
 //
 // Main CSS grid layout
 //
-// Definition:
-// %grid-columns {
-//   display: grid;
-//   grid-template-columns: [full-start] minmax(20px, 1fr) [main-start] minmax(0, $inner-max-width) [main-end] minmax(20px, 1fr) [full-end];
-//   @include from(10) {
-//     grid-template-columns: [full-start] minmax(40px, 1fr) [main-start] minmax(0, $inner-max-width) [main-end] minmax(40px, 1fr) [full-end];
-//   }
-// }
-//
-// Usage:
-// .sample {
-//   @extend grid-columns;
-// }
-//
-// Compiled:
-// .sample {
-//   display: grid;
-//   grid-template-columns: [full-start] minmax(20px, 1fr) [main-start] minmax(0, 1500px) [main-end] minmax(20px, 1fr) [full-end];
-// }
-// @media (min-width: 1000px) {
-//   .sample {
-//     grid-template-columns: [full-start] minmax(40px, 1fr) [main-start] minmax(0, 1500px) [main-end] minmax(40px, 1fr) [full-end];
-//   }
-// }
-//
-
-@mixin generate-grid-columns($gutter: 24px, $margins: 80px) {
-	$columns: 24;
-
-	gap: 0 $gutter;
-	grid-template-columns:
-		[full-start]
-		minmax($margins - $gutter, 1fr)
-		[main-start]
-		repeat($columns, minmax(0, math.div($inner-max-width, $columns)))
-		[main-end]
-		minmax($margins - $gutter, 1fr)
-		[full-end];
-}
-
-// Styleguide Sass Mixins.Grid Columns
 %grid-columns {
 	display: grid;
 
-	$gutter: 0;
-	$margins: 16px;
-	@include generate-grid-columns($gutter, $margins);
+	grid-template-columns:
+		[full-start]
+		minmax($gutter-small, 1fr)
+		[wide-start]
+		0
+		[medium-start]
+		0
+		[narrow-start]
+		minmax(0, $mobile-layout-max-width)
+		[narrow-end]
+		0
+		[medium-end]
+		0
+		[wide-end]
+		minmax($gutter-small, 1fr)
+		[full-end];
 
-	@include from($layout-switch) {
-		$gutter: 0;
-		$margins: 80px;
-		@include generate-grid-columns($gutter, $margins);
+	@include from($mobile-layout-switch) {
+		$col-width: math.div($inner-max-width, 24);
+
+		grid-template-columns:
+			[full-start]
+			minmax($gutter-medium, 1fr)
+			[wide-start]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[medium-start]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[narrow-start]
+			repeat(14, minmax(0, $col-width))
+			[narrow-end]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[medium-end]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[wide-end]
+			minmax($gutter-medium, 1fr)
+			[full-end];
+	}
+
+	@include from(14) {
+		$col-width: math.div($inner-max-width, 24);
+
+		grid-template-columns:
+			[full-start]
+			minmax($gutter-large, 1fr)
+			[wide-start]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[medium-start]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[narrow-start]
+			repeat(14, minmax(0, $col-width))
+			[narrow-end]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[medium-end]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[wide-end]
+			minmax($gutter-large, 1fr)
+			[full-end];
 	}
 }

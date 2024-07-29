@@ -1,5 +1,5 @@
 .sophisticated-type-block {
-	@include grid-placement(main);
+	@include grid-placement(wide);
 	@include component-margin;
 
 	p {
