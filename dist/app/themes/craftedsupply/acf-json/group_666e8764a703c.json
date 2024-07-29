@@ -1,9 +1,9 @@
 {
     "key": "group_666e8764a703c",
-    "title": "Block: Gallery Setup",
+    "title": "Thumbnail Settings",
     "fields": [
         {
-            "key": "field_666e8782d073f",
+            "key": "field_66a70a472d168",
             "label": "Thumbnail",
             "name": "",
             "aria-label": "",
@@ -17,8 +17,7 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0,
-            "selected": 0
+            "endpoint": 0
         },
         {
             "key": "field_666e8796d0740",
@@ -127,7 +126,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -135,5 +134,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718520021
+    "modified": 1722223188
 }

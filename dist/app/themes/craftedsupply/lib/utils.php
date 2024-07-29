@@ -374,6 +374,7 @@ function get_post_type_plural_name($post_type) {
 * @return array
 */
 function image_array_from_id( $attachment_id ) {
+
   $url = wp_get_attachment_url($attachment_id);
   $meta = wp_get_attachment_metadata($attachment_id);
   $post = get_post($attachment_id);

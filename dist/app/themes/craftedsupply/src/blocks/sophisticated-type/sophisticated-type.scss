@@ -1,7 +1,6 @@
 .sophisticated-type-block {
 	@include grid-placement(main);
 	@include component-margin;
-	padding: 40px 0;
 
 	p {
 		font-family: $caslon;

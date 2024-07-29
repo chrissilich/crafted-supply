@@ -56,14 +56,12 @@
                 "class": "",
                 "id": ""
             },
-            "crop_type": "aspect_ratio",
-            "aspect_ratio_width": 820,
-            "aspect_ratio_height": 888,
+            "crop_type": "free_crop",
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
-            "min_width": 820,
-            "min_height": 888,
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -146,5 +144,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720930078
+    "modified": 1721761016
 }

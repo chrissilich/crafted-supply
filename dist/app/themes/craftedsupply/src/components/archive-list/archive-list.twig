@@ -9,14 +9,16 @@
       {% for post in posts %}
 
         {% set fromPostMeta = {
-          thumbnail: image_array_from_id(post.meta.thumbnail),
+          thumbnail: post.meta.thumbnail,
           title_position: {
             horizontal: post.meta.title_position_horizontal, 
             vertical: post.meta.title_position_vertical 
-          }
+          },
+          url: post.link
         } %}
+
         {% include 'components/gallery-thumbnail/gallery-thumbnail.twig' with { component: fromPostMeta } %} 
-      
+
       {% endfor %}
     </div>
 

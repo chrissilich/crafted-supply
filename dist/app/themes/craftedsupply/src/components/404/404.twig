@@ -1,9 +1,12 @@
 {% import 'src/macros.twig' as macros %}
 
 <article class="fourohfour">
-	<h1>{{options['404_page'].title}}</h1>
+	<h1>
+	404 Not Found
+	{# {{options['404_page'].title}} #}
+	</h1>
 
-	{{options['404_page'].text}}
+	{# {{options['404_page'].text}} #}
 
-	{% include 'components/search-form/search-form.twig' %}
+	{# {% include 'components/search-form/search-form.twig' %} #}
 </article>

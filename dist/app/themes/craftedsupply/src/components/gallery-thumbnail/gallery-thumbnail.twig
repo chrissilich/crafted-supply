@@ -11,6 +11,7 @@ gallery settings block.
 	{{component.thumbnail ? '' : '-placeholder'}}
 	-horizontal-{{component.title_position.horizontal}} 
 	-vertical-{{component.title_position.vertical}}
+	js-link-event
 ">
 	
 	{% if component.thumbnail %}
@@ -23,7 +24,8 @@ gallery settings block.
 	{% endif %}
 
 	<h2>
-		{{ title }}
+		<a href="{{ component.url }}" class="js-link-event-link">{{ title }}</a>
 	</h2>
 
+	
 </div>

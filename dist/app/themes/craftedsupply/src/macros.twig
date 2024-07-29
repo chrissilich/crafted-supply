@@ -46,42 +46,103 @@
 
 
 
-{# Macro for creating an image, from a traditional Wordpress image object #}
+{# 
+### IMAGE and VIDEO MACROS 
+#}
+
+{# Macro for creating an image, from a traditional Wordpress image object 
+
+Optionally takes a boolean to determine if the image should be lazy-loaded, and an 
+object of other attributes to apply to the image tag. Outputs as a <picture> element
+with a <source> tag for webp images, and a <img> tag for the original image.
+If the image is not a Wordpress
+image object, we assume it's a plain string of a URL and it will be passed through to be
+used as the src of a regular img tag. This is useful for when sending placeholder URLs
+through the macro. #}
+{# 
+  @param image: A Timber Image, a Wordpress image object, or a placeholder approximation of a 
+                wordpress image object like this {url: "", alt: ""}
+  @param lazy: A boolean to determine if the image should be lazy-loaded
+  @param other_attributes: An object of other attributes to apply to the image tag
+#}
 {% macro image(image, lazy = true, other_attributes = {}) %}
-  {% if not image.id %}
-    {# This is not a wordpress image object, just pass it through #}
+    {% if not image.object_type and image.url and image.alt %}
+    {# It's not a proper wordpress image object, but it's an object with a URL and an ALT attribute #}
+    {{ _self.construct_simple_image(image, lazy, other_attributes) }}
+    
+    {% elseif image.object_type == "post" %}
+      {# If it's a post object, then this is already a Timber\Image, so just pass it into the 
+        construct_complex_image macro, where it's going to be turned into a Timber Image anyway #}
+      {{ _self.construct_complex_image(image, lazy, other_attributes) }}
+
+    {% elseif image.mime_type %}
+      {# This is a Wordpress image object, probably from ACF, pass it through #}
+      {{ _self.construct_complex_image(image, lazy, other_attributes) }}
+
+    {% else %}
+      <!-- Something went wrong with the image. Please check the image object and try again. -->
+
+    {% endif %}
+{% endmacro %}
+
+
+{# Don't call this macro directly. #}
+{# Constructs a basic picture and image tag for an image is created from just a URL and an alt text string #}
+{% macro construct_simple_image(image, lazy = true, other_attributes = {}) %}
+<picture>
+  <img
+    src="{{ image.url }}"
+    alt="{{ image.alt|escape }}"
+    decoding="async"
+    loading="{{ lazy ? 'lazy' : 'eager' }}"
+    {% for key, value in other_attributes %}
+      {{ key }}="{{ value }}"
+    {% endfor %}
+  >
+</picture>
+{% endmacro %}
+
+
+{# Don't call this macro directly. #}
+{# Constructs a full set of picture, source, and image tags for when an image is created from 
+Wordpress media items, with all their various sizes and formats. #}
+{% macro construct_complex_image(image, lazy = true, other_attributes = {}) %}
+  {# These sizes should match the sizes in lib/modules/media.php #}
+  {# full set: 2056, 1920, 1680, 1440, 1280, 1024, 768, 640, 375 #}
+  {% set sizes = [ 2056, 1440, 1024, 640 ] %}
+
+  {% if image.object_type != "post" %}
+    {% set image = get_image(image) %}
+  {% endif %}
+
+  <picture>
+    {% for size in sizes %}
+      {% if image.mime_type != 'image/webp' -%}
+        <source
+          srcset="{{ image.src(size ~ 'w')|towebp|relative }}"
+          type="image/webp"
+          media="(min-width: {{ size }}px)"
+        >
+      {%- endif %}
+      <source
+        srcset="{{ image.src(size ~ 'w')|relative }}"
+        media="(min-width: {{ size }}px)"
+      >
+    {% endfor %}
+
     <img
-      src="{{ image.url }}"
-      alt="{{ image.alt|escape }}"
       decoding="async"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      src="{{ image.src|towebp|relative }}"
+      alt="{{ image.alt|escape }}"
       loading="{{ lazy ? 'lazy' : 'eager' }}"
       {% for key, value in other_attributes %}
         {{ key }}="{{ value }}"
       {% endfor %}
     >
-  {% else %}
-    <picture>
-      {% if image.mime_type != 'image/webp' -%}
-        <source
-          srcset="{{ image.url|towebp|relative }}"
-          type="image/webp"
-        >
-      {%- endif %}
-      <img
-        src="{{ image.url|relative }}"
-        width="{{ image.width }}"
-        height="{{ image.height }}"
-        alt="{{ image.original_image.alt|escape }}"
-        type="{{ image.mime_type }}"
-        decoding="async"
-        loading="{{ lazy ? 'lazy' : 'eager' }}"
-        {% for key, value in other_attributes %}
-          {{ key }}="{{ value }}"
-        {% endfor %}
-      >
-    </picture>
-  {% endif %}
-{% endmacro %}
+  </picture>
 
+{% endmacro %}
 
 

@@ -115,7 +115,7 @@
             "layout": "table",
             "pagination": 0,
             "min": 3,
-            "max": 10,
+            "max": 0,
             "collapsed": "",
             "button_label": "Add Slide",
             "rows_per_page": 20,
@@ -170,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721597299
+    "modified": 1721688817
 }

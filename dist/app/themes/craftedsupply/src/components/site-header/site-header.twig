@@ -1,6 +1,6 @@
 {% import 'src/macros.twig' as macros %}
 
-<header class="site-header">
+<header class="site-header {{ all_galleries ? "" : "-no-subnav" }} ">
   <div class="site-header-inner">
 
     {# Logo #}
@@ -19,24 +19,20 @@
 
 
     {# Subnav #}
-    {% block subnav %}
-      <ul class="site-header-subnav">
-        <li>
-          <a href="#">Test</a>
-        </li>
-        <span class="pipe">|</span>
-        <li>
-          <a href="#">Test</a>
-        </li>
-        <span class="pipe">|</span>
-        <li>
-          <a href="#">Test</a>
-        </li>
-        <span class="pipe">|</span>
+      {% if all_galleries %}
+        <ul class="site-header-subnav">
+        {% for gallery in all_galleries %}
+          <li>
+            <a 
+              {% if gallery.id == post.id %}class="-active"{% endif %} 
+              href="{{ gallery.link }}">
+              {{ gallery.title }}
+            </a>
+          </li>
+          <span class="pipe">|</span>
+        {% endfor %}
       </ul>
-    {% endblock %}
-
-
+    {% endif %}
   </div>{# close .site-header-inner #}
 
 </header>

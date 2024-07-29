@@ -4,6 +4,7 @@
 import Animate from '@plugins/animate'
 import anchorSmoothScroll from '@plugins/anchor-smooth-scroll'
 import externalLinks from '@plugins/external-links'
+import jsLinkEvent from '@plugins/js-link-event'
 
 // -----------------------------------------------------------------------------
 // Component Includes
@@ -25,6 +26,7 @@ const initializer = {
 	plugins: [
 		// cssSizeVariables,
 		// extendJquery,
+		jsLinkEvent,
 		externalLinks,
 		anchorSmoothScroll,
 	],

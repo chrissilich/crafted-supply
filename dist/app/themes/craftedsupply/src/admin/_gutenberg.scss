@@ -7,15 +7,17 @@
 
 // Gutenberg editor
 @media (768px <= width <= 10000px) {
-	div:has(> [id='edit-post:document']),
-	div:has(> [id='edit-post:block']) {
-		width: 30%;
-		min-width: 300px;
-		max-width: 450px;
-	}
-	[id='edit-post:document'],
-	[id='edit-post:block'] {
-		width: auto;
+	.interface-interface-skeleton__sidebar {
+		&:not(:empty) {
+			width: 30%;
+			min-width: 300px;
+			max-width: 450px;
+		}
+
+		.interface-complementary-area__fill,
+		.interface-complementary-area__fill > * {
+			width: auto !important;
+		}
 	}
 }
 
@@ -24,11 +26,9 @@
 	z-index: 50;
 }
 
-// Make the editor's content clip off decorative elements that stick out the sides
 .edit-post-visual-editor .is-root-container {
+	// Make the editor's content clip off decorative elements that stick out the sides
 	overflow: clip;
-	container-type: inline-size;
-	container-name: page-container;
 }
 
 // Kill the H1 button in the heading block
@@ -41,20 +41,30 @@
 .edit-post-visual-editor__post-title-wrapper {
 	background: #eee;
 	margin: 0 !important;
-	padding: 20px;
+	padding: 12px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: 12px;
 
-	.post-type-gallery & {
-		padding-bottom: 0;
-
-		h1 {
-			margin-bottom: 0;
-		}
+	h1 {
+		flex: 1 1 auto;
+		margin: 0;
+		font-size: 1.25em;
+		font-weight: 500;
+		background: white;
+		padding: 0.1em 0.5em;
+		border-radius: 5px;
 	}
 
 	&::before {
-		content: 'Title:';
+		content: 'Post Title:';
 		font-size: 1em;
 		font-weight: normal;
-		color: #888;
+		color: #999;
+
+		.post-type-page & {
+			content: 'Page Title:';
+		}
 	}
 }
