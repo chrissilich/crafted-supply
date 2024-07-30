@@ -8,7 +8,7 @@
 	position: fixed;
 	cursor: pointer;
 	left: 50%;
-	top: is-clamp($distance_top_mobile, $distance_top);
+	top: $distance_top_mobile;
 	translate: calc(50vw - $distance_right - $width);
 	@include z(floating, 2);
 
@@ -19,7 +19,11 @@
 	justify-content: space-between;
 	background: none;
 
-	.-site-header-overlay-mode & {
+	@include from($mobile-layout-switch) {
+		top: $distance_top;
+	}
+
+	.-white-menu-mode & {
 		&::before {
 			content: '';
 			width: 100%;
@@ -37,7 +41,7 @@
 		transition: $ts;
 		background-color: color(black);
 
-		.-site-header-overlay-mode & {
+		.-white-menu-mode & {
 			background-color: color(white);
 		}
 

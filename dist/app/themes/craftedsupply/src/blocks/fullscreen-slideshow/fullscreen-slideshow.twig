@@ -1,9 +1,11 @@
 {% import 'macros.twig' as macros %}
 
 <div
-  class="fullscreen-slideshow-block {{block.className}}"
+  class="fullscreen-slideshow-block {{block.className}} -dark-background"
   id="{{block.anchor}}"
   {{is_preview ? 'data-preview' : ''}}
+  data-slideshow-between="{{fields.between * 1000}}"
+  data-slideshow-transition="{{fields.transition * 1000}}"
 >
 
   <!-- Slider main container -->
