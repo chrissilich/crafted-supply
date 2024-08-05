@@ -14,12 +14,17 @@ $context               = Timber::context();
 $context['block']      = $block;
 $context['is_preview'] = $is_preview;
 $context['fields']     = get_fields() ?: [
-  'FIELD_NAME' => 'Placeholder content'
+  'background' => [
+    "url" => "https://placehold.co/800x800/cccccc/aaaaaa/?text=Placeholder+Image",
+    "alt" => "Placeholder Image",
+  ],
+  'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  'name' => 'John Doe',
+  'company' => 'Company Name',
+  'layout' => 'left',
+  'width' => 10,
+  'position' => 4,
+  'span' => false
 ];
 
 Timber::render( 'accolade.twig', $context );
-
-
-
-
-// NOTES: widths can really go from 6 to 22, but we show the user 1 to 17 and just add 5 in code

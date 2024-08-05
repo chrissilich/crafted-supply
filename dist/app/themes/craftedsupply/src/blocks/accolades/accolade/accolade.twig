@@ -1,0 +1,35 @@
+{% import 'macros.twig' as macros %}
+
+{# 
+NOTES: widths can really go from 6 to 22, but we show the user 1 to 17 and just add 5 in code
+ #}
+
+<div{{ block.anchor ? ' id="' ~ block.anchor ~ '"' }}
+  {{ is_preview ? 'data-preview' }}
+  class="accolade-block  -light-background -layout-{{ fields.layout }} {{ fields.span ? '-span' }} "
+  data-start={{ fields.position + 2 }}
+  data-end={{ fields.position + 2 + fields.width + 5 }}
+  data-width={{ fields.width + 5 }}
+  style="background-image: url('{{ fields.image.url }}');"
+> 
+  <h2 class="accolade-block-text">
+    {{ fields.text }}
+  </h2>
+
+  <div class="accolade-block-attribution">
+    
+    <p class="accolade-block-name">
+      <span class="start-mdash">&mdash;</span>
+      {{ fields.name }}<span class="comma">,</span>
+    </p>
+
+    {% if fields.company %}
+      <p class="accolade-block-company">
+        {{ fields.company }} <span class="end-mdash">&mdash;</span>
+      </p>
+    {% endif %}
+    
+  </div>
+
+
+</div>

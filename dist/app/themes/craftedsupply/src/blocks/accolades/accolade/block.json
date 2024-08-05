@@ -1,0 +1,36 @@
+{
+	"name": "craftedsupply/accolade",
+	"title": "Accolade",
+	"description": "Replace this with a description of Accolade",
+	"style": [],
+	"category": "widgets",
+	"_category options": ["text", "media", "design", "widgets", "theme", "embed"],
+	"icon": "format-chat",
+	"_icon options": "Escaped SVG code OR https://developer.wordpress.org/resource/dashicons/#block-default",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "accolade.php"
+	},
+	"parent": ["craftedsupply/accolades"],
+	"craftedsupply": {
+		"boilerplate_version": "1.4.0"
+	},
+	"example": {
+		"viewportWidth": 1400
+	},
+	"supports": {
+		"mode": false,
+		"anchor": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": false,
+			"link": false
+		},
+		"customClassName": false
+	},
+	"_supports options": "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/"
+}

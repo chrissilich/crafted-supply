@@ -1,0 +1,12 @@
+{% import 'macros.twig' as macros %}
+
+<section{{ block.anchor ? ' id="' ~ block.anchor ~ '"' }}
+  {{ is_preview ? 'data-preview' }}
+  class="accolades-block"
+> 
+  <InnerBlocks 
+    class="accolades-block-inner" 
+    allowedBlocks="{{innerblocks_allowed}}" 
+    template="{{innerblocks_template}}"
+  />
+</section>

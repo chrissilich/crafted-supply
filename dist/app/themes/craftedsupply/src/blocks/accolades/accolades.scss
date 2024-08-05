@@ -1,0 +1,8 @@
+.accolades-block {
+	@include grid-placement(full);
+	@include component-margin;
+
+	&-inner {
+		@extend %grid-columns;
+	}
+}

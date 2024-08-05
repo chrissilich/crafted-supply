@@ -1,0 +1,86 @@
+.accolade-block {
+	@include grid-placement;
+	@include component-margin;
+
+	border: 1px solid red;
+
+	/*
+	* Positioning Logic 
+	*/
+
+	@for $i from 1 through 24 {
+		&[data-start='#{$i}'] {
+			grid-column-start: #{$i};
+
+			.wp-block-craftedsupply-accolade:has(&) {
+				grid-column-start: #{$i};
+			}
+		}
+
+		&[data-end='#{$i}'] {
+			grid-column-end: #{$i};
+
+			.wp-block-craftedsupply-accolade:has(&) {
+				grid-column-end: #{$i};
+			}
+		}
+
+		&[data-width='#{$i}'] {
+			margin-bottom: perc(1, $i);
+
+			.wp-block-craftedsupply-accolade:has(&) {
+				margin-bottom: perc(1, $i);
+			}
+		}
+	}
+
+	padding: 50px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	color: white;
+
+	&-attribution {
+		text-align: center;
+		margin-top: 24px;
+	}
+
+	&-text {
+		text-align: left;
+		font-size: 30pt;
+		font-family: $caslon;
+		font-weight: 400;
+		color: white;
+		margin-top: 0;
+
+		.-layout-center & {
+			text-align: center;
+		}
+	}
+
+	&-name,
+	&-company {
+		color: white;
+		text-align: right;
+		font-style: italic;
+		font-size: 22pt;
+		margin-top: 4px;
+		margin-bottom: 4px;
+
+		.-layout-center & {
+			display: inline;
+			text-align: center;
+		}
+	}
+
+	&-company {
+		text-transform: uppercase;
+	}
+
+	&.-layout-left {
+		.comma,
+		.end-mdash {
+			display: none;
+		}
+	}
+}
