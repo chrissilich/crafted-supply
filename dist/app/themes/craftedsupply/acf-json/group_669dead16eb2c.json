@@ -161,7 +161,7 @@
                 "id": ""
             },
             "default_value": 4,
-            "min": 0,
+            "min": 1,
             "max": 18,
             "step": 1,
             "prepend": "",
@@ -183,7 +183,7 @@
             },
             "default_value": 18,
             "min": 4,
-            "max": 24,
+            "max": 25,
             "step": 1,
             "prepend": "",
             "append": ""
@@ -223,9 +223,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 0,
-            "min": 0,
-            "max": 3,
+            "default_value": 1,
+            "min": 1,
+            "max": 5,
             "step": 1,
             "prepend": "",
             "append": ""
@@ -249,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723037885
+    "modified": 1723038455
 }

@@ -4,7 +4,7 @@
 	* Positioning Logic 
 	*/
 
-	@for $i from 1 through 24 {
+	@for $i from 0 through 25 {
 		&[data-left='#{$i}'] {
 			grid-column-start: #{$i};
 
@@ -34,7 +34,7 @@
 			margin-top: math.div(100cqw, 24) * $i;
 
 			.wp-block-craftedsupply-accolade:has(&) {
-				margin-top: 64px * $i;
+				margin-top: 64px;
 				margin-top: math.div(100cqw, 24) * $i;
 
 				.accolade-block {
@@ -52,15 +52,39 @@
 		}
 	}
 
+	@include to(9) {
+		grid-row: span 1;
+		grid-column: 1 / -1;
+
+		@for $i from 0 through 10 {
+			// narrow blocks
+			&[data-width='#{$i}'] {
+				grid-column: 3 / -3;
+			}
+		}
+		@for $i from 10 through 20 {
+			// medium blocks
+			&[data-width='#{$i}'] {
+				grid-column: 2 / -2;
+			}
+		}
+
+		margin-top: 32px !important;
+	}
+
 	/*
 	* Styling 
 	*/
 
-	padding: 50px;
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
 	color: white;
+	padding: 18px;
+
+	@include from(10) {
+		padding: is-clamp(24pt, 48px, 800px);
+	}
 
 	&-attribution {
 		text-align: center;
@@ -69,14 +93,18 @@
 
 	&-text {
 		text-align: left;
-		font-size: 30pt;
 		font-family: $caslon;
 		font-weight: 400;
 		color: white;
 		margin-top: 0;
+		font-size: 16pt;
 
-		.-layout-center & {
-			text-align: center;
+		@include from(10) {
+			font-size: is-clamp(20pt, 30pt, 800px);
+
+			.-layout-center & {
+				text-align: center;
+			}
 		}
 	}
 
@@ -85,18 +113,30 @@
 		color: white;
 		text-align: right;
 		font-style: italic;
-		font-size: 22pt;
 		margin-top: 4px;
 		margin-bottom: 4px;
+		font-size: 12pt;
 
-		.-layout-center & {
-			display: inline;
-			text-align: center;
+		@include from(10) {
+			font-size: is-clamp(16pt, 22pt, 800px);
+
+			.-layout-center & {
+				display: inline;
+				text-align: center;
+
+				.end-mdash {
+					display: inline;
+				}
+			}
 		}
 	}
 
 	&-company {
 		text-transform: uppercase;
+	}
+
+	.end-mdash {
+		display: none;
 	}
 
 	&.-layout-left {

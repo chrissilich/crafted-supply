@@ -7,8 +7,8 @@ NOTES: widths can really go from 6 to 22, but we show the user 1 to 17 and just 
 <div{{ block.anchor ? ' id="' ~ block.anchor ~ '"' }}
   {{ is_preview ? 'data-preview' }}
   class="accolade-block  -light-background -layout-{{ fields.layout }} "
-  data-left={{ fields.left + 2 }}
-  data-right={{ fields.right + 2 }}
+  data-left={{ fields.left }}
+  data-right={{ fields.right }}
   data-push={{ fields.push }}
   data-width={{ fields.right - fields.left }}
   data-span={{ fields.span }}
