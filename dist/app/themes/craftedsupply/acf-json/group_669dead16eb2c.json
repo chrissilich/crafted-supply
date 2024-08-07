@@ -147,33 +147,12 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_669debf2505a3",
-            "label": "Width",
-            "name": "width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 10,
-            "min": 1,
-            "max": 18,
-            "step": 1,
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_669dec9b505a5",
-            "label": "Position",
-            "name": "position",
+            "label": "Left Edge",
+            "name": "left",
             "aria-label": "",
             "type": "range",
-            "instructions": "Imagine this as pushing on the Accolade block's left side. Increasing the number means moving it to the right.",
+            "instructions": "In a 22 column grid, which column is the left edge?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -189,24 +168,67 @@
             "append": ""
         },
         {
-            "key": "field_669ded91505a7",
-            "label": "Span?",
-            "name": "span",
+            "key": "field_66b36d56e284e",
+            "label": "Right Edge",
+            "name": "right",
             "aria-label": "",
-            "type": "true_false",
-            "instructions": "Check this box if the Accolade will have two Accolades to its right. There's some styling code that needs to be applied to make that happen. Don't turn this on unless you need to.",
-            "required": 0,
+            "type": "range",
+            "instructions": "In a 22 column grid, which column is the right edge?",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "default_value": 12,
+            "min": 6,
+            "max": 22,
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b36eb7b9713",
+            "label": "Push Down",
+            "name": "push",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
+            "min": 0,
+            "max": 25,
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b37090db4e8",
+            "label": "Vertical Span",
+            "name": "span",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "If this Accolade needs to sit next to multiple other Accolades, some extra styling code needs to be applied to allow that. Set this number to the number of Accolades that this one will be allowed to share vertical space with.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": 0,
+            "max": 3,
+            "step": 1,
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -227,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722830686
+    "modified": 1723035951
 }

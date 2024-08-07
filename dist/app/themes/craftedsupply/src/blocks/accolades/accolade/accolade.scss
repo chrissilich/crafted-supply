@@ -2,14 +2,12 @@
 	@include grid-placement;
 	@include component-margin;
 
-	border: 1px solid red;
-
 	/*
 	* Positioning Logic 
 	*/
 
 	@for $i from 1 through 24 {
-		&[data-start='#{$i}'] {
+		&[data-left='#{$i}'] {
 			grid-column-start: #{$i};
 
 			.wp-block-craftedsupply-accolade:has(&) {
@@ -17,7 +15,7 @@
 			}
 		}
 
-		&[data-end='#{$i}'] {
+		&[data-right='#{$i}'] {
 			grid-column-end: #{$i};
 
 			.wp-block-craftedsupply-accolade:has(&) {
@@ -32,7 +30,27 @@
 				margin-bottom: perc(1, $i);
 			}
 		}
+
+		&[data-push='#{$i}'] {
+			margin-top: perc(1, $i);
+
+			.wp-block-craftedsupply-accolade:has(&) {
+				margin-top: perc(1, $i);
+			}
+		}
+
+		&[data-span='#{$i}'] {
+			grid-row: span $i;
+
+			.wp-block-craftedsupply-accolade:has(&) {
+				grid-row: span $i;
+			}
+		}
 	}
+
+	/*
+	* Styling 
+	*/
 
 	padding: 50px;
 	display: flex;

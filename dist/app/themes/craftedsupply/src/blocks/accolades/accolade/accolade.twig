@@ -6,10 +6,12 @@ NOTES: widths can really go from 6 to 22, but we show the user 1 to 17 and just 
 
 <div{{ block.anchor ? ' id="' ~ block.anchor ~ '"' }}
   {{ is_preview ? 'data-preview' }}
-  class="accolade-block  -light-background -layout-{{ fields.layout }} {{ fields.span ? '-span' }} "
-  data-start={{ fields.position + 2 }}
-  data-end={{ fields.position + 2 + fields.width + 5 }}
-  data-width={{ fields.width + 5 }}
+  class="accolade-block  -light-background -layout-{{ fields.layout }} "
+  data-left={{ fields.left + 2 }}
+  data-right={{ fields.right + 2 }}
+  data-push={{ fields.push }}
+  data-width={{ fields.right - fields.left }}
+  data-span={{ fields.span }}
   style="background-image: url('{{ fields.image.url }}');"
 > 
   <h2 class="accolade-block-text">
