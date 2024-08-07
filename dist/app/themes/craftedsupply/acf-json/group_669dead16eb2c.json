@@ -152,7 +152,7 @@
             "name": "left",
             "aria-label": "",
             "type": "range",
-            "instructions": "In a 22 column grid, which column is the left edge?",
+            "instructions": "In a 24 column grid, which column is the left edge?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -162,7 +162,7 @@
             },
             "default_value": 4,
             "min": 0,
-            "max": 17,
+            "max": 18,
             "step": 1,
             "prepend": "",
             "append": ""
@@ -173,7 +173,7 @@
             "name": "right",
             "aria-label": "",
             "type": "range",
-            "instructions": "In a 22 column grid, which column is the right edge?",
+            "instructions": "In a 24 column grid, which column is the right edge?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -181,9 +181,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 12,
-            "min": 6,
-            "max": 22,
+            "default_value": 18,
+            "min": 4,
+            "max": 24,
             "step": 1,
             "prepend": "",
             "append": ""
@@ -202,9 +202,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 0,
+            "default_value": 1,
             "min": 0,
-            "max": 25,
+            "max": 24,
             "step": 1,
             "prepend": "",
             "append": ""
@@ -249,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723035951
+    "modified": 1723037885
 }

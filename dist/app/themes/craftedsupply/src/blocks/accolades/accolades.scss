@@ -1,8 +1,13 @@
 .accolades-block {
 	@include grid-placement(full);
 	@include component-margin;
+	@extend %grid-columns;
 
 	&-inner {
-		@extend %grid-columns;
+		@include grid-placement(wide);
+		container-name: accolades-block;
+		container-type: inline-size;
+		display: grid;
+		grid-template-columns: repeat(24, 1fr);
 	}
 }

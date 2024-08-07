@@ -1,7 +1,5 @@
 .accolade-block {
-	@include grid-placement;
-	@include component-margin;
-
+	grid-column: 6 / 18;
 	/*
 	* Positioning Logic 
 	*/
@@ -23,19 +21,25 @@
 			}
 		}
 
-		&[data-width='#{$i}'] {
-			margin-bottom: perc(1, $i);
+		// &[data-width='#{$i}'] {
+		// 	margin-bottom: perc(1, $i);
 
-			.wp-block-craftedsupply-accolade:has(&) {
-				margin-bottom: perc(1, $i);
-			}
-		}
+		// 	.wp-block-craftedsupply-accolade:has(&) {
+		// 		margin-bottom: perc(1, $i);
+		// 	}
+		// }
 
 		&[data-push='#{$i}'] {
-			margin-top: perc(1, $i);
+			margin-top: 64px * $i;
+			margin-top: math.div(100cqw, 24) * $i;
 
 			.wp-block-craftedsupply-accolade:has(&) {
-				margin-top: perc(1, $i);
+				margin-top: 64px * $i;
+				margin-top: math.div(100cqw, 24) * $i;
+
+				.accolade-block {
+					margin-top: 0;
+				}
 			}
 		}
 
