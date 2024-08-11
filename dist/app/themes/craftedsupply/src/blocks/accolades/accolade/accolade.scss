@@ -21,14 +21,6 @@
 			}
 		}
 
-		// &[data-width='#{$i}'] {
-		// 	margin-bottom: perc(1, $i);
-
-		// 	.wp-block-craftedsupply-accolade:has(&) {
-		// 		margin-bottom: perc(1, $i);
-		// 	}
-		// }
-
 		&[data-push='#{$i}'] {
 			margin-top: 64px * $i;
 			margin-top: math.div(100cqw, 24) * $i;
@@ -79,8 +71,20 @@
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
-	color: white;
 	padding: 18px;
+	background-position: center center;
+	background-size: cover;
+	color: white;
+	text-shadow:
+		0 0 10px rgb(0 0 0 / 0.25),
+		0 0 40px rgb(0 0 0 / 0.5);
+
+	&[data-text-color='black'] {
+		color: black;
+		text-shadow:
+			0 0 10px rgb(255 255 255 / 0.25),
+			0 0 40px rgb(255 255 255 / 0.5);
+	}
 
 	@include from(10) {
 		padding: is-clamp(24pt, 48px, 800px);
@@ -95,12 +99,28 @@
 		text-align: left;
 		font-family: $caslon;
 		font-weight: 400;
-		color: white;
+		color: inherit;
 		margin-top: 0;
 		font-size: 16pt;
 
 		@include from(10) {
 			font-size: is-clamp(20pt, 30pt, 800px);
+
+			[data-font-size='20'] & {
+				font-size: is-clamp(20pt * 0.66, 20pt, 800px);
+			}
+			[data-font-size='22.5'] & {
+				font-size: is-clamp(22.5pt * 0.66, 22.5pt, 800px);
+			}
+			[data-font-size='25'] & {
+				font-size: is-clamp(25pt * 0.66, 25pt, 800px);
+			}
+			[data-font-size='27.5'] & {
+				font-size: is-clamp(27.5pt * 0.66, 27.5pt, 800px);
+			}
+			[data-font-size='30'] & {
+				font-size: is-clamp(30pt * 0.66, 30pt, 800px);
+			}
 
 			.-layout-center & {
 				text-align: center;
@@ -110,15 +130,15 @@
 
 	&-name,
 	&-company {
-		color: white;
+		color: inherit;
 		text-align: right;
 		font-style: italic;
-		margin-top: 4px;
-		margin-bottom: 4px;
-		font-size: 12pt;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-size: rem-convert(12pt);
 
 		@include from(10) {
-			font-size: is-clamp(16pt, 22pt, 800px);
+			font-size: rem-convert(14pt);
 
 			.-layout-center & {
 				display: inline;
@@ -132,6 +152,7 @@
 	}
 
 	&-company {
+		color: inherit;
 		text-transform: uppercase;
 	}
 

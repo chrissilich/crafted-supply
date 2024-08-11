@@ -107,7 +107,7 @@
         },
         {
             "key": "field_669debd2505a1",
-            "label": "Design",
+            "label": "Typography",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -145,6 +145,68 @@
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
+        },
+        {
+            "key": "field_66b8e30c3aeed",
+            "label": "Font Size",
+            "name": "font_size",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 25,
+            "min": 20,
+            "max": 30,
+            "step": "2.5",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b8e467f512c",
+            "label": "Text Color",
+            "name": "text_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "black": "Black"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_66b8e49af512d",
+            "label": "Positioning",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_669dec9b505a5",
@@ -249,5 +311,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723038455
+    "modified": 1723393233
 }
