@@ -1,6 +1,16 @@
 .images-gallery-block {
 	@include grid-placement(wide);
-	@include component-margin;
+
+	margin-bottom: 5%;
+
+	// 	-layout-huge is default
+	picture {
+		width: 100%;
+
+		img {
+			width: 100% !important;
+		}
+	}
 
 	&.-layout-square {
 		display: flex;
@@ -9,12 +19,14 @@
 		align-items: center;
 
 		picture {
+			width: 100%;
+
 			@include from(7) {
 				width: 75%;
 			}
 
 			img {
-				width: 100%;
+				width: 100% !important;
 			}
 		}
 	}
@@ -23,6 +35,6 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
-		gap: 40px;
+		gap: 5%;
 	}
 }

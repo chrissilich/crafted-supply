@@ -19,7 +19,7 @@
 		@include from($layout-switch) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			column-gap: is-clamp(30px, 50px, 1200px);
+			column-gap: 5%;
 			row-gap: 0;
 		}
 	}
@@ -63,6 +63,7 @@
 
 		@include from($layout-switch) {
 			grid-column: 1;
+
 			[data-image-side='right'] & {
 				grid-column: 2;
 			}
@@ -110,8 +111,10 @@
 		&-image {
 			margin: 0 auto;
 			max-width: 60%;
+
 			@include from($layout-switch) {
 				margin: unset;
+				margin-top: 5%;
 			}
 		}
 	}

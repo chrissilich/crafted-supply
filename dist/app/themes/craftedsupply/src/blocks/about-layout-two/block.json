@@ -1,0 +1,33 @@
+{
+	"name": "craftedsupply/about-layout-two",
+	"title": "About - Our Mission Layout",
+	"description": "",
+	"style": [],
+	"category": "media",
+	"icon": "format-",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "about-layout-two.php"
+	},
+	"craftedsupply": {
+		"enabled": true,
+		"boilerplate_version": "1.3.1"
+	},
+	"example": {
+		"viewportWidth": 1400
+	},
+	"supports": {
+		"mode": false,
+		"anchor": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": false,
+			"link": false
+		}
+	},
+	"_supports options": "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/"
+}

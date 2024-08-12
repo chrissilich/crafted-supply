@@ -4,6 +4,14 @@
 
 	@extend %grid-columns;
 
+	picture {
+		width: 100%;
+
+		img {
+			width: 100% !important;
+		}
+	}
+
 	&.-layout-simple {
 		picture {
 			@include grid-placement(narrow);

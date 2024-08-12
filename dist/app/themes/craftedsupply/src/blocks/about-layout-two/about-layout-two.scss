@@ -1,0 +1,125 @@
+.about-layout-two-block {
+	@include grid-placement(full);
+	@include component-margin;
+	@extend %grid-columns;
+
+	container-name: about-layout-two-block-inner;
+	container-type: inline-size;
+
+	&-intro {
+		grid-column: 2 / -2;
+
+		@include from($layout-switch) {
+			grid-column: 4 / 25;
+			margin-bottom: perc(1, 21); // 1 / number of columns this block spans
+		}
+	}
+
+	&-heading {
+		font-family: $didot;
+		font-weight: normal;
+		letter-spacing: 0.05em;
+		line-height: 120%;
+		font-size: max(20pt, 5.8cqw);
+		text-align: center;
+
+		@include from($layout-switch) {
+			margin-bottom: -20px;
+			line-height: 100%;
+			text-align: right;
+			font-size: 4.1cqw;
+		}
+
+		em {
+			font-size: 0.7em;
+			letter-spacing: 0.05em;
+
+			@include from($layout-switch) {
+				font-size: 0.5em;
+				letter-spacing: 0.08em;
+			}
+		}
+
+		br {
+			display: none;
+		}
+
+		@include from($layout-switch) {
+			font-size: 4.1cqw;
+			// text-align: right;
+
+			span {
+				display: inline-block;
+				width: 100%;
+				&:nth-of-type(1) {
+					text-align: center;
+				}
+				&:nth-of-type(2) {
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	&-content {
+		grid-column: 2 / -2;
+		margin-bottom: $content-margin;
+
+		@include from($layout-switch) {
+			grid-column: 3 / 16;
+			margin-bottom: perc(1, 13); // 1 / number of columns this block spans
+		}
+
+		p {
+			@include p;
+			font-family: $arquitecta;
+			$low: 18px;
+			$high: 24px;
+			font-size: is-clamp(rem-convert($low), rem-convert($high), 1200px);
+			line-height: is-clamp(rem-convert($low * 2), rem-convert($high * 2), 1200px);
+			margin-bottom: is-clamp(rem-convert($low), rem-convert($high), 1200px);
+
+			@include from($layout-switch) {
+				text-align: right;
+			}
+
+			// @include from($layout-switch) {
+			// 	max-width: 40vw;
+			// 	max-width: 40cqw;
+			// 	margin-left: auto;
+			// }
+		}
+	}
+
+	&-image-top_right {
+		grid-column: 1 / -1;
+		margin-bottom: $content-margin;
+
+		@include from($layout-switch) {
+			grid-column: 17 / 25;
+			grid-row: span 2;
+			margin-bottom: perc(1, 8); // 1 / number of columns this block spans
+		}
+	}
+
+	&-image_left {
+		grid-column: 1 / -1;
+		margin-bottom: $content-margin;
+
+		@include from($layout-switch) {
+			grid-column: 8 / 16;
+			grid-row: span 2;
+			margin-bottom: perc(1, 8); // 1 / number of columns this block spans
+		}
+	}
+
+	&-image-bottom_right {
+		grid-column: 1 / -1;
+		margin-bottom: $content-margin;
+
+		@include from($layout-switch) {
+			grid-column: 17 / 25;
+			margin-bottom: perc(1, 8); // 1 / number of columns this block spans
+		}
+	}
+}

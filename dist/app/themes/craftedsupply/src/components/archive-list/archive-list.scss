@@ -6,15 +6,16 @@
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
-		gap: perc(1, 21);
+		gap: 5%;
 	}
 
 	.gallery-thumbnail {
 		// child of -teasers
-
 		max-width: unset;
+
 		@include from(7) {
-			flex: 0 0 calc(50% - perc(1, 42));
+			flex: 0 0 47.5%;
+			margin-bottom: 5%;
 		}
 	}
 }

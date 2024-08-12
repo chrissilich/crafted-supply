@@ -22,15 +22,3 @@ $blocks-with-content-margins: (
 		}
 	}
 }
-
-// Special case for when a CTA block is last
-// This tucks the CTA block under the email subscribe component in the footer
-.cta-block:last-child {
-	@include from($layout-switch) {
-		margin-bottom: 0;
-
-		.page-container:has(&) .site-footer:has(.email-subscribe) {
-			margin-top: 0;
-		}
-	}
-}

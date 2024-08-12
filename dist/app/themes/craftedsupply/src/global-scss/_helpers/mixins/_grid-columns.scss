@@ -23,7 +23,7 @@
 		[full-end];
 
 	@include from($mobile-layout-switch) {
-		$col-width: math.div($inner-max-width, 24);
+		$col-width: math.div($inner-max-width, 26);
 
 		grid-template-columns:
 			[full-start]
@@ -35,7 +35,7 @@
 			minmax(0, $col-width)
 			minmax(0, $col-width)
 			[narrow-start]
-			repeat(14, minmax(0, $col-width))
+			repeat(16, minmax(0, $col-width))
 			[narrow-end]
 			minmax(0, $col-width)
 			minmax(0, $col-width)
@@ -48,7 +48,7 @@
 	}
 
 	@include from(14) {
-		$col-width: math.div($inner-max-width, 24);
+		$col-width: math.div($inner-max-width, 26);
 
 		grid-template-columns:
 			[full-start]
@@ -60,7 +60,7 @@
 			minmax(0, $col-width)
 			minmax(0, $col-width)
 			[narrow-start]
-			repeat(14, minmax(0, $col-width))
+			repeat(16, minmax(0, $col-width))
 			[narrow-end]
 			minmax(0, $col-width)
 			minmax(0, $col-width)

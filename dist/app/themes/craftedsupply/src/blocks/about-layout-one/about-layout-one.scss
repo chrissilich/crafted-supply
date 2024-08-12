@@ -1,0 +1,162 @@
+.about-layout-one-block {
+	@include grid-placement(full);
+	@include component-margin;
+	@extend %grid-columns;
+
+	container-name: about-layout-one-block-inner;
+	container-type: inline-size;
+
+	&-intro {
+		display: flex;
+		flex-flow: column;
+		grid-column: 2 / -2;
+
+		@include to($layout-switch - 1) {
+			order: 2;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 2 / 26;
+			flex-flow: row;
+			align-items: flex-end;
+			margin-bottom: perc(1, 24); // 1 / number of columns this block spans
+		}
+	}
+
+	&-heading {
+		// h2, inside -intro
+		font-size: max(20pt, 6cqw);
+		font-family: $didot;
+		font-weight: normal;
+		letter-spacing: 0.05em;
+		margin-top: 0;
+
+		em {
+			letter-spacing: 0.08em;
+			font-size: 0.75em;
+
+			@include from($layout-switch) {
+				font-size: 0.5em;
+			}
+		}
+
+		@include from($layout-switch) {
+			margin-bottom: -20px;
+			font-size: 4.1cqw;
+		}
+	}
+
+	&-image_top {
+		// inside -intro
+		grid-column: 1 / -1;
+		margin-bottom: $content-margin;
+
+		&.-inside {
+			display: none;
+		}
+
+		@include from($layout-switch) {
+			flex: 0 1 36%;
+			margin-left: 2.5%;
+			margin-bottom: 0;
+
+			&.-inside {
+				display: block;
+			}
+
+			&.-outside {
+				display: none;
+			}
+		}
+	}
+
+	&-image_left {
+		grid-column: main;
+		margin-bottom: $content-margin;
+		grid-column: 1 / -1;
+
+		@include to($layout-switch - 1) {
+			order: 4;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 4 / 9;
+			grid-row: span 2;
+			margin-bottom: perc(1, 5); // 1 / number of columns this block spans
+		}
+	}
+
+	&-content {
+		grid-column: main;
+		margin-bottom: $content-margin;
+		grid-column: 2 / -2;
+
+		@include to($layout-switch - 1) {
+			order: 3;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 10 / 23;
+			margin-bottom: perc(1, 13); // 1 / number of columns this block spans
+		}
+
+		p {
+			@include p;
+			font-family: $arquitecta;
+			$low: 18px;
+			$high: 24px;
+			font-size: is-clamp(rem-convert($low), rem-convert($high), 1200px);
+			line-height: is-clamp(rem-convert($low * 2), rem-convert($high * 2), 1200px);
+			margin-bottom: is-clamp(rem-convert($low), rem-convert($high), 1200px);
+
+			// @include from($layout-switch) {
+			// 	max-width: 40vw;
+			// 	max-width: 40cqw;
+			// }
+		}
+	}
+
+	&-image-bottom_left {
+		grid-column: main;
+		margin-bottom: $content-margin;
+		grid-column: 1 / -1;
+
+		@include to($layout-switch - 1) {
+			order: 5;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 10 / 15;
+			grid-row: span 2;
+		}
+	}
+
+	&-image-bottom_right {
+		grid-column: main;
+		margin-bottom: $content-margin;
+		grid-column: 1 / -1;
+
+		@include to($layout-switch - 1) {
+			order: 6;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 16 / 23;
+			margin-bottom: perc(1, 7); // 1 / number of columns this block spans
+		}
+	}
+
+	&-image-bottom_bottom {
+		grid-column: main;
+		margin-bottom: $content-margin;
+		grid-column: 1 / -1;
+
+		@include to($layout-switch - 1) {
+			order: 6;
+		}
+
+		@include from($layout-switch) {
+			grid-column: 16 / 22;
+		}
+	}
+}
