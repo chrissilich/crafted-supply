@@ -13,7 +13,10 @@
 		"renderTemplate": "accolades.php"
 	},
 	"craftedsupply": {
-		"boilerplate_version": "1.4.0"
+		"boilerplate_version": "1.4.0",
+		"allowed": {
+			"post_type": ["page"]
+		}
 	},
 	"example": {
 		"viewportWidth": 1400

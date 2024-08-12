@@ -143,10 +143,12 @@ iframe {
 	}
 }
 
-.has-text-align-center {
+:has(.has-text-align-center),
+.-center {
 	text-align: center;
 }
 
-.has-text-align-right {
+:has(.has-text-align-right),
+.-right {
 	text-align: right;
 }

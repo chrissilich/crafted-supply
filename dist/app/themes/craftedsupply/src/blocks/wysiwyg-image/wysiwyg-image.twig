@@ -1,0 +1,21 @@
+{% import 'macros.twig' as macros %}
+
+<figure
+  class="wysiwyg-image-block -{{fields.layout ? fields.layout : 'left'}} {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+  {% if fields.image %}
+    <img
+      src="{{fields.image.url}}"
+      alt="{{fields.image.alt}}"
+      class="wysiwyg-image-block-image"
+      loading="lazy"
+      width="{{fields.image.width}}"
+      height="{{fields.image.height}}"
+    />
+  {% else %}
+    <div class="wysiwyg-image-block-image-placeholder"></div>
+  {% endif %}
+
+</figure>

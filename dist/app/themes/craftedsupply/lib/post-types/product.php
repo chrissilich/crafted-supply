@@ -1,9 +1,9 @@
 <?php
 
-namespace CraftedSupply\PostTypes\Gallery;
+namespace CraftedSupply\PostTypes\Product;
 
-$singular = "gallery"; // also used as post type key
-$plural = "galleries";
+$singular = "product"; // also used as post type key
+$plural = "products";
 $singular_upper = ucwords($singular);
 $plural_upper = ucwords($plural);
 
@@ -67,19 +67,22 @@ add_action( 'init', function () use ($singular, $plural, $singular_upper, $plura
 
 
 /*
-* Block template for Gallery post type 
+* Block template for Product post type 
 *
 * @return void
 */
 add_action( 'init', function () use ($singular) {
 	$post_type_object = get_post_type_object( $singular );
 	$post_type_object->template = [
-		[ 'craftedsupply/gallery-setup', [
+		[ 'craftedsupply/product-intro', [
 			'lock' => [
 				'remove'	=> true,
 				'move'		=> true
 			]
-		] ]
+		] ],
+		[ 'craftedsupply/product-fifty-fifty'],
+		[ 'craftedsupply/product-fifty-fifty'],
+		[ 'craftedsupply/product-fifty-fifty']
 	];
 } );
 

@@ -1,6 +1,4 @@
 <?php
-use CraftedSupply\Modules\Utils;
-
 /*
 * Variables available in the block
 * $block (array) The block settings and attributes.
@@ -12,14 +10,15 @@ use CraftedSupply\Modules\Utils;
 
 $context = Timber::context();
 
-$context['fields'] = get_fields();
 $context['block'] = $block;
 $context['is_preview'] = $is_preview;
 $context['post'] = Timber::get_post($post_id);
+$context['fields'] = get_fields() ?: [
+	'image' => [
+		'url' => 'https://via.placeholder.com/900x400',
+		'alt' => 'Placeholder image',
+	],
+	'layout' => 'center'
+];
 
-
-
-// covert yotuube url to youtube iframe embed
-$context['video_embed'] = Utils\convert_youtube_url_to_embed($context['fields']['video_url']);
-
-Timber::render( 'video.twig', $context );
+Timber::render( 'wysiwyg-image.twig', $context );

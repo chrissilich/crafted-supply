@@ -1,0 +1,36 @@
+{% import 'src/macros.twig' as macros %}
+
+<section class="product-fifty-fifty-block {{block.className}}  -light-background"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+  data-image-side="{{ fields.image_side }}"
+  data-image-width="{{ fields.image_width }}"
+>
+
+  <div class="product-fifty-fifty-block-inner -apply-typography">
+
+    <div 
+      class="product-fifty-fifty-block-image" 
+      data-animation="{{is_preview ? '':'fadeInUp'}}"
+      data-animation-delay="{{fields.image_side ? 200 : 0}}"
+    >
+      {% if (fields.image) %}
+        {{ macros.image(fields.image) }}
+      {% endif %}
+    </div>
+
+    <div 
+      class="product-fifty-fifty-block-text" 
+      data-animation="{{is_preview ? '':'fadeInUp'}}"
+      data-animation-delay="{{fields.image_side ? 0 : 200}}"
+    > 
+      <p>
+        {{ fields.text }}
+      </p>
+      
+    </div>
+
+  </div>
+
+</section>
+

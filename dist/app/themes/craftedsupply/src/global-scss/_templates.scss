@@ -1,0 +1,8 @@
+.single-product {
+	&-title {
+		// the H2 at the top of the single-product page
+		text-align: center;
+		@include heading-b;
+		margin-bottom: 20px;
+	}
+}

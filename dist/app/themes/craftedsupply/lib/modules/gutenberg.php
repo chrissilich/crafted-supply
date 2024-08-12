@@ -61,8 +61,8 @@ function allowlist_built_in_block_types( $block_editor_context, $editor_context 
     // 'core/image', // replaced with our own version that is simpler, and customized for our wysiwyg
     // 'core/quote',
     // 'core/buttons', // replaced with our own version that can do icons and stuff
-    // 'core/button',
-    'core/separator',
+    'core/button',
+    // 'core/separator',
     // 'core/shortcode',
     // 'core/spacer',
     // 'core/pullquote',

@@ -9,8 +9,15 @@ $context         = Timber::context();
 $post            = Timber::get_post();
 $context['post'] = $post;
 
+
+
+// if post type is product
+if ( 'product' === $post->post_type ) {
+  // wrap the word "and" in the post titlte with <em> tag
+  $context['title'] = preg_replace( '/\b(and)\b/', '<em>$1</em>', $post->post_title );
+
 // If this is an article or resource, look for related posts
-if ($post->post_type == 'post' || $post->post_type == 'resource') {
+} else if ($post->post_type == 'post' || $post->post_type == 'resource') {
   
   // $related_posts = Timber::get_posts( [
   //   'post_type'      => $post->post_type,

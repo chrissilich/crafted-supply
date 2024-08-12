@@ -14,13 +14,8 @@
 	},
 	"craftedsupply": {
 		"boilerplate_version": "1.4.0",
-		"_allowed/disallowed options": {
-			"post_type": ["page", "post"],
-			"id": [1, 2, 3],
-			"slug": ["home", "about"],
-			"template": ["template-home.php", "template-about.php"],
-			"special": ["front", "posts"],
-			"capabilities": ["administrator", "custom_role"]
+		"allowed": {
+			"post_type": ["page"]
 		}
 	},
 	"example": {

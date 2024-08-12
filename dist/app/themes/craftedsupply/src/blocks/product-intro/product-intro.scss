@@ -1,0 +1,30 @@
+.product-intro-block {
+	@include grid-placement(full);
+	@include component-margin;
+	@extend %grid-columns;
+
+	&-image {
+		@include grid-placement(full);
+		margin-bottom: 12px;
+
+		@include from($mobile-layout-switch) {
+			@include grid-placement(wide);
+		}
+	}
+
+	&-text {
+		@include grid-placement(medium);
+		text-align: center;
+		margin-bottom: 12px;
+
+		p {
+			text-wrap: balance;
+			font-family: $arquitecta;
+		}
+	}
+
+	&-button {
+		@include grid-placement(medium);
+		text-align: center;
+	}
+}

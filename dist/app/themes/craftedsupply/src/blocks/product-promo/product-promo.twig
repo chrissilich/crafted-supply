@@ -1,0 +1,13 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="product-promo-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+  {{ macros.image(fields.image) }}
+
+  <div class="product-promo-block">
+  </div>
+ 
+</div>

@@ -1,0 +1,21 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="product-intro-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+
+
+  <div class="product-intro-block-image">
+    {{ macros.image(fields.image) }}
+  </div>
+
+  <div class="product-intro-block-text  -apply-typography">
+    <p>{{fields.text}}</p>
+  </div>
+
+  <div class="product-intro-block-button">
+    {{ macros.link('/contact', 'Inquire', ['button-outlined'], '', is_preview) }}
+  </div>
+</div>

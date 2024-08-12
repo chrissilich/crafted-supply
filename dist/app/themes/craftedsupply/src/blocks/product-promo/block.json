@@ -1,16 +1,17 @@
 {
-	"name": "craftedsupply/images-page",
-	"title": "Images",
-	"description": "A block that contains one or more images in interesting layouts.",
+	"name": "craftedsupply/product-promo",
+	"title": "Product Promo",
+	"description": "",
 	"style": [],
 	"category": "media",
 	"icon": "format-image",
 	"keywords": [],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "images-page.php"
+		"renderTemplate": "product-promo.php"
 	},
 	"craftedsupply": {
+		"enabled": true,
 		"boilerplate_version": "1.3.1",
 		"allowed": {
 			"post_type": ["page"]

@@ -11,6 +11,7 @@ $context         = Timber::context();
 $post            = Timber::get_post();
 $context['post'] = $post;
 
+
 if ( post_password_required( $post->ID ) ) {
   $context['password_form'] = get_the_password_form();
   Timber::render( 'src/pages/page-password.twig', $context );

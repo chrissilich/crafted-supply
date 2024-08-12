@@ -1,6 +1,6 @@
 {
-	"name": "craftedsupply/fifty-fifty-block",
-	"title": "Fifty-fifty",
+	"name": "craftedsupply/product-fifty-fifty",
+	"title": "Product Fifty-fifty",
 	"description": "A layout block that contains an image on one side and some text content on the other.",
 	"style": [],
 	"category": "design",
@@ -9,12 +9,12 @@
 	"keywords": ["columns", "fifty-fifty", "fifty fifty", "fifty", "half", "half and half"],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "fifty-fifty.php"
+		"renderTemplate": "product-fifty-fifty.php"
 	},
 	"craftedsupply": {
 		"boilerplate_version": "1.2.0",
 		"allowed": {
-			"post_type": ["page"]
+			"post_type": ["product"]
 		}
 	},
 	"example": {

@@ -1,17 +1,17 @@
 {
-	"name": "craftedsupply/video",
-	"title": "Video",
-	"description": "A block for embedding a Youtube video, the full width of the page container.",
+	"name": "craftedsupply/wysiwyg-image",
+	"title": "Image",
+	"description": "An image block, intended to be used inside a WYSIWYG block.",
 	"style": [],
 	"category": "media",
-	"icon": "video-alt3",
+	"icon": "format-image",
 	"keywords": [],
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "video.php"
+		"renderTemplate": "wysiwyg-image.php"
 	},
+	"parent": ["craftedsupply/wysiwyg"],
 	"craftedsupply": {
-		"enabled": false,
 		"boilerplate_version": "1.3.1"
 	},
 	"example": {
