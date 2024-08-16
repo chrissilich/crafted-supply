@@ -1,0 +1,65 @@
+.wp-block-craftedsupply-wysiwyg-image {
+	@include z(content, 1);
+	&:has(+ h2, + h3, + h4) {
+		margin-top: rem-convert(32px);
+	}
+	&:has(+ h5, + h6) {
+		margin-top: rem-convert(28px);
+	}
+}
+
+.wysiwyg-image-block {
+	@include z(content, 1);
+	margin: 0 0 rem-convert(12px);
+
+	@include from($mobile-layout-switch) {
+		&:has(+ h2, + h3, + h4) {
+			margin-top: rem-convert(32px);
+		}
+		&:has(+ h5, + h6) {
+			margin-top: rem-convert(28px);
+		}
+	}
+
+	&:where(.-center) {
+		width: 100%;
+		@include content-margin;
+	}
+
+	&-image {
+		width: 100%;
+	}
+}
+
+// Note: the ACF block wrapper is called .wp-block-craftedsupply-wysiwyg-image
+
+.wp-block-craftedsupply-wysiwyg-image:has(.wysiwyg-image-block.-right),
+.wysiwyg-image-block.-right:not([data-preview]) {
+	@include from($mobile-layout-switch) {
+		width: 60%;
+		float: right;
+		margin-left: 0%;
+		position: relative;
+		right: -10%;
+	}
+}
+
+.wp-block-craftedsupply-wysiwyg-image:has(.wysiwyg-image-block.-center),
+.wysiwyg-image-block.-center:not([data-preview]) {
+	@include from($mobile-layout-switch) {
+		width: 100%;
+		position: relative;
+		@include content-margin;
+	}
+}
+
+.wp-block-craftedsupply-wysiwyg-image:has(.wysiwyg-image-block.-left),
+.wysiwyg-image-block.-left:not([data-preview]) {
+	@include from($mobile-layout-switch) {
+		width: 60%;
+		float: left;
+		margin-right: 0%;
+		position: relative;
+		left: -10%;
+	}
+}

@@ -1,0 +1,137 @@
+.product-fifty-fifty-block {
+	@extend %grid-columns;
+	@include grid-placement(full);
+	@include component-margin;
+	position: relative;
+	padding: 30px 0;
+
+	&-inner {
+		@include grid-placement(medium);
+		display: flex;
+		justify-content: space-between;
+		gap: rem-convert(30px);
+		flex-flow: column;
+		@include z(content);
+		align-items: center;
+
+		container-name: fifty-fifty-block-inner;
+		container-type: inline-size;
+
+		@include from($layout-switch) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 5%;
+			row-gap: 0;
+		}
+	}
+
+	&-image {
+		position: relative;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+
+		img {
+			width: 100%;
+		}
+
+		@include from($layout-switch) {
+			img {
+				margin-left: auto;
+				margin-right: 0;
+			}
+
+			[data-image-side='right'] & {
+				grid-row: 1;
+				grid-column: 2;
+
+				img {
+					margin-left: 0;
+					margin-right: auto;
+				}
+			}
+
+			[data-image-width='95'] & {
+				img {
+					display: block;
+					width: 95%;
+				}
+			}
+			[data-image-width='90'] & {
+				img {
+					display: block;
+					width: 90%;
+				}
+			}
+			[data-image-width='85'] & {
+				img {
+					display: block;
+					width: 85%;
+				}
+			}
+			[data-image-width='80'] & {
+				img {
+					display: block;
+					width: 80%;
+				}
+			}
+			[data-image-width='75'] & {
+				img {
+					display: block;
+					width: 75%;
+				}
+			}
+			[data-image-width='70'] & {
+				img {
+					display: block;
+					width: 70%;
+				}
+			}
+			[data-image-width='65'] & {
+				img {
+					display: block;
+					width: 65%;
+				}
+			}
+			[data-image-width='60'] & {
+				img {
+					display: block;
+					width: 60%;
+				}
+			}
+		}
+	}
+
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		@include from($layout-switch) {
+			[data-image-side='right'] & {
+				grid-column: 1;
+				grid-row: 1;
+				align-items: flex-end;
+			}
+		}
+
+		p {
+			font-family: $arquitecta;
+			text-wrap: pretty;
+			text-align: left;
+
+			@include from($layout-switch) {
+				[data-image-side='right'] & {
+					text-align: right;
+				}
+			}
+
+			.-vendor {
+				text-transform: uppercase;
+				font-size: 1.5em;
+				line-height: 0.66;
+			}
+		}
+	}
+}
