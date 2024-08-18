@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-require('dotenv').config({ path: '../../../.env' });
+require('dotenv').config({ path: '../../../../.env' });
 const $ = require('gulp-load-plugins')();
 import beep from 'beepbeep';
 import log from 'fancy-log';
@@ -14,7 +14,7 @@ export default {
   src: process.cwd() + '/src',
   dist: process.cwd() + '/assets',
   wpHome: process.env.WP_HOME,
-  sslCertificatePath: process.env.SSL_CERTIFICATE_PATH ? process.env.SSL_CERTIFICATE_PATH : '../../../../../certs/',
+  sslCertificatePath: '../../../../certs/',
   reportError(error) {
     const lineNumber = (error.lineNumber) ? 'LINE ' + error.lineNumber + ' -- ' : '';
 

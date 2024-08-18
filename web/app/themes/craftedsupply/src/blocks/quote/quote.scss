@@ -1,0 +1,55 @@
+.quote-block {
+	@include grid-placement;
+	@include component-margin;
+
+	container-name: quote-block;
+	container-type: inline-size;
+
+	&-quote {
+		text-align: center;
+		font-family: $didot;
+		font-size: 24px;
+		margin: 0;
+
+		@include to($mobile-layout-switch - 1) {
+			br {
+				display: none;
+			}
+		}
+
+		@include from($mobile-layout-switch) {
+			font-size: max(24px, 3cqw);
+		}
+
+		&-open,
+		&-close {
+			position: relative;
+			display: inline-block;
+			width: 0.75em;
+			height: 1em;
+
+			span {
+				position: absolute;
+				transform: scale(1.6) translateX(-50%);
+				left: 50%;
+				top: -1px;
+			}
+		}
+
+		&-close {
+			width: 1em;
+		}
+	}
+
+	&-attribution {
+		text-align: center;
+		font-family: $didot;
+		font-style: italic;
+		font-size: max(17px, 2.1cqw);
+
+		&::before,
+		&::after {
+			content: '—';
+		}
+	}
+}

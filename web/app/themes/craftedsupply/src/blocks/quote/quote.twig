@@ -1,0 +1,18 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="quote-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+
+  <blockquote class="quote-block-quote">
+    <span class="quote-block-quote-open"><span>&ldquo;</span></span>{{fields.quote}}<span class="quote-block-quote-close"><span>&rdquo;</span></span>
+  </blockquote>
+
+  <p class="quote-block-attribution">
+    {{fields.attribution}}
+  </p>
+ 
+</div>
+
