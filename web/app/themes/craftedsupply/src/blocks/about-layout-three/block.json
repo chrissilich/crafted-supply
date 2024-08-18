@@ -1,0 +1,36 @@
+{
+	"name": "craftedsupply/about-layout-three",
+	"title": "About - Our Team Layout",
+	"description": "",
+	"style": [],
+	"category": "media",
+	"icon": "format-",
+	"keywords": [],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "about-layout-three.php"
+	},
+	"craftedsupply": {
+		"enabled": true,
+		"boilerplate_version": "1.3.1",
+		"allowed": {
+			"post_type": ["page"]
+		}
+	},
+	"example": {
+		"viewportWidth": 1400
+	},
+	"supports": {
+		"mode": false,
+		"anchor": true,
+		"align": false,
+		"alignWide": false,
+		"color": {
+			"background": false,
+			"gradients": false,
+			"text": false,
+			"link": false
+		}
+	},
+	"_supports options": "https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/"
+}

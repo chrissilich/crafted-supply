@@ -36,11 +36,9 @@
 .wp-block-craftedsupply-wysiwyg-image:has(.wysiwyg-image-block.-right),
 .wysiwyg-image-block.-right:not([data-preview]) {
 	@include from($mobile-layout-switch) {
-		width: 60%;
+		width: perc(305, 820);
 		float: right;
-		margin-left: 0%;
-		position: relative;
-		right: -10%;
+		margin-left: perc(20, 820);
 	}
 }
 
@@ -56,10 +54,8 @@
 .wp-block-craftedsupply-wysiwyg-image:has(.wysiwyg-image-block.-left),
 .wysiwyg-image-block.-left:not([data-preview]) {
 	@include from($mobile-layout-switch) {
-		width: 60%;
+		width: perc(135, 820);
 		float: left;
-		margin-right: 0%;
-		position: relative;
-		left: -10%;
+		margin-right: perc(20, 820);
 	}
 }

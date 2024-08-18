@@ -11,7 +11,7 @@
 	}
 
 	&-inner {
-		@include grid-placement(narrow);
+		@include grid-placement(medium);
 		position: relative;
 		@include z(content);
 		margin: 0 auto;

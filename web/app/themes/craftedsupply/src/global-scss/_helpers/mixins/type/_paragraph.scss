@@ -5,7 +5,10 @@
 }
 
 @mixin p {
+	$low: 18px;
+	$high: 24px;
 	font-size: rem-convert(18px);
+	font-size: is-clamp(rem-convert($low), rem-convert($high), 1200px);
 	@include line-height(32, 18);
 	font-weight: normal;
 	color: color(gray, 600);

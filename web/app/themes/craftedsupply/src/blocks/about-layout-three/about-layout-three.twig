@@ -1,0 +1,33 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="about-layout-three-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+>
+
+  <div class="about-layout-three-block-image-top">
+    {{ macros.image(fields.image_top) }}
+  </div>
+  
+  <div class="about-layout-three-block-intro">
+    <h2 class="about-layout-three-block-heading">
+      {{fields.title}}
+    </h2>
+  </div>
+
+  <div class="about-layout-three-block-content">
+    {{ fields.text }}
+  </div>
+
+  <div class="about-layout-three-block-image-bottom_left">
+    {{ macros.image(fields.image_bottom_left) }}
+  </div>
+  
+  <div class="about-layout-three-block-image-bottom_right">
+    {{ macros.image(fields.image_bottom_right) }}
+  </div>
+</div>
+
+
+

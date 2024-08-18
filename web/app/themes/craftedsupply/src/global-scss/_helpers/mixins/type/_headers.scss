@@ -1,5 +1,5 @@
 @mixin heading-a {
-	font-size: is-clamp(rem-convert(48px), rem-convert(80px));
+	font-size: is-clamp(rem-convert(44px), rem-convert(58px), 1000px);
 	@include line-height(88, 80);
 	margin-top: rem-convert(48px);
 	font-weight: 400;
@@ -7,7 +7,7 @@
 }
 
 @mixin heading-b {
-	font-size: is-clamp(rem-convert(40px), rem-convert(64px));
+	font-size: is-clamp(rem-convert(40px), rem-convert(54px), 1000px);
 	@include line-height(80, 64);
 	margin-top: rem-convert(48px);
 	font-weight: 400;
@@ -15,7 +15,7 @@
 }
 
 @mixin heading-c {
-	font-size: is-clamp(rem-convert(32px), rem-convert(52px));
+	font-size: is-clamp(rem-convert(36px), rem-convert(50px), 1000px);
 	@include line-height(58, 52);
 	margin-top: rem-convert(32px);
 	font-weight: 400;
@@ -23,7 +23,7 @@
 }
 
 @mixin heading-d {
-	font-size: is-clamp(rem-convert(24px), rem-convert(32px));
+	font-size: is-clamp(rem-convert(32px), rem-convert(46px), 1000px);
 	@include line-height(40, 32);
 	margin-top: rem-convert(24px);
 	font-weight: 400;
@@ -31,7 +31,7 @@
 }
 
 @mixin heading-e {
-	font-size: is-clamp(rem-convert(24px), rem-convert(24px));
+	font-size: is-clamp(rem-convert(28px), rem-convert(42px), 1000px);
 	@include line-height(32, 24);
 	margin-top: rem-convert(16px);
 	font-weight: 400;
