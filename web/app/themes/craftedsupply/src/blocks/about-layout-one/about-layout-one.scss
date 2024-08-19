@@ -71,7 +71,6 @@
 	}
 
 	&-image_left {
-		grid-column: main;
 		margin-bottom: $content-margin;
 		grid-column: 1 / -1;
 
@@ -87,7 +86,6 @@
 	}
 
 	&-content {
-		grid-column: main;
 		margin-bottom: $content-margin;
 		grid-column: 2 / -2;
 
@@ -117,7 +115,6 @@
 	}
 
 	&-image-bottom_left {
-		grid-column: main;
 		margin-bottom: $content-margin;
 		grid-column: 1 / -1;
 
@@ -132,7 +129,6 @@
 	}
 
 	&-image-bottom_right {
-		grid-column: main;
 		margin-bottom: $content-margin;
 		grid-column: 1 / -1;
 
@@ -147,7 +143,6 @@
 	}
 
 	&-image-bottom_bottom {
-		grid-column: main;
 		margin-bottom: $content-margin;
 		grid-column: 1 / -1;
 

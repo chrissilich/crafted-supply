@@ -15,20 +15,7 @@ $context['block'] = $block;
 $context['is_preview'] = $is_preview;
 $context['post'] = Timber::get_post($post_id);
 
-$context['all'] = Timber::get_posts( array(
-	'post_type' => 'person',
-	'posts_per_page' => -1,
-	'orderby' => 'meta_value',
-	'meta_key' => 'last_name',
-	'order' => 'ASC',
-	'meta_query' => array(
-		array(
-			'key' => 'all',
-			'value' => true,
-			'compare' => '=',
-		),
-	),
-) );
 
+$context['people'] = Timber::get_posts( $context['fields']['people'] );
 
 Timber::render( 'people-grid.twig', $context );

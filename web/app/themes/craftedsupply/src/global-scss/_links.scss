@@ -1,7 +1,6 @@
 %link {
 	cursor: pointer;
 	// display: inline-block;
-	color: $body-color;
 	text-decoration: none;
 	transition: color $ts;
 	color: color(teal);
@@ -24,7 +23,6 @@
 	color: $body-color;
 	text-decoration: none;
 	transition: color $ts;
-	color: $body-color;
 
 	&:hover {
 		text-decoration: underline;
@@ -69,9 +67,9 @@ main a.-inverted:not([class*='button']) {
 	background-size: contain;
 
 	&.social-icon-facebook {
-		background-image: url(../images/social-facebook.svg);
+		background-image: url('../images/social-facebook.svg');
 	}
 	&.social-icon-instagram {
-		background-image: url(../images/social-instagram.svg);
+		background-image: url('../images/social-instagram.svg');
 	}
 }

@@ -2,41 +2,33 @@
 	@include grid-placement(full);
 	@include component-margin;
 	@extend %grid-columns;
+	z-index: 1;
+
+	$gap-mobile: 3.5%;
+	$gap-desktop: 4.5%;
 
 	&-inner {
-		@include grid-placement;
-	}
-
-	&-nav {
 		display: flex;
 		flex-flow: row wrap;
-		gap: rem-convert(24px);
-		margin-bottom: rem-convert(80px);
+		justify-content: center;
+		gap: $gap-mobile;
+		@include grid-placement(full);
 
-		&-item {
-			&[aria-expanded='true'] {
-				background-color: color(teal, 100);
-			}
+		@include from($mobile-layout-switch) {
+			@include grid-placement(medium);
+			gap: $gap-desktop;
 		}
 	}
 
-	&-sections {
-		&-item {
-			&[aria-hidden='true'] {
-				display: none;
-			}
-
-			display: grid;
-			gap: rem-convert(60px) rem-convert(24px);
-
-			grid-template-columns: repeat(2, 1fr);
-			@include from(10) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-		}
-	}
 	&-person {
-		&-headshot {
+		margin-bottom: 24px;
+		flex: 0 0 math.div((100% - (1 * $gap-mobile)), 2);
+
+		@include from($mobile-layout-switch) {
+			flex: 0 0 math.div((100% - (2 * $gap-desktop)), 3);
+		}
+
+		&-image {
 			aspect-ratio: 1 / 1;
 			overflow: clip;
 
@@ -47,34 +39,55 @@
 				transition: transform $ts $te;
 			}
 		}
+
 		&-content {
-			margin-top: rem-convert(24px);
-
-			h3 a {
-				@include heading-e;
-				display: block;
-				margin-top: rem-convert(24px);
-				margin-bottom: rem-convert(12px);
-				padding-right: rem-convert(36px);
-				transition: color $ts $te;
-				position: relative;
-
-				@include corner-arrow(false, '.people-grid-block-person');
-			}
-
-			p {
-				@include p;
-				margin-bottom: 0;
-			}
+			text-align: center;
+			position: relative;
 		}
 
-		&:hover {
-			img {
-				transform: scale(1.05);
+		&-title {
+			position: relative;
+			z-index: 10;
+			font-family: $caslon;
+			font-size: is-clamp(15pt, 24px, 1000px);
+			letter-spacing: 0.05em;
+			padding-top: 12px;
+			margin-bottom: 0;
+		}
+
+		&-job_title {
+			position: relative;
+			z-index: 10;
+			font-family: $caslon;
+			font-size: is-clamp(13pt, 21px, 1000px);
+			letter-spacing: 0.05em;
+			font-style: italic;
+			margin: 0;
+		}
+
+		&-bio {
+			// child of -content
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			background-color: color(gray, 200);
+			text-align: left;
+			padding: is-clamp(72px, 84px, 1000px) 15px 20px 20px;
+
+			visibility: hidden;
+			opacity: 0;
+			transition:
+				opacity $ts $te,
+				visibility $ts $te;
+
+			p {
+				font-size: is-clamp(12pt, 14pt, 1000px);
 			}
-			h3 a {
-				background-color: transparent;
-				color: color(teal, 600);
+
+			.-show-bio & {
+				visibility: visible;
+				opacity: 1;
 			}
 		}
 	}

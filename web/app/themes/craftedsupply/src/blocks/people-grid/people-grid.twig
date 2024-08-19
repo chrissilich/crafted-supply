@@ -7,73 +7,33 @@
   data-animation="{{is_preview ? '':'fadeInUp'}}"
 >
   <div class="people-grid-block-inner -apply-typography">
+  
+    {% for person in people %}
 
-    {% if fields.sections|length > 0 %}
+      <div class="people-grid-block-person">
 
-      <nav class="people-grid-block-nav">
-        {{ macros.button({
-          text: "All Staff",
-          tag: "a",
-          href: post.link,
-          style: "tertiary",
-          icon: false,
-          classes: ['people-grid-block-nav-item'],
-          attributes: {
-            "aria-controls": "people-grid-section--all",
-            "aria-expanded": "true"
-          }
-        }) }}
+          <div class="people-grid-block-person-image">
+            {{ macros.image(person.image) }}
+          </div>
 
+          <div class="people-grid-block-person-content">
+            
+            <h3 class="people-grid-block-person-title">
+              {{person.first_name}} {{person.last_name}}
+            </h3>
 
-        {% for section in fields.sections %}
-          {{ macros.button({
-            text: section.title,
-            tag: "a",
-            href: post.link ~ "?section=" ~ section.title | replace({' ': ''}) | lower,
-            style: "tertiary",
-            icon: false,
-            classes: ['people-grid-block-nav-item'],
-            attributes: {
-              "aria-controls": "people-grid-section--" ~ section.title | replace({' ': ''}) | lower,
-              "aria-expanded": "false"
-            }
-          }) }}
+            <h4 class="people-grid-block-person-job_title">
+              {{person.job_title}}
+            </h4>
 
-        {% endfor %}
-      </nav>
-    {% endif %}
+            <div class="people-grid-block-person-bio">
+              {{person.bio}}
+            </div>
+            
+          </div>
+      </div>
 
-
-    <div class="people-grid-block-sections">
-
-      <div 
-        id="people-grid-section--all"
-        class="people-grid-block-sections-item"
-        aria-hidden="false">
-
-          <h2 class="sr-text">All Staff</h2>
-
-          {% for person in all %}
-            {% include 'person.twig' with {is_preview, person, index: loop.index } %}
-          {% endfor %}
-        </div>
-
-      {% for section in fields.sections %}
-        <div 
-          id="people-grid-section--{{section.title | replace({' ': ''}) | lower}}"
-          class="people-grid-block-sections-item"
-          aria-hidden="true"
-        >
-          <h2 class="sr-text">{{section.title}}</h2>
-
-          {% for person_wp_post in section.people %}
-            {% set person = get_post(person_wp_post) %}
-            {% include 'person.twig' with {is_preview, person, index: loop.index } %}
-          {% endfor %}
-
-        </div>
-      {% endfor %}
-    </div>
+    {% endfor %}
 
   </div>
 </div>

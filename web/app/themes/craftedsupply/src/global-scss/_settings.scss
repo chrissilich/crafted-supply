@@ -11,14 +11,7 @@ $slicer-anti-overlap-corrections: -1px;
 $caslon: ltc-caslon-pro, 'Caslon Pro', 'Caslon', 'Iowan Old Style', 'Palatino Linotype',
 	'URW Palladio L', P052, serif;
 
-$didot:
-	linotype-didot,
-	Didot,
-	Didot LT STD,
-	Hoefler Text,
-	Garamond,
-	Times New Roman,
-	serif;
+$didot: linotype-didot, Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 
 $arquitecta: ArquitectaRegular, 'Arquitecta', 'Arquitecta Regular', Avenir, Montserrat, Corbel,
 	'URW Gothic', source-sans-pro, sans-serif;

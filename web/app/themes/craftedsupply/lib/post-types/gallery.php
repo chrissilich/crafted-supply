@@ -13,7 +13,7 @@ add_action( 'init', function () use ($singular, $plural, $singular_upper, $plura
 			'name' => $plural_upper,
 			'singular_name' => $singular_upper,
 			'menu_name' => $plural_upper,
-			'all_items' => 'All Locations',
+			'all_items' => 'All ' . $plural_upper,
 			'edit_item' => 'Edit '.$singular_upper,
 			'view_item' => 'View '.$singular_upper,
 			'view_items' => 'View '.$plural_upper,

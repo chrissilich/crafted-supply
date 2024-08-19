@@ -1,15 +1,15 @@
 .hamburger-button {
-	$distance_right: 40px;
-	$distance_top_mobile: 40px;
-	$distance_top: 100px;
+	$distance-right: 40px;
+	$distance-top-mobile: 40px;
+	$distance-top: 100px;
 	$width: 32px;
 	$height: 16px;
 
 	position: fixed;
 	cursor: pointer;
 	left: 50%;
-	top: $distance_top_mobile;
-	translate: calc(50vw - $distance_right - $width);
+	top: $distance-top-mobile;
+	translate: calc(50vw - $distance-right - $width);
 	@include z(floating, 2);
 
 	width: $width;
@@ -20,7 +20,7 @@
 	background: none;
 
 	@include from($mobile-layout-switch) {
-		top: $distance_top;
+		top: $distance-top;
 	}
 
 	.-white-menu-mode & {

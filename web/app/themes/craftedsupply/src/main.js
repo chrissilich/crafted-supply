@@ -15,6 +15,7 @@ import siteHeader from '@components/site-header'
 // Block Includes
 // -----------------------------------------------------------------------------
 import fullscreenSlideshow from '@blocks/fullscreen-slideshow'
+import peopleGrid from '@blocks/people-grid'
 
 const initializer = {
 	components: [
@@ -22,6 +23,7 @@ const initializer = {
 		['.site-header', siteHeader],
 		// blocks
 		['.fullscreen-slideshow-block', fullscreenSlideshow],
+		['.people-grid-block', peopleGrid],
 	],
 	plugins: [
 		// cssSizeVariables,

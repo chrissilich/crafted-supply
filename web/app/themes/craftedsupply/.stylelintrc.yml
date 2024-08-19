@@ -8,6 +8,7 @@ rules:
   alpha-value-notation: null
   at-rule-empty-line-before: null
   rule-empty-line-before: null
+  length-zero-no-unit: null
   declaration-empty-line-before: null
   font-family-name-quotes: "always-unless-keyword"
   font-family-no-missing-generic-family-keyword:
@@ -24,10 +25,7 @@ rules:
   selector-id-pattern: null
   selector-class-pattern: null
   custom-property-pattern: null
-  value-keyword-case:
-    - "lower"
-    - ignoreProperties:
-      - "text-rendering"
+  value-keyword-case: null
   scss/comment-no-empty: null
   scss/dollar-variable-colon-space-after: "at-least-one-space"
   scss/dollar-variable-empty-line-before: null

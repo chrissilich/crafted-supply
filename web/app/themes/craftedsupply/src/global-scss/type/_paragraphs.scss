@@ -6,7 +6,7 @@ body {
 	p {
 		@include p;
 		font-family: $arquitecta;
-		margin: 0 0 rem-convert(12px);
+		margin: 0 0 1.5em;
 
 		&:last-child {
 			margin-bottom: 0;

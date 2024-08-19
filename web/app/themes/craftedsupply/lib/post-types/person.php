@@ -1,9 +1,9 @@
 <?php
 
-namespace CraftedSupply\PostTypes\Product;
+namespace CraftedSupply\PostTypes\Person;
 
-$singular = "product"; // also used as post type key
-$plural = "products";
+$singular = "person"; // also used as post type key
+$plural = "People";
 $singular_upper = ucwords($singular);
 $plural_upper = ucwords($plural);
 
@@ -43,11 +43,11 @@ add_action( 'init', function () use ($singular, $plural, $singular_upper, $plura
 		'hierarchical' => true,
 		'show_in_rest' => true,
 		'menu_position' => 4.2,
-		'menu_icon' => 'dashicons-cart',
+		'menu_icon' => 'dashicons-businessman',
 		'supports' => array(
 			0 => 'title',
-			1 => 'editor',
-			2 => 'page-attributes',
+			// 1 => 'editor',
+			// 2 => 'page-attributes',
 		),
 		'delete_with_user' => false,
 		'has_archive'           => true,		
@@ -62,28 +62,5 @@ add_action( 'init', function () use ($singular, $plural, $singular_upper, $plura
 		'capability_type'       => 'page',
 	) );
 
-} );
-
-
-
-/*
-* Block template for Product post type 
-*
-* @return void
-*/
-add_action( 'init', function () use ($singular) {
-	$post_type_object = get_post_type_object( $singular );
-	$post_type_object->template = [
-		[ 'craftedsupply/product-intro', [
-			'lock' => [
-				'remove'	=> true,
-				'move'		=> true
-			]
-		] ],
-		[ 'craftedsupply/product-fifty-fifty'],
-		[ 'craftedsupply/product-fifty-fifty'],
-		[ 'craftedsupply/product-fifty-fifty'],
-		[ 'craftedsupply/wysiwyg'],
-	];
 } );
 

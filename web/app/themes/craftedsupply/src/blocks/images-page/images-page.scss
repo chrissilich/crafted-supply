@@ -32,8 +32,14 @@
 	&.-layout-quad {
 		// top
 		picture:nth-child(1) {
-			grid-column: 11 / 20;
 			order: 2;
+			grid-column: -1 / 1;
+			margin-bottom: 30px;
+
+			@include from($mobile-layout-switch) {
+				margin-bottom: 0px;
+				grid-column: 11 / 20;
+			}
 
 			// NOTE use this technique to adjust ratios
 			// img {
@@ -45,26 +51,43 @@
 		// left
 		picture:nth-child(2) {
 			order: 1;
-			grid-column: 5 / 10;
-			grid-row: 1 / span 2;
+			grid-column: -2 / 2;
+			margin-bottom: 30px;
 
-			// NOTE the denominators in these percentages are the number of columns the image takes in the grid
-			// if you make the image wider, you'll need to adjust the denominator
-			padding-top: perc(2, 5);
+			@include from($mobile-layout-switch) {
+				margin-bottom: 0px;
+				grid-column: 5 / 10;
+				grid-row: 1 / span 2;
+				// NOTE the denominators in these percentages are the number of columns the image takes in the grid
+				// if you make the image wider, you'll need to adjust the denominator
+				padding-top: perc(2, 5);
+			}
 		}
 
 		// bottom
 		picture:nth-child(3) {
 			order: 3;
-			grid-column: 11 / 16;
-			padding-top: perc(1, 5);
+			grid-column: -2 / 2;
+			margin-bottom: 30px;
+
+			@include from($mobile-layout-switch) {
+				margin-bottom: 0px;
+				grid-column: 11 / 16;
+				padding-top: perc(1, 5);
+			}
 		}
 
 		// right
 		picture:nth-child(4) {
 			order: 4;
-			grid-column: 17 / 24;
-			padding-top: perc(1, 7);
+			grid-column: -1 / 1;
+			margin-bottom: 30px;
+
+			@include from($mobile-layout-switch) {
+				margin-bottom: 0px;
+				grid-column: 17 / 24;
+				padding-top: perc(1, 7);
+			}
 		}
 	}
 }

@@ -3,11 +3,8 @@ $button-pad-y: 17px;
 
 %button,
 .button {
-	cursor: pointer;
 	appearance: none;
 	backface-visibility: hidden;
-	background: none;
-	color: inherit;
 	font-family: $arquitecta;
 	text-transform: uppercase;
 	border: 0;

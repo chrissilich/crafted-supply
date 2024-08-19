@@ -4,6 +4,11 @@
 
 	a {
 		@extend %link-subtle;
+		color: color(gray, 900);
+
+		&:hover {
+			color: color(teal, 500);
+		}
 	}
 
 	&-inner {
@@ -18,8 +23,7 @@
 
 		@include from(6) {
 			flex-flow: row wrap;
-			justify-content: center;
-			align-content: center;
+			place-content: center center;
 		}
 
 		@include from(10) {
@@ -100,21 +104,9 @@
 		&-col-4 {
 			order: 5;
 		}
-
-		&-logo {
-			// padding: 0 20px;
-		}
 	}
 
 	ul {
 		margin-bottom: 1em;
-	}
-
-	a {
-		color: color(gray, 900);
-
-		&:hover {
-			color: color(teal, 500);
-		}
 	}
 }
