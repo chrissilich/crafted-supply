@@ -43,7 +43,7 @@ add_action( 'init', function () use ($singular, $plural, $singular_upper, $plura
 		'hierarchical' => true,
 		'show_in_rest' => true,
 		'menu_position' => 4.2,
-		'menu_icon' => 'dashicons-admin-site-alt',
+		'menu_icon' => 'dashicons-images-alt',
 		'supports' => array(
 			0 => 'title',
 			1 => 'editor',

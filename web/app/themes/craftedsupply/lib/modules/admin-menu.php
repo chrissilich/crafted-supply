@@ -5,7 +5,7 @@ namespace CraftedSupply\Modules\AdminMenuOrder;
 
 
 
-// add_action( 'admin_init', __NAMESPACE__ . '\\alter_admin_menu', 5, 1 );
+add_action( 'admin_init', __NAMESPACE__ . '\\alter_admin_menu', 5, 1 );
 function alter_admin_menu() {
 	global $menu;
 	
@@ -14,51 +14,56 @@ function alter_admin_menu() {
 	$menu["100.2"] = array( '', 'custom-separator-2', 'custom-separator-2', '', 'wp-menu-separator custom-separator' );
 	$menu["100.3"] = array( '', 'custom-separator-3', 'custom-separator-3', '', 'wp-menu-separator custom-separator' );
 
+	// remove some menu items if you want
+	remove_menu_page('index.php');
+
 	$menu = array_values($menu);
+	// dump($menu);die;
+	// foreach ( $menu as $key => $menu_item ) {
+	// 	echo $menu_item[2] . '<br>';
+	// }
+	// die;
+
 
 	if ( current_user_can( 'administrator' ) ) {
 		$custom_menu_order = array(
 			'index.php', 								// Dashboard
+			'site-settings', 							// Global Options
 			'separator1', 							// ---- Separator
-			'global-options', 							// Global Options
 			'edit.php?post_type=page', 					// Pages
-			'edit.php', 								// Posts
-			'edit.php?post_type=resource', 				// Resources
-			'edit.php?post_type=region', 				// Regions
+			'edit.php?post_type=gallery', 				// Regions
+			'edit.php?post_type=product', 				// Products
 			'edit.php?post_type=person', 				// People
 			'separator2', 							// ---- Separator
 			'upload.php', 								// Media
 			'filebird-settings', 						// FileBird
 			'custom-separator-1', 					// ---- Separator
 			'wpforms-overview', 							//  Forms
-			'custom-separator-2', 					// ---- Separator
 			'edit.php?post_type=acf-field-group', 		// ACF
 			'wpseo_dashboard', 							// Yoast SEO
-			'custom-separator-3', 					// ---- Separator
+			'custom-separator-2', 					// ---- Separator
 			'themes.php', 								// Appearance
 			'users.php', 								// Users
 			'plugins.php', 								// Plugins
 			'tools.php',		 						// Tools
 			'options-general.php', 						// Settings
+			'custom-separator-3', 					// ---- Separator
 			'separator-last', 						// ---- Separator
 		);
 	} else if (current_user_can('client_admin')) {
 		$custom_menu_order = array(
 			'index.php', 								// Dashboard
+			'site-settings', 							// Global Options
 			'separator1', 							// ---- Separator
-			'global-options', 							// Global Options
 			'edit.php?post_type=page', 					// Pages
-			'edit.php', 								// Posts
-			'edit.php?post_type=resource', 				// Resources
-			'edit.php?post_type=region', 				// Regions
+			'edit.php?post_type=gallery', 				// Regions
+			'edit.php?post_type=product', 				// Products
 			'edit.php?post_type=person', 				// People
 			'separator2', 							// ---- Separator
-			'admin.php?page=wpforms-overview', 			//  Forms
 			'upload.php', 								// Media
+			'custom-separator-1', 					// ---- Separator
 			'wpseo_dashboard', 							// Yoast SEO
 			'profile.php', 								// Users
-			'separator3', 							// ---- Separator
-			'separator-last', 						// ---- Separator
 		);
 	}
 
