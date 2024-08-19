@@ -12,10 +12,8 @@ function client_user_role() {
   global $wp_roles;
 
   // Rename Administrator role
-  $wp_roles->roles['administrator']['name'] = 'Crafted Supply Admin';
-  $wp_roles->role_names['administrator'] = 'Crafted Supply Admin';
-
-  // TODO: define user role below for clients
+  $wp_roles->roles['administrator']['name'] = 'UP Ideas Admin';
+  $wp_roles->role_names['administrator'] = 'UP Ideas Admin';
 
   // Create Client Admin role if not created
   if ( get_option( 'client_admin_role_created' ) === FALSE ) {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1370db19e59a539996422a0e07dc3e0b",
+    "content-hash": "f7a6a02fa5d94c0c2c97801d6394dc32",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -6048,6 +6048,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/acf-image-aspect-ratio-crop/"
+        },
+        {
+            "name": "wpackagist-plugin/capability-manager-enhanced",
+            "version": "2.13.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/capability-manager-enhanced/",
+                "reference": "tags/2.13.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/capability-manager-enhanced.2.13.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/capability-manager-enhanced/"
         },
         {
             "name": "wpackagist-plugin/filebird",
