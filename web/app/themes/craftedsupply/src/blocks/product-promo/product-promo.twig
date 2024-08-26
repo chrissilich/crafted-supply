@@ -5,9 +5,38 @@
   id="{{block.anchor}}"
   {{is_preview ? 'data-preview' : ''}}
 >
-  {{ macros.image(fields.image) }}
+  <div class="product-promo-block-inner">
 
-  <div class="product-promo-block">
+
+    <div class="product-promo-block-intro  -apply-typography">
+      <h2>
+        {{ product.title }}
+      </h2>
+
+      {% if fields.text %}
+        <div class="product-promo-block-intro-text">
+          {{ fields.text }}
+        </div>
+      {% endif %}
+
+      <div class="product-promo-block-intro-button">
+        <a class="button-outlined" href="{{ product.link|relative}}">Learn more</a>
+      </div>
+    </div>
+
+    <div class="product-promo-block-images">
+      <div class="product-promo-block-images-big">
+        {{ macros.image(fields.big_image) }}
+      </div>
+      <div class="product-promo-block-images-left">
+        {{ macros.image(fields.left_image) }}
+      </div>
+      <div class="product-promo-block-images-right">
+        {{ macros.image(fields.right_image) }}
+      </div>
+      <div class="product-promo-block-images-middle">
+        {{ macros.image(fields.middle_image) }}
+      </div>
+    </div>
   </div>
- 
 </div>

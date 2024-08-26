@@ -1,4 +1,89 @@
 .product-promo-block {
-	@include grid-placement;
+	@include grid-placement(full);
 	@include component-margin;
+	@extend %grid-columns;
+
+	&-inner {
+		@include grid-placement(wide);
+		padding-top: 36px;
+		border-top: 2px solid color(gray, 900);
+	}
+
+	&-intro {
+		text-align: center;
+
+		h2 {
+			font-size: rem-convert(45px);
+
+			@include from($mobile-layout-switch) {
+				font-size: is-clamp(55px, 75px, 1000px);
+			}
+		}
+
+		&-text {
+			margin-bottom: 36px;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		&-button {
+			margin-bottom: 36px;
+		}
+	}
+
+	&-images {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		> div {
+			picture,
+			img {
+				width: 100%;
+			}
+		}
+
+		&-big {
+			flex: 0 0 100%;
+			margin-bottom: 5%;
+
+			@include from($mobile-layout-switch) {
+				margin-bottom: perc(24, 820);
+				order: 1;
+			}
+		}
+
+		&-left {
+			@include from($mobile-layout-switch) {
+				order: 2;
+			}
+		}
+
+		&-middle {
+			flex: 0 0 100%;
+
+			@include from($mobile-layout-switch) {
+				flex: 0 0 perc(324, 820);
+				order: 3;
+			}
+		}
+
+		&-right {
+			@include from($mobile-layout-switch) {
+				order: 4;
+			}
+		}
+
+		&-left,
+		&-right {
+			flex: 0 0 47.5%;
+			margin-bottom: 5%;
+
+			@include from($mobile-layout-switch) {
+				flex: 0 0 perc(224, 820);
+			}
+		}
+	}
 }

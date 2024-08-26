@@ -103,6 +103,7 @@
 		color: inherit;
 		margin-top: 0;
 		font-size: 16pt;
+		text-wrap: balance;
 
 		@include from(10) {
 			font-size: is-clamp(20pt, 30pt, 800px);

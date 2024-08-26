@@ -15,4 +15,10 @@ $context['block'] = $block;
 $context['is_preview'] = $is_preview;
 $context['post'] = Timber::get_post($post_id);
 
+if ($context['fields']['product']) {
+	$context['product'] = Timber::get_post( $context['fields']['product'] );
+	$context['product']->post_title = preg_replace( '/\b(and)\b/', '<em>$1</em>', $context['product']->post_title );
+}
+
 Timber::render( 'product-promo.twig', $context );
+

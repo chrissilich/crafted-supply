@@ -32,8 +32,16 @@
 }
 
 // Kill the H1 button in the heading block
-.components-popover button[aria-label='Heading 1'] {
-	display: none;
+.components-popover {
+	// WP <= 6.6
+	div[aria-label='Change level'] {
+		button:nth-child(1) {
+			display: none;
+		}
+		button:nth-child(6) {
+			display: none;
+		}
+	}
 }
 
 // Change the way the post title part of the editor looks,
@@ -63,8 +71,16 @@
 		font-weight: normal;
 		color: #999;
 
-		.post-type-page & {
-			content: 'Page Title:';
+		.post-type-product & {
+			content: 'Product Title:';
+		}
+
+		.post-type-gallery & {
+			content: 'Gallery Title:';
+		}
+
+		.post-type-person & {
+			content: 'Person Title:';
 		}
 	}
 }

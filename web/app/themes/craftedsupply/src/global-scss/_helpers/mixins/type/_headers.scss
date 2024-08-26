@@ -1,38 +1,38 @@
 @mixin heading-a {
-	font-size: is-clamp(rem-convert(44px), rem-convert(58px), 1000px);
-	@include line-height(88, 80);
+	font-size: is-clamp(rem-convert(40px), rem-convert(54px), 1000px);
+	line-height: 1.2;
 	margin-top: rem-convert(48px);
 	font-weight: 400;
 	@include first-last-margin;
 }
 
 @mixin heading-b {
-	font-size: is-clamp(rem-convert(40px), rem-convert(54px), 1000px);
-	@include line-height(80, 64);
-	margin-top: rem-convert(48px);
-	font-weight: 400;
-	@include first-last-margin;
-}
-
-@mixin heading-c {
 	font-size: is-clamp(rem-convert(36px), rem-convert(50px), 1000px);
-	@include line-height(58, 52);
+	line-height: 1.2;
 	margin-top: rem-convert(32px);
 	font-weight: 400;
 	@include first-last-margin;
 }
 
-@mixin heading-d {
+@mixin heading-c {
 	font-size: is-clamp(rem-convert(32px), rem-convert(46px), 1000px);
-	@include line-height(40, 32);
+	line-height: 1.2;
 	margin-top: rem-convert(24px);
 	font-weight: 400;
 	@include first-last-margin;
 }
 
-@mixin heading-e {
+@mixin heading-d {
 	font-size: is-clamp(rem-convert(28px), rem-convert(42px), 1000px);
-	@include line-height(32, 24);
+	line-height: 1.2;
+	margin-top: rem-convert(16px);
+	font-weight: 400;
+	@include first-last-margin;
+}
+
+@mixin heading-e {
+	font-size: is-clamp(rem-convert(24px), rem-convert(36px), 1000px);
+	line-height: 1.2;
 	margin-top: rem-convert(16px);
 	font-weight: 400;
 	@include first-last-margin;

@@ -89,18 +89,10 @@ wp.domReady(() => {
  * Add some of our own styles to core blocks as needed
  */
 wp.domReady(() => {
-	// wp.blocks.registerBlockStyle('core/heading', {
-	// 	name: 'eyebrow',
-	// 	label: 'Eyebrow',
-	// })
-	// wp.blocks.registerBlockStyle('core/paragraph', {
-	// 	name: 'large',
-	// 	label: 'Large',
-	// })
-	// wp.blocks.registerBlockStyle('core/paragraph', {
-	// 	name: 'small',
-	// 	label: 'Small',
-	// })
+	wp.blocks.registerBlockStyle('core/heading', {
+		name: 'small-italic',
+		label: 'Smaller Italics',
+	})
 })
 
 /*

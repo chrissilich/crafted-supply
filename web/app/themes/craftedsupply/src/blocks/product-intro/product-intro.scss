@@ -10,6 +10,11 @@
 		@include from($mobile-layout-switch) {
 			@include grid-placement(wide);
 		}
+
+		picture,
+		img {
+			width: 100%;
+		}
 	}
 
 	&-text {

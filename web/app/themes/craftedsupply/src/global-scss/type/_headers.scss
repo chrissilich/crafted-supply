@@ -42,38 +42,32 @@
 		}
 
 		.wysiwyg-block & {
-			em {
-				font-size: 0.52em;
-				letter-spacing: 0.03em;
+			&.is-style-small-italic {
+				em {
+					font-size: 0.52em;
+					letter-spacing: 0.03em;
+				}
 			}
 		}
 	}
 
 	h1 {
-		@include heading-b;
+		@include heading-a;
 	}
 
 	h2 {
-		@include heading-c;
+		@include heading-b;
 	}
 
 	h3 {
-		@include heading-d;
+		@include heading-c;
 	}
 
 	h4 {
-		@include heading-e;
+		@include heading-d;
 	}
 
 	h5 {
-		@include p-large;
-		margin-top: rem-convert(40px);
-		font-weight: bold;
-	}
-
-	h6 {
-		@include p;
-		margin-top: rem-convert(24px);
-		font-weight: bold;
+		@include heading-e;
 	}
 }
