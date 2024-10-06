@@ -30,31 +30,40 @@
 	}
 
 	&.-layout-quad {
+		@include between(5, $mobile-layout-switch - 1) {
+			grid-template-columns: repeat(16, 1fr);
+		}
+
+		picture {
+			margin-bottom: 30px;
+			grid-column: -2 / 2;
+		}
+
 		// top
 		picture:nth-child(1) {
-			order: 2;
-			grid-column: -1 / 1;
-			margin-bottom: 30px;
+			@include from(5) {
+				order: 1;
+				grid-column: 3 / 14;
+				margin-bottom: 30px;
+			}
 
 			@include from($mobile-layout-switch) {
 				margin-bottom: 0px;
 				grid-column: 11 / 20;
 			}
-
-			// NOTE use this technique to adjust ratios
-			// img {
-			// 	aspect-ratio: 205 / 100;
-			// 	object-fit: cover;
-			// }
 		}
 
 		// left
 		picture:nth-child(2) {
-			order: 1;
-			grid-column: -2 / 2;
-			margin-bottom: 30px;
+			@include from(5) {
+				order: 2;
+				grid-column: 2 / 7;
+				margin-bottom: 30px;
+				grid-row: span 2;
+			}
 
 			@include from($mobile-layout-switch) {
+				grid-row: span 2;
 				margin-bottom: 0px;
 				grid-column: 5 / 10;
 				grid-row: 1 / span 2;
@@ -66,9 +75,10 @@
 
 		// bottom
 		picture:nth-child(3) {
-			order: 3;
-			grid-column: -2 / 2;
-			margin-bottom: 30px;
+			@include from(5) {
+				order: 4;
+				grid-column: 8 / 15;
+			}
 
 			@include from($mobile-layout-switch) {
 				margin-bottom: 0px;
@@ -79,9 +89,11 @@
 
 		// right
 		picture:nth-child(4) {
-			order: 4;
-			grid-column: -1 / 1;
-			margin-bottom: 30px;
+			@include from(5) {
+				order: 3;
+				grid-column: 8 / 16;
+				margin-bottom: 30px;
+			}
 
 			@include from($mobile-layout-switch) {
 				margin-bottom: 0px;

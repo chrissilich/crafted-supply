@@ -9,7 +9,7 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "vendor-dir": "web/vendor",
-    "_vendor-dir": "if you dont have access to the parent dir to make the vendor dir private, change it to web/vendor",
+    "_vendor-dir": "default to vendor. if you dont have access to the parent dir to make the vendor dir private, change it to web/vendor",
     "allow-plugins": {
       "composer/installers": true,
       "cweagans/composer-patches": true,

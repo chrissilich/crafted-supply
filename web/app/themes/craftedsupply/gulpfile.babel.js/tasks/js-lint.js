@@ -54,7 +54,8 @@ const updateCache = () => through.obj((file, enc, cb) => {
 // -----------------------------------------------------------------------------
 task('js:lint', () => src([
   `${config.src}/**/*.js`,
-  `!${config.src}/assets/js/jquery.min.js`
+  `!${config.src}/assets/js/jquery.min.js`,
+  `!${config.src}/js-vendor/**/*.js`
 ])
   .pipe($.plumber({
     errorHandler: config.reportError

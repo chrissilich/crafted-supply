@@ -47,21 +47,7 @@
 
 	@include to(9) {
 		grid-row: span 1;
-		grid-column: 1 / -1;
-
-		@for $i from 0 through 10 {
-			// narrow blocks
-			&[data-width='#{$i}'] {
-				grid-column: 3 / -3;
-			}
-		}
-		@for $i from 10 through 20 {
-			// medium blocks
-			&[data-width='#{$i}'] {
-				grid-column: 2 / -2;
-			}
-		}
-
+		grid-column: 1 / -1 !important;
 		margin-top: 32px !important;
 	}
 

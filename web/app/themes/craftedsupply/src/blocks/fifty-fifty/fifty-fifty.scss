@@ -9,14 +9,15 @@
 		@include grid-placement(medium);
 		display: flex;
 		justify-content: space-between;
-		gap: rem-convert(30px);
 		flex-flow: column;
 		@include z(content);
+		gap: 8px;
 
 		container-name: fifty-fifty-block-inner;
 		container-type: inline-size;
 
 		@include from($layout-switch) {
+			gap: 30px;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 0 5%;
@@ -27,6 +28,7 @@
 		font-size: 40pt;
 		font-family: $didot;
 		font-weight: normal;
+		padding-top: 18px;
 
 		@include to($layout-switch - 1) {
 			order: 2;
@@ -34,6 +36,7 @@
 		}
 
 		@include from($layout-switch) {
+			margin-top: 0;
 			grid-column: 1;
 			font-size: 7.5cqw;
 			text-align: right;
@@ -54,8 +57,15 @@
 
 		@include to($layout-switch) {
 			order: 1;
+			align-items: flex-start;
+			width: 80%;
+
+			picture {
+				max-width: 400px;
+			}
 		}
 
+		picture,
 		img {
 			width: 100%;
 		}
@@ -108,10 +118,13 @@
 		}
 
 		&-image {
-			margin: 0 auto;
-			max-width: 60%;
+			width: 80%;
+			picture {
+				max-width: 400px;
+			}
 
 			@include from($layout-switch) {
+				max-width: 60%;
 				margin: unset;
 				margin-top: 5%;
 			}

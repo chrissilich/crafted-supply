@@ -3,11 +3,12 @@
 <section class="fifty-fifty-block {{block.className}}  -light-background"
   id="{{block.anchor}}"
   {{is_preview ? 'data-preview' : ''}}
-  data-image-side="{{ fields.image_side }}" >
+  data-image-side="{{ fields.image_side }}" 
+  data-animation="{{is_preview ? '':'fadeInUp'}}">
 
   <div class="fifty-fifty-block-inner -apply-typography">
 
-    <h2 class="fifty-fifty-block-heading">
+    <h2 class="fifty-fifty-block-heading" >
         {{ fields.title }}
     </h2>
 

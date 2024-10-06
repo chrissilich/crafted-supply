@@ -5,6 +5,12 @@
 	container-name: quote-block;
 	container-type: inline-size;
 
+	padding: 36px 16px 48px;
+
+	@include from($mobile-layout-switch) {
+		padding: 36px 0 48px;
+	}
+
 	&-quote {
 		text-align: center;
 		font-family: $didot;

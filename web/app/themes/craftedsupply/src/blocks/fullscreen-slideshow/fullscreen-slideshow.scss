@@ -20,8 +20,13 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-75%);
 		width: is-clamp(50px, 90px, 1000px);
-
+		// animation: bob 4s infinite;
 		@include z(content, 1);
+		display: none;
+
+		@include from($layout-switch) {
+			display: block;
+		}
 
 		img {
 			width: 100%;
@@ -43,6 +48,17 @@
 					object-fit: cover;
 				}
 			}
+		}
+	}
+
+	@keyframes bob {
+		0%,
+		100% {
+			transform: translateY(-65%);
+		}
+
+		50% {
+			transform: translateY(-85%);
 		}
 	}
 }

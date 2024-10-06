@@ -1,4 +1,4 @@
-/* global wp, acf */
+/* global wp */
 
 // This contains a helper that waits for the block editor to be ready before resolving a promise.
 // import { whenEditorIsReady } from '@plugins/gutenberg-helpers'
@@ -92,6 +92,11 @@ wp.domReady(() => {
 	wp.blocks.registerBlockStyle('core/heading', {
 		name: 'small-italic',
 		label: 'Smaller Italics',
+	})
+
+	wp.blocks.registerBlockStyle('core/paragraph', {
+		name: 'caslon',
+		label: 'Caslon Typeface',
 	})
 })
 

@@ -15,10 +15,15 @@
 	translate: 110%;
 	transition: $ts $te;
 
+	max-height: 100vh;
+	overflow-y: auto;
+
 	&[aria-hidden='false'] {
 		translate: 0%;
 	}
 
+	// Universal styling for all nav items
+	// Style specific levels of nav item below
 	ul {
 		display: flex;
 		flex-flow: column nowrap;
@@ -34,6 +39,24 @@
 				padding: 6px 0;
 				text-decoration: none;
 				letter-spacing: 0.1em;
+			}
+		}
+	}
+
+	// Styling for specific levels of nav items
+	> ul {
+		> li {
+			> ul {
+				gap: 8px;
+				margin-top: 8px;
+				margin-bottom: 8px;
+
+				li {
+					a {
+						text-transform: none;
+						font-size: rem-convert(16px);
+					}
+				}
 			}
 		}
 	}

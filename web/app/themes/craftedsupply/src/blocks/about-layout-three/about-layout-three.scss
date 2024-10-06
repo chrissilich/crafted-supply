@@ -3,6 +3,9 @@
 	@include component-margin;
 	@extend %grid-columns;
 
+	// extra margin on top
+	margin-top: $component-margin;
+
 	container-name: about-layout-three-block-inner;
 	container-type: inline-size;
 

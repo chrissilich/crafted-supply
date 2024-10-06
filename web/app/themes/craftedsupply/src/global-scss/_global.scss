@@ -31,6 +31,7 @@ body {
 	@include line-height(24, 16);
 	text-rendering: optimizeSpeed;
 	margin: 0;
+	text-wrap: pretty;
 
 	&.front-end {
 		min-height: 100vh;
@@ -151,4 +152,9 @@ iframe {
 :has(> .has-text-align-right),
 .-right {
 	text-align: right;
+}
+
+:has(> .is-style-caslon),
+.is-style-caslon {
+	font-family: $caslon;
 }

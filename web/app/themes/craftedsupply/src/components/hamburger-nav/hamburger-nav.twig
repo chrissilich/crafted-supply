@@ -11,7 +11,28 @@ aria-label="{{ __('Main Menu', 'craftedsupply') }}"
 					aria-current="{{ item.current ? 'page' : 'false' }}"
 					data-trail="{{ item.current or get_active_trail( post, item ) ? 'active' : 'inactive' }}"
 				>{{ item.title }}</a>
+			
+				{% if item.children %}
+					{# Second level of nav #}
+					<ul>
+						{% for child in item.children %}
+							<li>
+								<a
+									href="{{ child.url }}"
+									aria-current="{{ child.current ? 'page' : 'false' }}"
+									data-trail="{{ child.current or get_active_trail( post, child ) ? 'active' : 'inactive' }}"
+								>{{ child.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+
+
+		
+			
 			</li>
+
+			
 		{% endfor %}
 
 	</ul>

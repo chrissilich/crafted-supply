@@ -28,6 +28,10 @@
 			flex: 0 0 math.div((100% - (2 * $gap-desktop)), 3);
 		}
 
+		&.-has-bio {
+			cursor: pointer;
+		}
+
 		&-image {
 			aspect-ratio: 1 / 1;
 			overflow: clip;
@@ -53,6 +57,10 @@
 			letter-spacing: 0.05em;
 			padding-top: 12px;
 			margin-bottom: 0;
+
+			.-show-bio & {
+				z-index: 21;
+			}
 		}
 
 		&-job_title {
@@ -63,6 +71,10 @@
 			letter-spacing: 0.05em;
 			font-style: italic;
 			margin: 0;
+
+			.-show-bio & {
+				z-index: 21;
+			}
 		}
 
 		&-bio {
@@ -73,8 +85,7 @@
 			left: 0;
 			background-color: color(gray, 200);
 			text-align: left;
-			padding: is-clamp(72px, 84px, 1000px) 15px 20px 20px;
-
+			padding: var(--bio-titles-height, 90px) 15px 20px 20px;
 			visibility: hidden;
 			opacity: 0;
 			transition:
@@ -86,6 +97,7 @@
 			}
 
 			.-show-bio & {
+				z-index: 20;
 				visibility: visible;
 				opacity: 1;
 			}

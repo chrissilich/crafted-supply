@@ -10,7 +10,7 @@
   
     {% for person in people %}
 
-      <div class="people-grid-block-person">
+      <div class="people-grid-block-person {{ person.bio ? "-has-bio" : "" }} ">
 
           <div class="people-grid-block-person-image">
             {{ macros.image(person.image) }}
@@ -26,9 +26,12 @@
               {{person.job_title}}
             </h4>
 
-            <div class="people-grid-block-person-bio">
-              {{person.bio}}
-            </div>
+            {% if person.bio %}
+              <div class="people-grid-block-person-bio">
+                {{person.bio}}
+              </div>
+            {% endif %}
+
             
           </div>
       </div>

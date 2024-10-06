@@ -30,8 +30,9 @@ $content-margin: 32px;
 
 // Content to edge of viewport
 $gutter-small: 16px;
-$gutter-medium: 65px;
-$gutter-large: 100px;
+$gutter-medium: 80px;
+$gutter-large: 128px;
+$gutter-x-large: 184px;
 
 // Almost all components/blocks switch from wide to stacked at this breakpoint,
 // occasionally, some other changes happen in other places, but this is the main one

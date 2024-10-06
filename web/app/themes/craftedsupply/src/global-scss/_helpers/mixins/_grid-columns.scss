@@ -47,7 +47,7 @@
 			[full-end];
 	}
 
-	@include from(14) {
+	@include from(12) {
 		$col-width: math.div($inner-max-width, 26);
 
 		grid-template-columns:
@@ -69,6 +69,30 @@
 			minmax(0, $col-width)
 			[wide-end]
 			minmax($gutter-large, 1fr)
+			[full-end];
+	}
+	@include from(14) {
+		$col-width: math.div($inner-max-width, 26);
+
+		grid-template-columns:
+			[full-start]
+			minmax($gutter-x-large, 1fr)
+			[wide-start]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[medium-start]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[narrow-start]
+			repeat(16, minmax(0, $col-width))
+			[narrow-end]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[medium-end]
+			minmax(0, $col-width)
+			minmax(0, $col-width)
+			[wide-end]
+			minmax($gutter-x-large, 1fr)
 			[full-end];
 	}
 }
