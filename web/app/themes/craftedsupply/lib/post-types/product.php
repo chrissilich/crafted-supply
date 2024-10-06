@@ -50,16 +50,14 @@ add_action( 'init', function () use ($singular, $plural, $singular_upper, $plura
 			2 => 'page-attributes',
 		),
 		'delete_with_user' => false,
-		'has_archive'           => true,		
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'rewrite'               => array(
-			'slug'                  => $singular,
-			'with_front'            => false,
-			'pages'                 => false,
-			'feeds'                 => true,
+		'rewrite' => array(
+			'with_front' => true,
+			'slug' => $plural
 		),
-		'capability_type'       => 'page',
+		'has_archive' => false,
+		'capability_type' => 'page',
 	) );
 
 } );

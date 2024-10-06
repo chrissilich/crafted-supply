@@ -22,6 +22,11 @@
 		line-height: 120%;
 		font-size: max(20pt, 5.8cqw);
 		text-align: center;
+		margin-bottom: 20px;
+
+		@include to($layout-switch - 1) {
+			margin-top: 0;
+		}
 
 		@include from($layout-switch) {
 			margin-bottom: -20px;
@@ -95,6 +100,10 @@
 		grid-column: 1 / -1;
 		margin-bottom: $content-margin;
 
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
+
 		@include from($layout-switch) {
 			grid-column: 17 / 25;
 			grid-row: span 2;
@@ -106,6 +115,10 @@
 		grid-column: 1 / -1;
 		margin-bottom: $content-margin;
 
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
+
 		@include from($layout-switch) {
 			grid-column: 8 / 16;
 			grid-row: span 2;
@@ -115,9 +128,13 @@
 
 	&-image-bottom_right {
 		grid-column: 1 / -1;
-		margin-bottom: $content-margin;
+
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
 
 		@include from($layout-switch) {
+			margin-bottom: $content-margin;
 			grid-column: 17 / 25;
 			margin-bottom: perc(1, 8); // 1 / number of columns this block spans
 		}

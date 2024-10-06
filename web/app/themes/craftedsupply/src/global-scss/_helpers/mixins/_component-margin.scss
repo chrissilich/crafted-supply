@@ -20,6 +20,6 @@
 //
 // Styleguide Sass Mixins.Component Margin
 @mixin component-margin {
-	$mobile-margin: $component-margin * 0.4;
+	$mobile-margin: $component-margin * 0.5;
 	margin-bottom: is-clamp($mobile-margin, $component-margin);
 }

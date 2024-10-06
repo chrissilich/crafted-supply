@@ -7,6 +7,10 @@
 	$gap-mobile: 3.5%;
 	$gap-desktop: 4.5%;
 
+	@include to($mobile-layout-switch - 1) {
+		margin-top: 32px;
+	}
+
 	&-inner {
 		display: flex;
 		flex-flow: row wrap;
@@ -24,7 +28,7 @@
 		margin-bottom: 24px;
 		flex: 0 0 math.div((100% - (1 * $gap-mobile)), 2);
 
-		@include from($mobile-layout-switch) {
+		@include from(6) {
 			flex: 0 0 math.div((100% - (2 * $gap-desktop)), 3);
 		}
 

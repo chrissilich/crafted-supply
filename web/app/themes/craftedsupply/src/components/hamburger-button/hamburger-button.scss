@@ -35,7 +35,27 @@
 		}
 	}
 
-	span {
+	span.breadcrumb {
+		position: absolute;
+		right: $width + 10px;
+		top: 50%;
+		translate: 0 -50%;
+		font-family: $nav-font;
+		font-size: rem-convert(14pt);
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		transition:
+			opacity $ts,
+			letter-spacing $ts;
+
+		display: none;
+
+		@include from(7) {
+			display: block;
+		}
+	}
+
+	span.line {
 		width: 100%;
 		height: 2px;
 		transition: $ts;
@@ -72,7 +92,7 @@
 	}
 
 	&[aria-expanded='true'] {
-		span {
+		span.line {
 			background-color: color(white);
 		}
 		span:nth-child(1) {
@@ -89,6 +109,11 @@
 		}
 
 		&::after {
+			opacity: 0;
+		}
+
+		span.breadcrumb {
+			// letter-spacing: 0.5em;
 			opacity: 0;
 		}
 	}

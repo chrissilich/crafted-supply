@@ -10,6 +10,7 @@ import jsLinkEvent from '@plugins/js-link-event'
 // Component Includes
 // -----------------------------------------------------------------------------
 import siteHeader from '@components/site-header'
+import hamburgerButton from '@components/hamburger-button'
 
 // -----------------------------------------------------------------------------
 // Block Includes
@@ -21,6 +22,7 @@ const initializer = {
 	components: [
 		// regular components
 		['.site-header', siteHeader],
+		['.hamburger-button', hamburgerButton],
 		// blocks
 		['.fullscreen-slideshow-block', fullscreenSlideshow],
 		['.people-grid-block', peopleGrid],

@@ -55,6 +55,10 @@
 			display: none;
 		}
 
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
+
 		@include from($layout-switch) {
 			flex: 0 1 36%;
 			margin-left: 2.5%;
@@ -76,6 +80,10 @@
 
 		@include to($layout-switch - 1) {
 			order: 4;
+		}
+
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
 		}
 
 		@include from($layout-switch) {
@@ -122,6 +130,10 @@
 			order: 5;
 		}
 
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
+
 		@include from($layout-switch) {
 			grid-column: 10 / 15;
 			grid-row: span 2;
@@ -136,6 +148,10 @@
 			order: 6;
 		}
 
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
+
 		@include from($layout-switch) {
 			grid-column: 16 / 23;
 			margin-bottom: perc(1, 7); // 1 / number of columns this block spans
@@ -143,14 +159,19 @@
 	}
 
 	&-image-bottom_bottom {
-		margin-bottom: $content-margin;
+		// margin-bottom: $content-margin;
 		grid-column: 1 / -1;
 
 		@include to($layout-switch - 1) {
 			order: 6;
 		}
 
+		@include from($mobile-portrait-landscape-layout-switch) {
+			grid-column: 2 / -2;
+		}
+
 		@include from($layout-switch) {
+			margin-bottom: $content-margin;
 			grid-column: 16 / 22;
 		}
 	}

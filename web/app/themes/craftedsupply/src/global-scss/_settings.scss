@@ -38,6 +38,10 @@ $gutter-x-large: 184px;
 // occasionally, some other changes happen in other places, but this is the main one
 $mobile-layout-switch: 10;
 
+// Rarely, some blocks have full width images that wi=ork in portrait phone layouts but not landscape
+// This is the breakpoint where those blocks switch
+$mobile-portrait-landscape-layout-switch: 5;
+
 // Cap the mobile layout here so that, effectively, we don't have to deal with any
 // weirdly oversized mobile layouts between this and our $mobile-layout-switch breakpoint
 $mobile-layout-max-width: 640px;
