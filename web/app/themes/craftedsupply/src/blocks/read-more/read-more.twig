@@ -1,0 +1,12 @@
+{% import 'src/macros.twig' as macros %}
+
+<div
+  class="read-more-block {{block.className}}"
+  id="{{block.anchor}}"
+  {{is_preview ? 'data-preview' : ''}}
+  aria-expanded="false"
+  aria-label="Expandable text content"
+  aria-controlledby="read-more-button-{{block.id}}"
+>
+  <InnerBlocks />
+</div>

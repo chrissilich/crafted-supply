@@ -15,16 +15,17 @@
 		@include grid-placement;
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: space-between;
 		font-family: $nav-font;
 		font-size: 13pt;
+		justify-content: space-between;
 		align-items: center;
 		text-align: center;
 
 		@include from(6) {
 			text-align: left;
 			flex-flow: row wrap;
-			place-content: center center;
+			justify-content: space-between;
+			align-items: flex-start;
 		}
 
 		@include from(10) {

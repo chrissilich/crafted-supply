@@ -120,7 +120,7 @@ wp.domReady(() => {
 		// }
 		// Apply to all non-IS blocks.
 		if (!block.name.startsWith('craftedsupply/')) {
-			block.parent = ['craftedsupply/wysiwyg']
+			block.parent = ['craftedsupply/wysiwyg', 'craftedsupply/read-more']
 		}
 	})
 })

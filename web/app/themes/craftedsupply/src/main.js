@@ -17,6 +17,7 @@ import hamburgerButton from '@components/hamburger-button'
 // -----------------------------------------------------------------------------
 import fullscreenSlideshow from '@blocks/fullscreen-slideshow'
 import peopleGrid from '@blocks/people-grid'
+import readMore from '@blocks/read-more'
 
 const initializer = {
 	components: [
@@ -26,6 +27,7 @@ const initializer = {
 		// blocks
 		['.fullscreen-slideshow-block', fullscreenSlideshow],
 		['.people-grid-block', peopleGrid],
+		['.read-more-block', readMore],
 	],
 	plugins: [
 		// cssSizeVariables,

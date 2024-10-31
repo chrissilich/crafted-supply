@@ -1,0 +1,18 @@
+.read-more-link {
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+
+.read-more-block {
+	// display: contents;
+
+	&.is-preview {
+		border: 2px dashed violet;
+		padding: 10px;
+		display: block !important;
+	}
+
+	&[aria-expanded='false'] {
+		display: none;
+	}
+}

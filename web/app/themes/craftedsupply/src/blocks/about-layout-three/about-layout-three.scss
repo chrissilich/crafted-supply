@@ -20,7 +20,7 @@
 		@include from($layout-switch) {
 			grid-column: 9 / 16;
 			grid-row: span 2;
-			// margin-bottom: perc(1, 7); // 1 / number of columns this block spans
+			margin-bottom: -16px;
 		}
 	}
 
