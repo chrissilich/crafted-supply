@@ -13,7 +13,6 @@ certs/
 # wp core (as of 4.9.5)
 web/wp/
 web/db-config.php
-web/index.php
 web/license.txt
 web/readme.html
 web/wp-activate.php
