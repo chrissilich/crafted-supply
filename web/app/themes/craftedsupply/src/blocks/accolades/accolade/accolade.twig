@@ -15,6 +15,7 @@ NOTES: widths can really go from 6 to 22, but we show the user 1 to 17 and just 
   data-font-size="{{ fields.font_size }}"
   data-text-color="{{ fields.text_color }}"
   style="background-image: url('{{ fields.image.url }}');"
+  data-animation="{{is_preview ? '':'fadeInUp'}}"
 > 
   <h2 class="accolade-block-text">
     {{ fields.text }}
