@@ -48,17 +48,6 @@ class CraftedSupplyJS {
 		this.callAll(this.initializer.plugins)
 		new Animate('[data-animation]')
 		this.callAll(this.initializer.components, this.initComponent)
-
-		// -----------------------------------------------------------------------------
-		// Service Worker registration
-		// -----------------------------------------------------------------------------
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('/service-worker.js', {
-					scope: '/',
-				})
-			})
-		}
 	}
 
 	callAll(items, fn = (fn) => fn()) {
